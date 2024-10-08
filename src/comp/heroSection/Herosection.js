@@ -1,6 +1,7 @@
 import React from 'react'
 import "./herosection.scss"
-
+import { FaWhatsapp } from "react-icons/fa";
+import { MdOutlineCall } from "react-icons/md";
 // swiper
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -14,10 +15,15 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import SlideText from '../slideText/SlideText';
 
 
 
-const Herosection = () => {
+const Herosection = ({herodata}) => {
+
+
+
+
   return (
     <>
       <div className="hero-parent parent">
@@ -25,7 +31,7 @@ const Herosection = () => {
         spaceBetween={0}
         centeredSlides={true}
         autoplay={{
-          delay: 2500,
+          delay: 3500,
           disableOnInteraction: false,
         }}
         pagination={{
@@ -35,22 +41,37 @@ const Herosection = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide className='swiperslide-parent parent'>
-         <div className="slide-cont cont">
-            
-         </div>
-        </SwiperSlide>
-        <SwiperSlide className='swiperslide-parent parent'>
-         <div className="slide-cont cont">
-
-         </div>
-        </SwiperSlide>
-        <SwiperSlide className='swiperslide-parent parent'>
-         <div className="slide-cont cont">
-
-         </div>
-        </SwiperSlide>
-    
+       {
+        herodata.map((item,index)=>(
+          <SwiperSlide className='swiperslide-parent parent' key={index} >
+            <SlideText/>
+          <div className="slide-cont cont">
+        <div className="top">
+        <h2 className='heroheading'>
+              {item.heroHeading}
+             </h2>
+             <p>
+              {item.content}
+             </p>
+        </div>
+             <div className="cta_btn">
+               <div className="icons">
+                 <a href="">
+                 <FaWhatsapp />
+                 </a>
+                 <a href="">
+                 <MdOutlineCall />
+                 </a>
+               </div>
+               <div className="btn">
+                 Book an appoinment
+               </div>
+             </div>
+          </div>
+         </SwiperSlide>
+        ))
+       }
+       
     
       </Swiper>
       </div>

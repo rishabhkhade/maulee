@@ -2,11 +2,11 @@
     --black: #1A1A1A;
     --white: #FFFFFF;
     --blue: #191825;
-    --orange: linear-gradient(#2a88f0, #11ded8);
-    --orange2: #2a88f0;
+    --accent: #b8553a;
+    --accent2: #d8bc9e;
     --text: rgb(107, 107, 107);
     --unit: 12px;
-    --grey: #F6F6F6;
+    --grey: #606060;
     --max-width: 1200px;
     --trans: all 0.4s ease-in-out;
     --trans2: all 0.5s ease-out;
@@ -74,5 +74,20 @@ p {
 
 a {
     text-decoration: none;
+}
+
+
+.btn{
+    padding: var(--unit);
+    background-color: var(--black);
+    color: var(--white);
+    border-radius: var(--unit);
+    cursor: pointer;
+}
+
+.heroheading{
+    font-size: calc(var(--unit)*5);
+    color: var(--white);
+    line-height: 100%;
 }
 
