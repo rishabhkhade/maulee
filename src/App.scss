@@ -1,0 +1,78 @@
+:root {
+    --black: #1A1A1A;
+    --white: #FFFFFF;
+    --blue: #191825;
+    --orange: linear-gradient(#2a88f0, #11ded8);
+    --orange2: #2a88f0;
+    --text: rgb(107, 107, 107);
+    --unit: 12px;
+    --grey: #F6F6F6;
+    --max-width: 1200px;
+    --trans: all 0.4s ease-in-out;
+    --trans2: all 0.5s ease-out;
+    --shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    --unit: 16px;
+    --bg-color: #f3f7fc;
+}
+*::before,
+*::after,
+* {
+    box-sizing: border-box;
+    // border: 1px solid red;
+    margin: 0px;
+    font-family: "Poppins", sans-serif;
+    line-height: 120%;
+
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+    width: 100%;
+    overflow-x: hidden;
+    font-weight: 700;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+p {
+    text-align: justify;
+    font-size: 1rem;
+    line-height: 28px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-weight: 300;
+    color: var(--text);
+}
+
+
+.bg-img-cover {
+    background-position: center center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+}
+
+.bg-img-contain {
+    background-position: center center !important;
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+}
+
+.parent {
+    width: 100%;
+
+    .cont {
+        max-width: var(--max-width);
+        margin: auto;
+        padding: 0px 10px;
+        height: 100%;
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
