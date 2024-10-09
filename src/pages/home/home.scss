@@ -87,6 +87,7 @@
       .swiper {
         height: 100%;
         width: 100%;
+        padding: 50px 0px;
       }
 
       .swiperslide {
@@ -218,34 +219,68 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap: calc(var(--unit)/2);
+            gap: calc(var(--unit) / 2);
 
             .img {
-                width: 80px;
-                aspect-ratio: 1;
-                border-radius: 50%;
-                overflow: hidden;
-    
-                img {
-                  height: 100%;
-                  width: 100%;
-                }
-              }
+              width: 80px;
+              aspect-ratio: 1;
+              border-radius: 50%;
+              overflow: hidden;
 
-              .stars{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: calc(var(--unit)/3);
-
-                svg{
-                    color: rgb(255, 174, 0);
-                }
+              img {
+                height: 100%;
+                width: 100%;
               }
+            }
+
+            .stars {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: calc(var(--unit) / 3);
+
+              svg {
+                color: rgb(255, 174, 0);
+              }
+            }
           }
-       
         }
       }
+    }
+  }
+}
+
+.place-visit-parent {
+  width: 100%;
+  height: auto;
+  background-color: var(--lightgrey);
+  .place-visit-cont {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+
+    .left {
+      width: 50%;
+      height: 100%;
+      border-right: 1px dotted var(--accent);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: var(--unit);
+      padding: 100px 0px;
+
+      .location {
+      
+
+      }
+    }
+
+    .right {
+      width: 50%;
+      height: 100%;
+      padding: 100px 0px;
     }
   }
 }

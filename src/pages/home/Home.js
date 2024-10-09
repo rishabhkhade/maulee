@@ -4,9 +4,9 @@ import Herosection from "../../comp/heroSection/Herosection";
 import SectionHeading from "../../comp/sectionHeading/SectionHeading";
 import { FaWhatsapp } from "react-icons/fa";
 import { MdOutlineCall } from "react-icons/md";
-
+import { BsArrowDown } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { IoLocationOutline } from "react-icons/io5";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -44,6 +44,20 @@ const Home = () => {
       icon: icon1,
       name: "lorem lipsum",
       star: 5,
+    },
+    {
+      clientdesc:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad",
+      icon: icon1,
+      name: "lorem lipsum",
+      star: 4,
+    },
+    {
+      clientdesc:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad",
+      icon: icon1,
+      name: "lorem lipsum",
+      star: 3,
     },
   ];
   return (
@@ -98,9 +112,8 @@ const Home = () => {
               slidesPerView={2.8}
               spaceBetween={30}
               centeredSlides={false}
-              pagination={{
-                clickable: false,
-              }}
+              pagination={false}
+              navigation={{ nextEl: ".custom-circle-prev", prevEl: ".custom-circle-next" }}
               modules={[Pagination]}
               className="mySwiper"
             >
@@ -109,6 +122,12 @@ const Home = () => {
                   <p className="tatto-name">lorem lipsum</p>
                 </div>
               </SwiperSlide>
+              <div className="custom-circle-prev">
+                <BsArrowDown />
+              </div>
+              <div className="custom-circle-next">
+                <BsArrowDown />
+              </div>
             </Swiper>
           </div>
         </div>
@@ -152,10 +171,8 @@ const Home = () => {
             delay: 3500,
             disableOnInteraction: false,
           }}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
+          pagination={false}
+          navigation={{ nextEl: ".custom-next", prevEl: ".custom-prev" }}
           modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
         >
@@ -185,7 +202,32 @@ const Home = () => {
               </div>
             </SwiperSlide>
           ))}
+
+          <div className="custom-prev">
+            <BsArrowDown />
+          </div>
+          <div className="custom-next">
+            <BsArrowDown />
+          </div>
         </Swiper>
+      </div>
+
+      <div className="place-visit-parent parent">
+        <div className="place-visit-cont cont">
+          <div className="left">
+           <div className="location">
+
+           </div>
+           <div className="text">
+            <h5>
+              Viman Nagar , Pune
+            </h5>
+           </div>
+          </div>
+          <div className="right">
+
+          </div>
+        </div>
       </div>
     </>
   );
