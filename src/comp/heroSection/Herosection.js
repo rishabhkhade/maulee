@@ -64,7 +64,9 @@ const Herosection = ({herodata}) => {
                  </a>
                </div>
                <div className="btn">
+                 <h5 className='btn_text'>
                  Book an appoinment
+                 </h5>
                </div>
              </div>
           </div>
