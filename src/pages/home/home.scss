@@ -1,61 +1,251 @@
 .mini-about-section {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 
-    background-color: var(--white);
-    padding: calc(var(--unit)*3) 0px;
+  background-color: var(--white);
+  padding: calc(var(--unit) * 3) 0px;
 
-    .mini-about-cont {
+  .mini-about-cont {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: var(--unit);
+
+    .left {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      width: 50%;
+      height: auto;
+      gap: calc(var(--unit) * 2);
+
+      .top {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: var(--unit);
+      }
+
+      .cta_btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: calc(var(--unit) / 3);
+
+        .icons {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: calc(var(--unit));
+
+          a {
+            font-size: calc(var(--unit) + 5px);
+            color: var(--black);
+          }
+        }
+      }
+    }
+  }
+}
+
+.gallery-parent {
+  width: 100%;
+  height: auto;
+  padding: calc(var(--unit) * 4);
+  background-color: var(--lightgrey);
+
+  .gallery-cont {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: stretch;
+    gap: var(--unit);
+
+    .left {
+      width: 20%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .right {
+      width: 80%;
+      height: 100%;
+
+      .swiper {
         height: 100%;
+        width: 100%;
+      }
+
+      .swiperslide {
+        width: calc(100% / 4);
+        aspect-ratio: 0.8;
+
+        .tatto-image {
+          width: 100%;
+          height: 100%;
+          background-color: var(--white);
+          border-radius: var(--unit);
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-end;
+          padding: var(--unit);
+
+          .tatto-name {
+            color: var(--black);
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  .bottom-cont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0px 0px 0px;
+  }
+}
+
+.counter-parent {
+  width: 100%;
+  height: auto;
+  background-color: var(--black);
+
+  .counter-cont {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--unit);
+
+    .right,
+    .middle,
+    .left {
+      width: calc(100% / 4);
+      aspect-ratio: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+      .count {
+        font-size: calc(var(--unit) * 10);
+        color: var(--accent);
+      }
+
+      .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        text-align: center;
+        background-color: var(--black);
+        padding: calc(var(--unit) / 4) 0px;
         display: flex;
         justify-content: center;
-        align-items: stretch;
-        gap: var(--unit);
+        align-items: center;
+        font-size: var(--unit);
+        color: var(--white);
+        letter-spacing: 1px;
+      }
 
-        .left{
-            width: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+      .countTitle {
+        font-size: calc(var(--unit) * 2);
+        color: var(--white);
+        text-align: center;
+        line-height: 110%;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.testmonial-parent {
+  width: 100%;
+  height: 300px;
+  background-color: var(--white);
+
+  .swiper {
+    width: 100%;
+    height: 100%;
+
+    .testimoneal-parent {
+      height: 100%;
+      width: 100%;
+
+      .slide-cont {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: calc(var(--unit) * 2);
+
+        .heroheading {
+          width: 80%;
+          font-size: var(--unit);
+          color: var(--black);
+          text-align: center;
+          line-height: 120%;
         }
 
-        .right{
+        .test-con {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: var(--unit);
+
+          .test {
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-            width: 50%;
-            height: auto;
-            gap: calc(var(--unit)*2);
+            justify-content: center;
+            align-items: center;
+            gap: calc(var(--unit)/2);
 
-            .top{
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: flex-start;
-                gap: var(--unit);
-            }
+            .img {
+                width: 80px;
+                aspect-ratio: 1;
+                border-radius: 50%;
+                overflow: hidden;
+    
+                img {
+                  height: 100%;
+                  width: 100%;
+                }
+              }
 
-            .cta_btn{
+              .stars{
                 display: flex;
-                flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 gap: calc(var(--unit)/3);
 
-                .icons{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: calc(var(--unit));
-
-                a{
-                    font-size: calc(var(--unit) + 5px);
-                    color: var(--black);
+                svg{
+                    color: rgb(255, 174, 0);
                 }
-                }
-            }
-
+              }
+          }
+       
         }
+      }
     }
+  }
 }
