@@ -3,23 +3,23 @@ import SlideText from '../slideText/SlideText'
 import "./pagetop.scss"
 import logo from "../../assets/logo2.png"
 const Pagetop = ({
-    pageHeader
+  pageHeader
 }) => {
   return (
     <>
       <div className="pagetop-parent parent">
         {/* <SlideText  firstTextTOP="30%"  fontsize="90px"  /> */}
 
-    <div className="pagetop-cont cont">
-    <div className="logo">
-        <img src={logo} alt="" />
-     </div>
-     <div className="text">
-        <h5>
-          {pageHeader}
-        </h5>
-     </div>
-    </div>
+        <div className="pagetop-cont cont">
+          <div className="logo">
+            <img src={logo} alt="" />
+          </div>
+          <div className="text">
+            <h5>
+              {pageHeader}
+            </h5>
+          </div>
+        </div>
       </div>
     </>
   )
