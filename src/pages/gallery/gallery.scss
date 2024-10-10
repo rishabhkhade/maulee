@@ -1,0 +1,69 @@
+.gallery-parent {
+  height: auto;
+  width: 100%;
+  background-color: var(--white);
+
+  .gallery-cont {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--unit);
+
+    .btn-list {
+      width: 50%;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--unit);
+      border: 1px solid var(--accent);
+      padding: calc(var(--unit) / 2);
+      border-radius: calc(var(--unit) * 2);
+
+      .btn-tag {
+        width: calc(100% / 3);
+        height: 100%;
+        border-radius: calc(var(--unit) * 2);
+        background-color: var(--accent);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--white);
+        cursor: pointer;
+      }
+    }
+
+    .gallery-section {
+      width: 100%;
+      height: 100vh;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+      gap: var(--unit);
+
+   
+
+        .class{
+            background-color: red;
+        }
+
+        .div1 { grid-area: 1 / 1 / 2 / 3; }
+        .div2 { grid-area: 1 / 3 / 3 / 4; }
+        .div3 { grid-area: 1 / 4 / 2 / 5; }
+        .div4 { grid-area: 2 / 4 / 3 / 5; }
+        .div5 { grid-area: 1 / 5 / 2 / 7; }
+        .div6 { grid-area: 2 / 5 / 3 / 7; }
+        .div7 { grid-area: 2 / 1 / 3 / 3; }
+        .div8 { grid-area: 3 / 1 / 5 / 3; }
+        .div9 { grid-area: 3 / 3 / 4 / 4; }
+        .div10 { grid-area: 4 / 3 / 5 / 4; }
+        .div11 { grid-area: 3 / 4 / 4 / 6; }
+        .div12 { grid-area: 4 / 4 / 5 / 5; }
+        .div13 { grid-area: 4 / 5 / 5 / 6; }
+        .div14 { grid-area: 3 / 6 / 5 / 7; }
+      }
+    
+  }
+}
