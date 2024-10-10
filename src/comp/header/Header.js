@@ -11,7 +11,7 @@ const Header = () => {
     <>
       <div className="parent header-parent">
         <div className="cont header-container">
-          <img src={logo_img} />
+          {/* <img src={logo_img} /> */}
           <span className='hamburger' onClick={() => setNavOpen(!navOpen)}><MdOutlineSort /></span>
         </div>
       </div>

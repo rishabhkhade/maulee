@@ -33,7 +33,7 @@ const Herosection = ({ herodata }) => {
         >
           {herodata.map((item, index) => (
             <SwiperSlide className="swiperslide-parent parent" key={index}>
-              <SlideText />
+         
               <div className="slide-cont cont">
                 <div className="top">
                   <h2 className="heroheading">

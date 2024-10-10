@@ -215,10 +215,10 @@ const Home = () => {
       <div className="place-visit-parent parent">
         <div className="place-visit-cont cont">
           <div className="left">
-           <div className="location">
+           <div className="location bg-img-contain">
 
            </div>
-           <div className="text">
+           <div className="visit-text">
             <h5>
               Viman Nagar , Pune
             </h5>
