@@ -33,11 +33,29 @@
         color: var(--white);
         cursor: pointer;
         border: 1px solid var(--accent);
+        gap: calc(var(--unit)/2);
+
+        span{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .text{
+          font-size: var(--unit);
+          font-weight: 600;
+          color: inherit;
+        }
+
+        .icon{
+          font-size: var(--unit);
+        }
 
         &.active {
           border: 1px solid var(--accent);
           background-color: transparent;
           color: var(--accent);
+
         }
       }
     }

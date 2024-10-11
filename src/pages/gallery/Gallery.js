@@ -6,6 +6,9 @@ import { CiPlay1 } from "react-icons/ci";
 import image from "../../assets/IMG_9164.jpg";
 import video from "../../assets/video.webm";
 import ReactPlayer from "react-player";
+import { BiSolidVideos } from "react-icons/bi";
+import { IoMdPhotos } from "react-icons/io";
+import { BsYoutube } from "react-icons/bs";
 const Gallery = () => {
   const images = [
     {
@@ -153,7 +156,11 @@ const Gallery = () => {
                 });
               }}
             >
-              Photos
+              <span className="icon">
+              <IoMdPhotos />
+              </span>
+
+              <p className="text">Photos</p>
             </div>
             <div
               className={
@@ -166,9 +173,19 @@ const Gallery = () => {
                 });
               }}
             >
-              Videos
+              <span className="icon">
+                <BiSolidVideos />
+              </span>
+
+              <p className="text">Videos</p>
             </div>
-            <div className="btn-tag">YT Links</div>
+            <div className="btn-tag">
+              {" "}
+              <span className="icon">
+              <BsYoutube />
+              </span>
+              <p className="text">YT links</p>
+            </div>
           </div>
 
           <div className="gallery-section">
