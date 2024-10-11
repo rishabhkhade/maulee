@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./gallery.scss";
 import Pagetop from "../../comp/pagetop/Pagetop";
-
+import { CiPlay1 } from "react-icons/ci";
 // image
 import image from "../../assets/IMG_9164.jpg";
 import video from "../../assets/video.webm";
@@ -97,17 +97,43 @@ const Gallery = () => {
   ];
 
   const [gallerypages, setgalleryPage] = useState({
-    photos: true,
-    videos: false,
-    ytlinks: false,
+    photossection: true,
+    videossection: false,
+    ytlinkssection: false,
   });
 
   const closeAll = () => {
     setgalleryPage({
-      photos: false,
-      videos: false,
-      ytlinks: false,
+      photossection: false,
+      videossection: false,
+      ytlinkssection: false,
     });
+  };
+
+  const [lightboxImageOpen, setLightboxOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  const [lightboxVideoOpen, setLightboxvideoOpen] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
+  const openLightVideobox = (image) => {
+    setSelectedVideo(image);
+    setLightboxvideoOpen(true);
+  };
+
+  const closeLightvideobox = () => {
+    setLightboxvideoOpen(false);
+    setSelectedVideo(null);
+  };
+
+  const openLightbox = (image) => {
+    setSelectedImage(image);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    setSelectedImage(null);
   };
   return (
     <>
@@ -117,27 +143,27 @@ const Gallery = () => {
         <div className="gallery-cont cont">
           <div className="btn-list">
             <div
-              className={gallerypages.photos ? "btn-tag active" : "btn-tag"}
+              className={
+                gallerypages.photossection ? "btn-tag active" : "btn-tag"
+              }
               onClick={() => {
-                closeAll(); 
+                closeAll();
                 setgalleryPage({
-                  ...gallerypages,
-                  photos: true,
+                  photossection: true,
                 });
-                
               }}
             >
               Photos
             </div>
             <div
-              className={gallerypages.videos ? "btn-tag active" : "btn-tag"}
-             onClick={() => {
-              closeAll();
+              className={
+                gallerypages.videossection ? "btn-tag active" : "btn-tag"
+              }
+              onClick={() => {
+                closeAll();
                 setgalleryPage({
-                  ...gallerypages,
-                  videos: true,
+                  videossection: true,
                 });
-               
               }}
             >
               Videos
@@ -146,31 +172,46 @@ const Gallery = () => {
           </div>
 
           <div className="gallery-section">
-            {gallerypages.photos && (
+            {gallerypages.photossection && (
               <>
                 {images.map((item, index) => (
                   <div
                     className=" class bg-img-cover"
                     style={{ backgroundImage: `url(${item.image})` }}
                     key={index}
+                    onClick={() => openLightbox(item.image)}
                   ></div>
                 ))}
               </>
             )}
-            {gallerypages.videos && (
+            {gallerypages.videossection && (
               <>
                 {videos.map((item, index) => (
-                  <div
-                    className=" class bg-img-cover"
-               
-                    key={index}
-                  >
+                  <div className=" class bg-img-cover" key={index}>
                     <ReactPlayer
-                      className="react-player"
-                      url={item.image}
+                      config={{
+                        file: {
+                          forceVideo: true,
+                          attributes: {
+                            preload: "metadata",
+                          },
+                        },
+                      }}
+                      muted
+                      controls={false}
+                      playing={false}
                       width="100%"
                       height="100%"
+                      className="video"
+                      url={item.image}
                     />
+
+                    <div
+                      className="play-button"
+                      onClick={() => openLightVideobox(item.image)}
+                    >
+                      <CiPlay1 />
+                    </div>
                   </div>
                 ))}
               </>
@@ -178,6 +219,40 @@ const Gallery = () => {
           </div>
         </div>
       </div>
+
+      {/* image popup */}
+      {lightboxImageOpen && (
+        <div className="image-lightbox" onClick={closeLightbox}>
+          <div className="image ">
+            <img src={selectedImage} alt="Selected" />
+          </div>
+        </div>
+      )}
+
+      {lightboxVideoOpen && (
+        <div className="image-lightbox" onClick={closeLightvideobox}>
+          <div className="image ">
+            <ReactPlayer
+              config={{
+                file: {
+                  forceVideo: true,
+                  attributes: {
+                    preload: "metadata",
+                  },
+                },
+              }}
+              muted
+              controls={true}
+              autoplay
+              playing={true}
+              width="100%"
+              height="100%"
+              className="video"
+              url={selectedVideo}
+            />
+          </div>
+        </div>
+      )}
     </>
   );
 };
