@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Intelo';
+    src: local('Intelo Medium'), local('Intelo-Medium'),
+        url('Intelo-Medium.woff2') format('woff2'),
+        url('Intelo-Medium.woff') format('woff'),
+        url('Intelo-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }

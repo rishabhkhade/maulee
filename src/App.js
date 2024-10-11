@@ -7,6 +7,7 @@ import About from "./pages/about/About";
 import Service from "./pages/service/Service";
 import Gallery from "./pages/gallery/Gallery";
 import Contact from "./pages/contact/Contact";
+import AfterFooter from "./comp/afterFooter/AfterFooter";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
+        <AfterFooter />
       </BrowserRouter>
     </div>
   );
