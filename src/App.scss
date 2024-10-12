@@ -15,6 +15,7 @@
   --unit: 16px;
   --bg-color: #f3f7fc;
 }
+
 *::before,
 *::after,
 * {
@@ -28,9 +29,37 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+
+
+//custom fonts
+@font-face {
+  font-family: 'Intelo';
+  src: local('Intelo Medium'), local('Intelo-Medium'),
+    url('./fonts/Intelo-Medium.woff2') format('woff2'),
+    url('./fonts/Intelo-Medium.woff') format('woff'),
+    url('./fonts/Intelo-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Gilroy';
+  src: local('Gilroy Medium'), local('Intelo-Medium'),
+    url('./fonts/Gilroy-Medium.ttf') format('woff2'),
+    url('./fonts/Gilroy-Light.ttf') format('woff'),
+    url('./fonts/Gilroy-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+
+
+
 body {
   width: 100%;
-  overflow-x: hidden ;
+  overflow-x: hidden;
   font-weight: 700;
 }
 
@@ -126,11 +155,13 @@ a {
     &::after {
       left: 0;
     }
+
     &::before {
       right: 0;
     }
   }
 }
+
 .btn2 {
   padding: var(--unit);
   background-color: var(--black);
@@ -182,6 +213,7 @@ a {
     &::after {
       left: 0;
     }
+
     &::before {
       right: 0;
     }
@@ -227,6 +259,7 @@ a {
   transform: translate(-50%, 0);
   cursor: pointer;
   z-index: 2;
+
   svg {
     color: var(--accent);
     transform: rotate(90deg);
@@ -248,21 +281,23 @@ a {
     font-size: 60px;
   }
 }
+
 .custom-circle-prev {
   position: absolute;
-bottom: 0;
+  bottom: 0;
   left: 45%;
   transform: translate(0%, -50%);
   cursor: pointer;
   z-index: 2;
-width: 30px;
-aspect-ratio: 1;
-background-color: rgba(255, 68, 0, 0.693);
+  width: 30px;
+  aspect-ratio: 1;
+  background-color: rgba(255, 68, 0, 0.693);
 
-border-radius: 50%;
-display: flex;
-justify-content: center;
-align-items: center;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   svg {
     color: var(--white);
     transform: rotate(90deg);
@@ -270,20 +305,20 @@ align-items: center;
   }
 }
 
-.custom-circle-next{
+.custom-circle-next {
   position: absolute;
- bottom: 0;
+  bottom: 0;
   right: 45%;
   transform: translate(0%, -50%);
   cursor: pointer;
   z-index: 2;
   width: 30px;
-aspect-ratio: 1;
-background-color: rgba(255, 68, 0, 0.693);
-border-radius: 50%;
-display: flex;
-justify-content: center;
-align-items: center;
+  aspect-ratio: 1;
+  background-color: rgba(255, 68, 0, 0.693);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   svg {
     color: var(--white);
@@ -291,7 +326,7 @@ align-items: center;
     font-size: 20px;
   }
 
-  &:active{
+  &:active {
     background-color: var(--accent);
   }
 }

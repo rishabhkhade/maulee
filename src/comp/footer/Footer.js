@@ -9,7 +9,7 @@ const Footer = () => {
 
             <div className="parent footer-parent">
                 <div className="cont footer-cont">
-                    <img src={logo_footer} alt="" />
+                    {/* <img src={logo_footer} alt="" /> */}
                     <div className="nav-footer">
                         <Link>Home</Link>
                         <Link>About</Link>
@@ -20,7 +20,6 @@ const Footer = () => {
                     <p>Copyright/Maulees Tatoos</p>
                 </div>
             </div>
-
         </>
     )
 }

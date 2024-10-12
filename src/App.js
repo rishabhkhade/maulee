@@ -6,10 +6,12 @@ import Footer from "./comp/footer/Footer";
 import About from "./pages/about/About";
 import Service from "./pages/service/Service";
 import Gallery from "./pages/gallery/Gallery";
+import Contact from "./pages/contact/Contact";
+import AfterFooter from "./comp/afterFooter/AfterFooter";
 
 function App() {
   return (
-    <div className="App"> 
+    <div className="App">
       <BrowserRouter>
         <Header />
         <Routes>
@@ -17,8 +19,10 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/service" element={<Service />} />
           <Route path="/mauleeswork" element={<Gallery />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
+        <AfterFooter />
       </BrowserRouter>
     </div>
   );

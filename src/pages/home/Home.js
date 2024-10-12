@@ -113,7 +113,10 @@ const Home = () => {
               spaceBetween={30}
               centeredSlides={false}
               pagination={false}
-              navigation={{ nextEl: ".custom-circle-prev", prevEl: ".custom-circle-next" }}
+              navigation={{
+                nextEl: ".custom-circle-prev",
+                prevEl: ".custom-circle-next",
+              }}
               modules={[Pagination]}
               className="mySwiper"
             >
@@ -215,18 +218,12 @@ const Home = () => {
       <div className="place-visit-parent parent">
         <div className="place-visit-cont cont">
           <div className="left">
-           <div className="location bg-img-contain">
-
-           </div>
-           <div className="visit-text">
-            <h5>
-              Viman Nagar , Pune
-            </h5>
-           </div>
+            <div className="location bg-img-contain"></div>
+            <div className="visit-text">
+              <h5>Viman Nagar , Pune</h5>
+            </div>
           </div>
-          <div className="right">
-
-          </div>
+          <div className="right"></div>
         </div>
       </div>
     </>
