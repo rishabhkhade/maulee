@@ -59,13 +59,13 @@
   }
 }
 
-.gallery-parent {
+.mini-gallery-parent {
   width: 100%;
   height: auto;
   padding: calc(var(--unit) * 4);
   background-color: var(--lightgrey);
 
-  .gallery-cont {
+  .mini-gallery-cont {
     display: flex;
     height: 100%;
     justify-content: center;
@@ -90,14 +90,15 @@
         padding: 50px 0px;
       }
 
-      .swiperslide {
+      .gallery-swiperslide {
         width: calc(100% / 4);
         aspect-ratio: 0.8;
+        
 
         .tatto-image {
           width: 100%;
           height: 100%;
-          background-color: var(--white);
+          background-color: var(--accent);
           border-radius: var(--unit);
           display: flex;
           justify-content: flex-start;
@@ -105,7 +106,7 @@
           padding: var(--unit);
 
           .tatto-name {
-            color: var(--black);
+            color: var(--white);
             font-weight: 700;
           }
         }
