@@ -146,8 +146,21 @@
       position: relative;
 
       .count {
+        height: 100%;
+        width: 100%;
         font-size: calc(var(--unit) * 10);
         color: var(--accent);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        span{
+          height: 100%;
+          width: 100%;  
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
       }
 
       .text {
@@ -180,8 +193,9 @@
 
 .testmonial-parent {
   width: 100%;
-  height: 300px;
+  height: auto;
   background-color: var(--white);
+
 
   .swiper {
     width: 100%;
@@ -190,7 +204,7 @@
     .testimoneal-parent {
       height: 100%;
       width: 100%;
-
+      padding: 50px 0px;
       .slide-cont {
         height: 100%;
         display: flex;
@@ -280,6 +294,93 @@
       width: 50%;
       height: 100%;
       padding: 50px 0px;
+    }
+  }
+}
+
+
+@media only screen and (max-width:800px) {
+  .mini-about-section{
+
+    .mini-about-cont{
+      flex-direction: column !important;
+
+      .left{
+        width: 100%;
+        aspect-ratio: 19/6 !important;
+
+
+      }
+
+      .right{
+        width: 100% !important;
+        align-items: center !important;
+
+        .top{
+          align-items: center !important;
+        }
+      }
+    }
+  }
+
+  .mini-gallery-parent{
+    padding: 10px !important;
+  }
+
+  .counter-parent{
+
+    .counter-cont{
+
+      .right,.left{
+        .count{
+          font-size: calc(var(--unit) * 6);
+        }
+
+        .text{
+
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:400px){
+  .counter-parent{
+
+    .counter-cont{
+
+      .right,.left{
+        .count{
+          font-size: calc(var(--unit) * 4) ;
+        }
+
+        .text{
+font-size: 8px;
+        }
+      }
+
+      .middle{
+        h4{
+          font-size: 14px !important;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width:650px){
+  .mini-gallery-parent{
+
+    .mini-gallery-cont{
+      flex-direction: column !important;
+
+      .left{
+        width: 100%;
+      }
+
+      .right{
+        width: 100%;
+      }
     }
   }
 }

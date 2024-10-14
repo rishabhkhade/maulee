@@ -53,8 +53,8 @@ function AfterFooter() {
           className="mySwiper parent"
         >
           {data.map((item, index) => (
-            <SwiperSlide className="cont">
-              <p>{item.description}</p>
+            <SwiperSlide className="parent">
+              <p className="cont">{item.description}</p>
             </SwiperSlide>
           ))}
           <div className="custom-prev">

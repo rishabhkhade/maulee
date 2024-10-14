@@ -19,21 +19,21 @@ const Herosection = ({ herodata }) => {
   return (
     <>
       <div className="hero-parent parent">
-        <SlideText/>
+        {/* <SlideText/> */}
         <Swiper
           spaceBetween={0}
           centeredSlides={true}
           autoplay={{
-            delay: 35000000,
+            delay: 3500000,
             disableOnInteraction: false,
           }}
           pagination={false}
           navigation={{ nextEl: ".custom-next", prevEl: ".custom-prev" }}
           modules={[Autoplay, Pagination, Navigation]}
-          className="hero-mySwiper"
+          className="mySwiper"
         >
           {herodata.map((item, index) => (
-            <SwiperSlide className="hero-swiperslide-parent bg-img-cover parent"   style={{backgroundImage:`url(${item.heroimage})`}}  key={index}>
+            <SwiperSlide className="hero-swiperslide-parent bg-img-cover parent"    key={index}>
               <div className="hero-overlay"></div>
          
               <div className="hero-slide-cont cont">

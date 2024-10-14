@@ -270,7 +270,7 @@ a {
 .custom-next {
   position: absolute;
   top: 50%;
-  right: 5%;
+  right: 2%;
   transform: translate(-50%, 0);
   cursor: pointer;
   z-index: 2;
@@ -328,5 +328,19 @@ a {
 
   &:active {
     background-color: var(--accent);
+  }
+}
+
+@media only screen and (max-width:800px){
+  .custom-circle-prev{
+    left: 25%;
+  }
+}
+
+
+@media only screen and (max-width:650px){
+  .custom-circle-prev
+  {
+    left: 35%;
   }
 }

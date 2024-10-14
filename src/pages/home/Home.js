@@ -180,7 +180,9 @@ const Home = () => {
         <div className="counter-cont cont">
           <div className="right ">
             <h1 className="count">
-              <CountUp end={50} />
+           <span>
+           <CountUp end={50} />
+           </span>
             </h1>
             <h6 className="text">lorem limpsum</h6>
           </div>
@@ -189,7 +191,9 @@ const Home = () => {
           </div>
           <div className="left">
             <h1 className="count">
-              <CountUp end={50} />
+            <span>
+           <CountUp end={50} />
+           </span>
             </h1>
             <h6 className="text">lorem limpsum</h6>
           </div>
