@@ -17,21 +17,25 @@ import { Link } from "react-router-dom";
 import CountUp from "react-countup";
 import { IoIosStar } from "react-icons/io";
 import icon1 from "../../assets/Mask group.png";
-
+import image from "../../assets/IMG_9164.jpg";
+import heroimage from "../../assets/hero.png"
 const Home = () => {
   const herodata = [
     {
       heroHeading: "MOULEE'S",
+      heroimage:heroimage,
       content:
         "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     },
     {
       heroHeading: "MOULEE'S",
+      heroimage:heroimage,
       content:
         "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     },
     {
       heroHeading: "MOULEE'S",
+      heroimage:heroimage,
       content:
         "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     },
@@ -60,6 +64,29 @@ const Home = () => {
       star: 3,
     },
   ];
+
+  const images = [
+    {
+      image: image,
+      tattoName:"lorem lipsum"
+    },
+    {
+      image: image,
+       tattoName:"lorem lipsum"
+    },
+    {
+      image: image,
+       tattoName:"lorem lipsum"
+    },
+    {
+      image: image,
+       tattoName:"lorem lipsum"
+    },
+
+  ];
+
+
+
   return (
     <>
       <Herosection herodata={herodata} />
@@ -102,8 +129,8 @@ const Home = () => {
       </div>
 
       {/* gallery semi section */}
-      <div className="gallery-parent parent">
-        <div className="gallery-cont cont">
+      <div className="mini-gallery-parent parent">
+        <div className="mini-gallery-cont cont">
           <div className="left">
             <h2 className="heading">Lorem ipsum dolor sit.</h2>
           </div>
@@ -120,11 +147,17 @@ const Home = () => {
               modules={[Pagination]}
               className="mySwiper"
             >
-              <SwiperSlide className="swiperslide">
-                <div className="tatto-image">
-                  <p className="tatto-name">lorem lipsum</p>
+             {
+              images.map((item,index)=>(
+                <SwiperSlide className="gallery-swiperslide"key={index} >
+                <div className="tatto-image bg-img-cover"  style={{backgroundImage:`url(${item.image})`}} >
+                  <p className="tatto-name"> {item.tattoName}  </p>
                 </div>
               </SwiperSlide>
+         
+              ))
+             }
+             
               <div className="custom-circle-prev">
                 <BsArrowDown />
               </div>

@@ -50,11 +50,11 @@ function AfterFooter() {
           }}
           navigation={{ nextEl: ".custom-next", prevEl: ".custom-prev" }}
           modules={[Autoplay, Navigation]}
-          className="mySwiper"
+          className="mySwiper parent"
         >
           {data.map((item, index) => (
-            <SwiperSlide className="parent" >
-              <p className="cont">{item.description}</p>
+            <SwiperSlide className="cont">
+              <p>{item.description}</p>
             </SwiperSlide>
           ))}
           <div className="custom-prev">

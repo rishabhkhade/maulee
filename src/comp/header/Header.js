@@ -41,8 +41,12 @@ const Header = () => {
     <>
       <div className="parent header-parent">
         <div className="cont header-container">
-          {/* <img src={logo_img} /> */}
-          <span className='hamburger' onClick={() => setNavOpen(!navOpen)}><MdOutlineSort /></span>
+          <img src={logo_img} />
+          <span className="hamburger" onClick={() => setNavOpen(!navOpen)}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
         </div>
       </div>
 
