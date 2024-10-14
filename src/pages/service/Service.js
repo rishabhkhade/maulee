@@ -60,7 +60,12 @@ const Service = () => {
       <Pagetop pageHeader="Our services" />
 
       <div className="service-parent parent">
-        <div className="service-cont cont">
+        <div
+          className="service-cont cont"
+          data-aos="fade-up"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+        >
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
@@ -76,13 +81,23 @@ const Service = () => {
       </div>
 
       <div className="ourservice parent">
-        <div className="our-service-cont cont">
+        <div
+          className="our-service-cont cont"
+          data-aos="fade-up"
+          data-aos-delay="300"
+          data-aos-duration="1000"
+        >
           <SectionHeading line_text="Services" fill_text="services" />
         </div>
       </div>
 
       <div className="service-list parent">
-        <div className="service-cont cont">
+        <div
+          className="service-cont cont"
+          data-aos="fade-up"
+          data-aos-delay="500"
+          data-aos-duration="1000"
+        >
           {serviceContent.map((item, index) => (
             <div className="service" key={index}>
               <p>{item.content}</p>
@@ -93,7 +108,12 @@ const Service = () => {
       </div>
 
       <div className="faq-parent parent">
-        <div className="faq-cont cont">
+        <div
+          className="faq-cont cont"
+          data-aos="fade-up"
+          data-aos-delay="700"
+          data-aos-duration="1000"
+        >
           <div className="left"></div>
 
           <div className="right">
@@ -104,25 +124,19 @@ const Service = () => {
             </p>
 
             <div className="faq-list">
-            {
-                faqContent.map((item,index)=>(
-                    <div className="faq"  key={index} >
-                    <div className="heading" onClick={() => handleToggle(index)}>
-                      <p>
-                        {item.title}
-                      </p>
-                      <div className={faq === index ? "icon active" : "icon"}>
-                        <IoIosArrowDown />
-                      </div>
-                    </div>
-                    <div className={faq === index ? "content active" : "content"}>
-                      <p>
-                        {item.content}
-                      </p>
+              {faqContent.map((item, index) => (
+                <div className="faq" key={index}>
+                  <div className="heading" onClick={() => handleToggle(index)}>
+                    <p>{item.title}</p>
+                    <div className={faq === index ? "icon active" : "icon"}>
+                      <IoIosArrowDown />
                     </div>
                   </div>
-                ))
-            }
+                  <div className={faq === index ? "content active" : "content"}>
+                    <p>{item.content}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

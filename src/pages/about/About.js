@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./about.scss";
 import Pagetop from "../../comp/pagetop/Pagetop";
 import SectionHeading from "../../comp/sectionHeading/SectionHeading";
@@ -6,7 +6,14 @@ import artistImage from "../../assets/dummy-artist.png";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoLogoInstagram } from "react-icons/io";
 import { FaXTwitter } from "react-icons/fa6";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const About = () => {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   const artistData = [
     {
       image: artistImage,
@@ -50,7 +57,12 @@ const About = () => {
       <Pagetop pageHeader="About Us" />
 
       <div className="about-parent parent">
-        <div className="about-cont cont">
+        <div
+          className="about-cont cont"
+          data-aos="fade-up"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+        >
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
             industry. Lorem Ipsum has been the industry's standard dummy text
@@ -66,7 +78,12 @@ const About = () => {
       </div>
 
       <div className="journey-parent parent">
-        <div className="journey-cont cont">
+        <div
+          className="journey-cont cont"
+          data-aos="fade-up"
+          data-aos-delay="300"
+          data-aos-duration="1000"
+        >
           <div className="left">
             <p className="section">
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -104,10 +121,20 @@ const About = () => {
       </div>
 
       <div className="artist-parent parent">
-        <div className="heading-cont cont">
+        <div
+          className="heading-cont cont"
+          data-aos="fade-up"
+          data-aos-delay="500"
+          data-aos-duration="1000"
+        >
           <SectionHeading line_text="Artist" fill_text="Artist" />
         </div>
-        <div className="artist-cont cont">
+        <div
+          className="artist-cont cont"
+          data-aos="fade-up"
+          data-aos-delay="500"
+          data-aos-duration="1000"
+        >
           {artistData.map((item, index) => (
             <div class="card" key={index}>
               <div class="card-inner">
@@ -119,7 +146,10 @@ const About = () => {
                     <h3>{item.artist_name}</h3>
                   </div>
                 </div>
-                <div class="backcard bg-img-cover"   style={{ backgroundImage: `url(${item.image})` }} >
+                <div
+                  class="backcard bg-img-cover"
+                  style={{ backgroundImage: `url(${item.image})` }}
+                >
                   <div className="blur-overlay">
                     <p>{item.description}</p>
 

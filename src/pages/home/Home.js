@@ -18,24 +18,24 @@ import CountUp from "react-countup";
 import { IoIosStar } from "react-icons/io";
 import icon1 from "../../assets/Mask group.png";
 import image from "../../assets/IMG_9164.jpg";
-import heroimage from "../../assets/hero.png"
+import heroimage from "../../assets/hero.png";
 const Home = () => {
   const herodata = [
     {
       heroHeading: "MOULEE'S",
-      heroimage:heroimage,
+      heroimage: heroimage,
       content:
         "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     },
     {
       heroHeading: "MOULEE'S",
-      heroimage:heroimage,
+      heroimage: heroimage,
       content:
         "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     },
     {
       heroHeading: "MOULEE'S",
-      heroimage:heroimage,
+      heroimage: heroimage,
       content:
         "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     },
@@ -68,24 +68,21 @@ const Home = () => {
   const images = [
     {
       image: image,
-      tattoName:"lorem lipsum"
+      tattoName: "lorem lipsum",
     },
     {
       image: image,
-       tattoName:"lorem lipsum"
+      tattoName: "lorem lipsum",
     },
     {
       image: image,
-       tattoName:"lorem lipsum"
+      tattoName: "lorem lipsum",
     },
     {
       image: image,
-       tattoName:"lorem lipsum"
+      tattoName: "lorem lipsum",
     },
-
   ];
-
-
 
   return (
     <>
@@ -94,7 +91,9 @@ const Home = () => {
       {/* mini about */}
 
       <div className="mini-about-section parent">
-        <div className="mini-about-cont cont">
+        <div className="mini-about-cont cont" data-aos="fade-up"
+                data-aos-delay="100"
+                data-aos-duration="1000">
           <div className="left"></div>
 
           <div className="right">
@@ -130,7 +129,9 @@ const Home = () => {
 
       {/* gallery semi section */}
       <div className="mini-gallery-parent parent">
-        <div className="mini-gallery-cont cont">
+        <div className="mini-gallery-cont cont" data-aos="fade-up"
+                data-aos-delay="300"
+                data-aos-duration="1000">
           <div className="left">
             <h2 className="heading">Lorem ipsum dolor sit.</h2>
           </div>
@@ -147,17 +148,17 @@ const Home = () => {
               modules={[Pagination]}
               className="mySwiper"
             >
-             {
-              images.map((item,index)=>(
-                <SwiperSlide className="gallery-swiperslide"key={index} >
-                <div className="tatto-image bg-img-cover"  style={{backgroundImage:`url(${item.image})`}} >
-                  <p className="tatto-name"> {item.tattoName}  </p>
-                </div>
-              </SwiperSlide>
-         
-              ))
-             }
-             
+              {images.map((item, index) => (
+                <SwiperSlide className="gallery-swiperslide" key={index}>
+                  <div
+                    className="tatto-image bg-img-cover"
+                    style={{ backgroundImage: `url(${item.image})` }}
+                  >
+                    <p className="tatto-name"> {item.tattoName} </p>
+                  </div>
+                </SwiperSlide>
+              ))}
+
               <div className="custom-circle-prev">
                 <BsArrowDown />
               </div>
@@ -168,7 +169,9 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="bottom-cont cont">
+        <div className="bottom-cont cont" data-aos="fade-up"
+                data-aos-delay="300"
+                data-aos-duration="1000">
           <Link className="btn">
             <h5 className="btn_text">Know More</h5>
           </Link>
@@ -177,12 +180,14 @@ const Home = () => {
 
       {/* counter */}
       <div className="counter-parent parent">
-        <div className="counter-cont cont">
+        <div className="counter-cont cont" data-aos="fade-up"
+                data-aos-delay="500"
+                data-aos-duration="1000">
           <div className="right ">
             <h1 className="count">
-           <span>
-           <CountUp end={50} />
-           </span>
+              <span>
+                <CountUp end={50} />
+              </span>
             </h1>
             <h6 className="text">lorem limpsum</h6>
           </div>
@@ -191,9 +196,9 @@ const Home = () => {
           </div>
           <div className="left">
             <h1 className="count">
-            <span>
-           <CountUp end={50} />
-           </span>
+              <span>
+                <CountUp end={50} />
+              </span>
             </h1>
             <h6 className="text">lorem limpsum</h6>
           </div>
@@ -202,7 +207,9 @@ const Home = () => {
 
       {/* testimoneal */}
 
-      <div className="testmonial-parent parent">
+      <div className="testmonial-parent parent" data-aos="fade-up"
+                data-aos-delay="700"
+                data-aos-duration="1000">
         <div className="overlay"></div>
         <Swiper
           spaceBetween={0}
@@ -253,7 +260,9 @@ const Home = () => {
       </div>
 
       <div className="place-visit-parent parent">
-        <div className="place-visit-cont cont">
+        <div className="place-visit-cont cont" data-aos="fade-up"
+                data-aos-delay="800"
+                data-aos-duration="1000">
           <div className="left">
             <div className="location bg-img-contain"></div>
             <div className="visit-text">

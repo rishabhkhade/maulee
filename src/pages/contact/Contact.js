@@ -34,7 +34,12 @@ const Contact = () => {
     <>
       <Pagetop pageHeader="Contact Us" />
       <div className="parent contact-parent">
-        <div className="cont contact-cont">
+        <div
+          className="cont contact-cont"
+          data-aos="fade-up"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+        >
           <div className="contact-left bg-img-cover"></div>
           <div className="contact-right">
             <div className="contact-top">
