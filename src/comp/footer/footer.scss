@@ -20,19 +20,34 @@
             align-items: center;
             gap: 30px;
 
-            a{
-                color:var(--white);
+            a {
+                color: var(--white);
                 font-size: var(--unit);
 
-                &:hover{
+                &:hover {
                     color: rgba(255, 255, 255, 0.473);
                     transform: var(--trans);
                 }
             }
-
-            
         }
-       
+    }
+}
 
+@media (max-width:1000px) {
+    .nav-footer {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: calc(var(--unit)) !important;
+    }
+}
+
+@media (max-width:500px) {
+    .footer-parent {
+
+        .footer-cont {
+            img {
+                width: 200px !important;
+            }
+        }
     }
 }

@@ -55,12 +55,48 @@ const Header = () => {
       >
         <div className="cont nav-container">
           <div className="links">
-            <Link to="/" ref={(el) => (navLinks.current[0] = el)} onClick={() => setNavOpen(false)} >Home</Link>
-            <Link to="/about" ref={(el) => (navLinks.current[1] = el)}  onClick={() => setNavOpen(false)}   >About</Link>
-            <Link to="/service" ref={(el) => (navLinks.current[2] = el)}  onClick={() => setNavOpen(false)}   >Services</Link>
-            <Link to="/mauleeswork" ref={(el) => (navLinks.current[3] = el)}  onClick={() => setNavOpen(false)}   >Maulees Work</Link>
-            <Link to="/blog" ref={(el) => (navLinks.current[4] = el)}  onClick={() => setNavOpen(false)}   >Blog</Link>
-            <Link to="/contact" ref={(el) => (navLinks.current[5] = el)}  onClick={() => setNavOpen(false)}   >Contact</Link>
+            <Link
+              to="/"
+              ref={(el) => (navLinks.current[0] = el)}
+              onClick={() => setNavOpen(false)}
+            >
+              Home
+            </Link>
+            <Link
+              to="/about"
+              ref={(el) => (navLinks.current[1] = el)}
+              onClick={() => setNavOpen(false)}
+            >
+              About
+            </Link>
+            <Link
+              to="/service"
+              ref={(el) => (navLinks.current[2] = el)}
+              onClick={() => setNavOpen(false)}
+            >
+              Services
+            </Link>
+            <Link
+              to="/mauleeswork"
+              ref={(el) => (navLinks.current[3] = el)}
+              onClick={() => setNavOpen(false)}
+            >
+              Maulees Work
+            </Link>
+            <Link
+              to="/blog"
+              ref={(el) => (navLinks.current[4] = el)}
+              onClick={() => setNavOpen(false)}
+            >
+              Blog
+            </Link>
+            <Link
+              to="/contact"
+              ref={(el) => (navLinks.current[5] = el)}
+              onClick={() => setNavOpen(false)}
+            >
+              Contact
+            </Link>
           </div>
 
           <div className="cross" onClick={() => setNavOpen(false)}>

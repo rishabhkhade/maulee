@@ -24,7 +24,7 @@ const Herosection = ({ herodata }) => {
           spaceBetween={0}
           centeredSlides={true}
           autoplay={{
-            delay: 3500000,
+            delay: 3500,
             disableOnInteraction: false,
           }}
           pagination={false}
@@ -33,9 +33,12 @@ const Herosection = ({ herodata }) => {
           className="mySwiper"
         >
           {herodata.map((item, index) => (
-            <SwiperSlide className="hero-swiperslide-parent bg-img-cover parent"    key={index}>
+            <SwiperSlide
+              className="hero-swiperslide-parent bg-img-cover parent"
+              key={index}
+            >
               <div className="hero-overlay"></div>
-         
+
               <div className="hero-slide-cont cont">
                 <div className="top">
                   <h2 className="heroheading">
@@ -60,15 +63,14 @@ const Herosection = ({ herodata }) => {
                   </div>
                 </div>
               </div>
-           
             </SwiperSlide>
           ))}
-             <div className="custom-prev">
-              <BsArrowDown />
-              </div>
-      <div className="custom-next">
-      <BsArrowDown />
-      </div>
+          <div className="custom-prev">
+            <BsArrowDown />
+          </div>
+          <div className="custom-next">
+            <BsArrowDown />
+          </div>
         </Swiper>
       </div>
     </>

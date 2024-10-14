@@ -6,7 +6,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { MdOutlineCall } from "react-icons/md";
 import { BsArrowDown } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { IoLocationOutline } from "react-icons/io5";
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -91,9 +91,12 @@ const Home = () => {
       {/* mini about */}
 
       <div className="mini-about-section parent">
-        <div className="mini-about-cont cont" data-aos="fade-up"
-                data-aos-delay="100"
-                data-aos-duration="1000">
+        <div
+          className="mini-about-cont cont"
+          data-aos="fade-up"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+        >
           <div className="left"></div>
 
           <div className="right">
@@ -129,9 +132,12 @@ const Home = () => {
 
       {/* gallery semi section */}
       <div className="mini-gallery-parent parent">
-        <div className="mini-gallery-cont cont" data-aos="fade-up"
-                data-aos-delay="300"
-                data-aos-duration="1000">
+        <div
+          className="mini-gallery-cont cont"
+          data-aos="fade-up"
+          data-aos-delay="300"
+          data-aos-duration="1000"
+        >
           <div className="left">
             <h2 className="heading">Lorem ipsum dolor sit.</h2>
           </div>
@@ -144,6 +150,28 @@ const Home = () => {
               navigation={{
                 nextEl: ".custom-circle-prev",
                 prevEl: ".custom-circle-next",
+              }}
+              breakpoints={{
+                340: {
+                  slidesPerView: 1,
+                  spaceBetween: 20,
+                },
+                720: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 40,
+                },
+                1024: {
+                  slidesPerView: 2,
+                  spaceBetween: 40,
+                },
+                1050: {
+                  slidesPerView: 3,
+                  spaceBetween: 50,
+                },
               }}
               modules={[Pagination]}
               className="mySwiper"
@@ -169,9 +197,12 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="bottom-cont cont" data-aos="fade-up"
-                data-aos-delay="300"
-                data-aos-duration="1000">
+        <div
+          className="bottom-cont cont"
+          data-aos="fade-up"
+          data-aos-delay="300"
+          data-aos-duration="1000"
+        >
           <Link className="btn">
             <h5 className="btn_text">Know More</h5>
           </Link>
@@ -180,9 +211,12 @@ const Home = () => {
 
       {/* counter */}
       <div className="counter-parent parent">
-        <div className="counter-cont cont" data-aos="fade-up"
-                data-aos-delay="500"
-                data-aos-duration="1000">
+        <div
+          className="counter-cont cont"
+          data-aos="fade-up"
+          data-aos-delay="500"
+          data-aos-duration="1000"
+        >
           <div className="right ">
             <h1 className="count">
               <span>
@@ -207,9 +241,12 @@ const Home = () => {
 
       {/* testimoneal */}
 
-      <div className="testmonial-parent parent" data-aos="fade-up"
-                data-aos-delay="700"
-                data-aos-duration="1000">
+      <div
+        className="testmonial-parent parent"
+        data-aos="fade-up"
+        data-aos-delay="700"
+        data-aos-duration="1000"
+      >
         <div className="overlay"></div>
         <Swiper
           spaceBetween={0}
@@ -260,9 +297,12 @@ const Home = () => {
       </div>
 
       <div className="place-visit-parent parent">
-        <div className="place-visit-cont cont" data-aos="fade-up"
-                data-aos-delay="800"
-                data-aos-duration="1000">
+        <div
+          className="place-visit-cont cont"
+          data-aos="fade-up"
+          data-aos-delay="800"
+          data-aos-duration="1000"
+        >
           <div className="left">
             <div className="location bg-img-contain"></div>
             <div className="visit-text">

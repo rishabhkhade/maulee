@@ -106,8 +106,8 @@ a {
 
 .btn {
   padding: var(--unit);
-  background-color: var(--black);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--black);
   border-radius: var(--unit);
   cursor: pointer;
   position: relative;
@@ -121,7 +121,7 @@ a {
     left: -100%;
     height: 100%;
     width: 50%;
-    background-color: white;
+    background-color: var(--accent2);
     z-index: 2;
     transition: var(--trans);
   }
@@ -133,13 +133,13 @@ a {
     right: -100%;
     height: 100%;
     width: 60%;
-    background-color: white;
+    background-color: var(--accent2);
     z-index: 2;
     transition: var(--trans);
   }
 
   .btn_text {
-    color: var(--white);
+    color: var(--black);
     position: relative;
     z-index: 3;
     transition: var(--trans);
@@ -331,16 +331,52 @@ a {
   }
 }
 
-@media only screen and (max-width:800px){
-  .custom-circle-prev{
+@media only screen and (max-width:800px) {
+  .custom-circle-prev {
     left: 25%;
   }
 }
 
 
-@media only screen and (max-width:650px){
-  .custom-circle-prev
-  {
+@media only screen and (max-width:650px) {
+  .custom-circle-prev {
     left: 35%;
+  }
+}
+
+
+@media (max-width:500px) {
+  .heroheading {
+    font-size: calc(var(--unit) * 3);
+  }
+}
+
+@media (max-width:900px) {
+  .custom-prev {
+    left: 10% !important;
+  }
+
+  .custom-next {
+    right: 4% !important;
+  }
+}
+
+@media (max-width:550px) {
+  .custom-prev {
+    left: 12% !important;
+
+    svg {
+      font-size: 50px !important;
+      opacity: 0.7 !important;
+    }
+  }
+
+  .custom-next {
+    right: 2%;
+
+    svg {
+      font-size: 50px !important;
+      opacity: 0.7 !important;
+    }
   }
 }
