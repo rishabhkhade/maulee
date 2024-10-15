@@ -18,8 +18,9 @@ import SlideText from "../slideText/SlideText";
 const Herosection = ({ herodata }) => {
   return (
     <>
+
       <div className="hero-parent parent">
-        {/* <SlideText/> */}
+    
         <Swiper
           spaceBetween={0}
           centeredSlides={true}
@@ -37,6 +38,7 @@ const Herosection = ({ herodata }) => {
               className="hero-swiperslide-parent bg-img-cover parent"
               key={index}
             >
+                <SlideText/>
               <div className="hero-overlay"></div>
 
               <div className="hero-slide-cont cont">

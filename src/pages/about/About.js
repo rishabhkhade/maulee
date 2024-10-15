@@ -52,6 +52,24 @@ const About = () => {
       x_link: "/whatsapp",
     },
   ];
+
+  const journeyData = [
+    {
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      year: "2000",
+    },
+    {
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      year: "2000",
+    },
+    {
+      description:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      year: "2000",
+    },
+  ];
   return (
     <>
       <Pagetop pageHeader="About Us" />
@@ -84,31 +102,14 @@ const About = () => {
           data-aos-delay="300"
           data-aos-duration="1000"
         >
-          <div className="left">
-            <p className="section">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-            <h2 className="section">2000</h2>
-            <p className="section">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-          </div>
-          <div className="right">
-            <h2 className="section">2000</h2>
-            <p className="section">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </p>
-            <h2 className="section">2000</h2>
-          </div>
+          {journeyData.map((item, index) => (
+            <div className="content"  key={index} >
+              <p className="section">{item.description} </p>
+              <h2 className="section">
+                {item.year}
+              </h2>
+            </div>
+          ))}
 
           <div className="middle-line">
             <div className="line"></div>
