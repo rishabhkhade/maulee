@@ -147,3 +147,33 @@
     }
   }
 }
+
+@media (max-width:600px){
+  .nav-parent{
+
+    .nav-container{
+
+      .links{
+
+        a{
+          font-size: calc(var(--unit)*3) ;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:450px){
+  .nav-parent{
+
+    .nav-container{
+padding: 0px 30px;
+      .links{
+
+        a{
+          font-size: calc(var(--unit)*1.5) !important;
+        }
+      }
+    }
+  }
+}

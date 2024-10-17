@@ -6,7 +6,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { MdOutlineCall } from "react-icons/md";
 import { BsArrowDown } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { CiLocationOn } from "react-icons/ci";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -304,12 +304,24 @@ const Home = () => {
           data-aos-duration="1000"
         >
           <div className="left">
-            <div className="location bg-img-contain"></div>
+            <div className="location ">
+              <div className="arc bg-img-contain"></div>
+              <div className="loc-icon">
+              <CiLocationOn />
+              </div>
+            </div>
             <div className="visit-text">
-              <h5>Viman Nagar , Pune</h5>
+              <h5 className="linetext">Viman Nagar , Pune</h5>
             </div>
           </div>
-          <div className="right"></div>
+          <div className="right">
+            <h5 className="righttext">
+              Contact With Us
+            </h5>
+            <div className="btn">
+              Click Here
+            </div>
+          </div>
         </div>
       </div>
     </>
