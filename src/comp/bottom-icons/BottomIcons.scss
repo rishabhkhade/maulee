@@ -25,10 +25,11 @@
         border: 1px solid var(--accent);
         transition: var(--trans);
 
-        svg{
+        svg {
             font-size: calc(var(--unit)*1.4);
         }
-        &:hover{
+
+        &:hover {
             border: 1px solid var(--accent);
             color: var(--accent);
             background: transparent;
