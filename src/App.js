@@ -10,6 +10,7 @@ import Contact from "./pages/contact/Contact";
 import AfterFooter from "./comp/afterFooter/AfterFooter";
 import Blog from "./pages/blogs/Blog";
 import ScrollToTop from "./comp/scrolltotop/ScrollToTop";
+import PopUp from "./comp/popup/PopUp";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <ScrollToTop/>
+        <PopUp/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
