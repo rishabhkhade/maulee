@@ -177,7 +177,7 @@ const Home = () => {
                 nextEl: ".custom-circle-prev",
                 prevEl: ".custom-circle-next",
               }}
-              modules={[Pagination]}
+              modules={[Pagination,Navigation]}
               className="mySwiper"
             >
               {images.map((item, index) => (
