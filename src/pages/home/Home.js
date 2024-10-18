@@ -10,7 +10,7 @@ import { CiLocationOn } from "react-icons/ci";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import aboutVideo from "../../assets/video/about_video.mp4"
+import aboutVideo from "../../assets/video/about_video.mp4";
 // import required modules
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
@@ -92,11 +92,14 @@ const Home = () => {
       {/* mini about */}
 
       <div className="mini-about-section parent">
-        <div className="mini-about-cont cont" data-aos="fade-up"
-                data-aos-delay="100"
-                data-aos-duration="1000">
+        <div
+          className="mini-about-cont cont"
+          data-aos="fade-up"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+        >
           <div className="left">
-          <ReactPlayer
+            <ReactPlayer
               config={{
                 file: {
                   forceVideo: true,
@@ -308,7 +311,7 @@ const Home = () => {
             <div className="location ">
               <div className="arc bg-img-contain"></div>
               <div className="loc-icon">
-              <CiLocationOn />
+                <CiLocationOn />
               </div>
             </div>
             <div className="visit-text">
@@ -316,12 +319,8 @@ const Home = () => {
             </div>
           </div>
           <div className="right">
-            <h5 className="righttext">
-              Contact With Us
-            </h5>
-            <div className="btn">
-              Click Here
-            </div>
+            <h5 className="righttext">Contact With Us</h5>
+            <div className="btn">Click Here</div>
           </div>
         </div>
       </div>
