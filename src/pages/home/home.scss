@@ -1,7 +1,6 @@
 .mini-about-section {
   width: 100%;
   height: auto;
-
   background-color: var(--white);
   padding: calc(var(--unit) * 3) 0px;
 
@@ -222,6 +221,7 @@
       height: 100%;
       width: 100%;
       padding: 50px 0px;
+
       .slide-cont {
         height: 100%;
         display: flex;
@@ -284,7 +284,7 @@
 
 .place-visit-parent {
   width: 100%;
-  height: auto;
+  height: 300px;
   background-color: var(--lightgrey);
 
   .place-visit-cont {
@@ -303,19 +303,35 @@
       align-items: center;
       gap: var(--unit);
       padding: 50px 0px;
+
+
     }
 
     .right {
       width: 50%;
       height: 100%;
       padding: 50px 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: var(--unit);
+      padding: 0px 10px;
+
+      .righttext {
+        font-size: calc(var(--unit) * 3);
+        color: var(--accent);
+        text-align: center;
+      }
     }
   }
 }
 
-@media only screen and (max-width: 800px) {
-  .mini-about-section {
-    .mini-about-cont {
+
+@media only screen and (max-width:800px) {
+  .mini-about-section{
+
+    .mini-about-cont{
       flex-direction: column !important;
 
       .left {
@@ -346,7 +362,8 @@
           font-size: calc(var(--unit) * 6);
         }
 
-        .text {
+        .text{
+
         }
       }
     }
@@ -385,9 +402,64 @@
         width: 100%;
       }
 
-      .right {
+      .right{
         width: 100%;
       }
     }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .place-visit-parent {
+    height: auto !important;
+    padding: 20px 0px;
+    .place-visit-cont {
+      .left {
+        height: 50%;
+        .location {
+          .arc {
+            width: 50%;
+            aspect-ratio: 1;
+          }
+
+          .loc-icon {
+            font-size: calc(var(--unit) * 13);
+          }
+        }
+      }
+
+      .right{
+
+      }
+    }
+  }
+}
+
+
+@media only screen and (max-width: 400px) {
+  .place-visit-parent{
+    .place-visit-cont{
+
+      .left{
+        .visit-text{
+
+          .linetext
+          {
+            font-size: calc(var(--unit)*2);
+          }
+        }
+      }
+
+      .right{
+        .righttext{
+          font-size: calc(var(--unit)*2);
+        }
+      }
+    }
+  }
+
+
+  .loc-icon {
+    font-size: calc(var(--unit) * 8) !important;
   }
 }

@@ -21,7 +21,6 @@
 .footer-swiper {
     width: 100%;
     height: auto;
-   
     background-color: var(--white);
 
     .swiper {
@@ -35,13 +34,22 @@
             display: flex;
             padding: 20px 0px;
 
-            p {
+            .paragraph{
                 text-align: center;
                 font-weight: 600;
-                font-size: calc(var(--unit)*1.1);
+                font-size: calc(var(--unit));
+                color: rgba(107, 107, 107, 0.562);
+                line-height: 23px;
             }
         }
     }
+}
 
 
+
+@media (max-width:500px){
+    .paragraph{
+        font-size: calc(var(--unit)/2) !important;
+        line-height: 15px !important;   
+    }
 }

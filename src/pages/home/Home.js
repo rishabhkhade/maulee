@@ -6,7 +6,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { MdOutlineCall } from "react-icons/md";
 import { BsArrowDown } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { IoLocationOutline } from "react-icons/io5";
+import { CiLocationOn } from "react-icons/ci";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -92,34 +92,10 @@ const Home = () => {
       {/* mini about */}
 
       <div className="mini-about-section parent">
-        <div
-          className="mini-about-cont cont"
-          data-aos="fade-up"
-          data-aos-delay="100"
-          data-aos-duration="1000"
-        >
-          <div className="left">
-            <ReactPlayer
-              config={{
-                file: {
-                  forceVideo: true,
-                  attributes: {
-                    preload: "metadata",
-                  },
-                },
-              }}
-              autoPlay
-              loop
-              muted
-              playsInline
-              controls={false}
-              playing={true}
-              width="100%"
-              height="100%"
-              className="aboutvideo"
-              url={aboutVideo}
-            />
-          </div>
+        <div className="mini-about-cont cont" data-aos="fade-up"
+                data-aos-delay="100"
+                data-aos-duration="1000">
+          <div className="left"></div>
 
           <div className="right">
             <div className="top">
@@ -174,14 +150,10 @@ const Home = () => {
                 disableOnInteraction: false,
               }}
               navigation={{
-                
-                nextEl: ".custom-circle-next",
-                prevEl: ".custom-circle-prev",
-              
-              }
-            
-            }
-              modules={[Pagination,Navigation]}
+                nextEl: ".custom-circle-prev",
+                prevEl: ".custom-circle-next",
+              }}
+              modules={[Pagination]}
               className="mySwiper"
             >
               {images.map((item, index) => (
@@ -312,12 +284,24 @@ const Home = () => {
           data-aos-duration="1000"
         >
           <div className="left">
-            <div className="location bg-img-contain"></div>
+            <div className="location ">
+              <div className="arc bg-img-contain"></div>
+              <div className="loc-icon">
+              <CiLocationOn />
+              </div>
+            </div>
             <div className="visit-text">
-              <h5>Viman Nagar , Pune</h5>
+              <h5 className="linetext">Viman Nagar , Pune</h5>
             </div>
           </div>
-          <div className="right"></div>
+          <div className="right">
+            <h5 className="righttext">
+              Contact With Us
+            </h5>
+            <div className="btn">
+              Click Here
+            </div>
+          </div>
         </div>
       </div>
     </>

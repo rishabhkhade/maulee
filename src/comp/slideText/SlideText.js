@@ -1,28 +1,30 @@
-import React from 'react'
-import "./slidetext.scss"
+import React from "react";
+import "./slidetext.scss";
 const SlideText = ({
+  topPosition,
   fontsize,
   firstTextTOP,
   secondTextTOP,
   firstdelay,
-  seconddelay,thirddelay
+  seconddelay,
+  thirddelay,
 }) => {
   return (
     <>
-      <div className="swipe-text parent" style={{fontSize:fontsize, }} >
-        <h1  style={{top:firstTextTOP, animationDelay:firstdelay}} >
-            MOULEES'S TATTOO
-        </h1>
-        <h1 className='scondetxt' style={{top:secondTextTOP, animationDelay:seconddelay}}  >
-            MOULEES'S TATTOO
-        </h1>
-        {/* <h1 className='thirdtext' style={{top:secondTextTOP, animationDelay:thirddelay}}  >
-            MOULEES'S TATTOO
-        </h1> */}
-       
+      <div class="marquee-w parent"   style={{top:topPosition}} >
+        <div class="marquee">
+          <span>
+           Maulees Tatto Art Studio&nbsp;&nbsp;&nbsp;
+          </span>
+        </div>
+        <div class="marquee marquee2">
+          <span>
+          Maulees Tatto Art Studio&nbsp;&nbsp;&nbsp;
+          </span>
+        </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default SlideText
+export default SlideText;

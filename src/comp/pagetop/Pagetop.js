@@ -8,7 +8,7 @@ const Pagetop = ({
   return (
     <>
       <div className="pagetop-parent parent">
-        {/* <SlideText  firstTextTOP="30%"  fontsize="90px"  /> */}
+        <SlideText  topPosition="25%" />
 
         <div className="pagetop-cont cont">
           <div className="logo">
