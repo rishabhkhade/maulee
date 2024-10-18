@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Contact.scss";
 import Pagetop from "../../comp/pagetop/Pagetop";
+import contact_top_img from "../../assets/hero.png";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -32,7 +33,7 @@ const Contact = () => {
 
   return (
     <>
-      <Pagetop pageHeader="Contact Us" />
+      <Pagetop pageHeader="Contact Us" backgroundImage={contact_top_img} />
       <div className="parent contact-parent">
         <div
           className="cont contact-cont"

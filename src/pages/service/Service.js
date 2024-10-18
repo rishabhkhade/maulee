@@ -3,6 +3,9 @@ import "./service.scss";
 import Pagetop from "../../comp/pagetop/Pagetop";
 import SectionHeading from "../../comp/sectionHeading/SectionHeading";
 import { IoIosArrowDown } from "react-icons/io";
+import service_top_img from "../../assets/hero.png";
+
+
 const Service = () => {
   const serviceContent = [
     {
@@ -57,7 +60,7 @@ const Service = () => {
   };
   return (
     <>
-      <Pagetop pageHeader="Our services" />
+      <Pagetop pageHeader="Our services" backgroundImage={service_top_img} />
 
       <div className="service-parent parent">
         <div

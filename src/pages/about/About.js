@@ -8,6 +8,7 @@ import { IoLogoInstagram } from "react-icons/io";
 import { FaXTwitter } from "react-icons/fa6";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import about_top_img from "../../assets/hero.png";
 
 const About = () => {
   useEffect(() => {
@@ -70,9 +71,10 @@ const About = () => {
       year: "2000",
     },
   ];
+
   return (
     <>
-      <Pagetop pageHeader="About Us" />
+      <Pagetop pageHeader="About Us"  backgroundImage={about_top_img}/>
 
       <div className="about-parent parent">
         <div
