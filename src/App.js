@@ -8,6 +8,7 @@ import Service from "./pages/service/Service";
 import Gallery from "./pages/gallery/Gallery";
 import Contact from "./pages/contact/Contact";
 import AfterFooter from "./comp/afterFooter/AfterFooter";
+import Blog from "./pages/blogs/Blog";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/service" element={<Service />} />
           <Route path="/mauleeswork" element={<Gallery />} />
+          <Route path="/blogs" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer />
