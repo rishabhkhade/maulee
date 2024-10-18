@@ -4,7 +4,7 @@ import logo_footer from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import BottomIcons from "../bottom-icons/BottomIcons";
 
-const Footer = () => {
+const Footer = ({setPopup}) => {
   return (
     <>
       <div className="parent footer-parent">
@@ -23,7 +23,7 @@ const Footer = () => {
           <p>Copyright/Maulees Tatoos</p>
         </div>
       </div>
-      <BottomIcons />
+      <BottomIcons setPopup={setPopup}  />
     </>
   );
 };

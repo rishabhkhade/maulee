@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "./popup.scss"
-const PopUp = () => {
+import { IoClose } from "react-icons/io5";
+const PopUp = ({setPopup}) => {
     const [formData, setFormData] = useState({
         name: "",
         lastname: "",
@@ -29,7 +30,7 @@ const PopUp = () => {
       };
   return (
     <>
-       <div className="popup-parent parent">
+       <div className="popup-parent parent"  onClick={()=>setPopup(false)} >
        <div className="contact-right">
             <div className="contact-top">
               <h3>Get In Touch</h3>
@@ -95,6 +96,10 @@ const PopUp = () => {
                   <div className="btn_text ">Submit</div>
                 </button>
               </form>
+            </div>
+
+            <div className="closeButton"  onClick={()=>setPopup(false)} >
+            <IoClose />
             </div>
           </div>
        </div>

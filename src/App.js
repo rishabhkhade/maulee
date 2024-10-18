@@ -11,17 +11,31 @@ import AfterFooter from "./comp/afterFooter/AfterFooter";
 import Blog from "./pages/blogs/Blog";
 import ScrollToTop from "./comp/scrolltotop/ScrollToTop";
 import PopUp from "./comp/popup/PopUp";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
 
   const [popup, setPopup] =  useState(false)
+
+
+  const openPopUpdely = ()=>{
+    setTimeout(() => {
+      setPopup(true)
+    }, 5000);
+  }
+  useEffect(()=>{
+    openPopUpdely()
+  },[]);
+
+
+
+
   return (
     <div className="App">
       <BrowserRouter>
         <Header />
         <ScrollToTop/>
-        <PopUp/>
+    {  popup &&  <PopUp setPopup={setPopup}  />}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -30,7 +44,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-        <Footer />
+        <Footer  setPopup={setPopup}  />
         <AfterFooter />
       </BrowserRouter>
     </div>
