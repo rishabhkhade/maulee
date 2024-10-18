@@ -177,6 +177,32 @@ const Home = () => {
                 nextEl: ".custom-circle-next",
                 prevEl: ".custom-circle-prev",
               }}
+              breakpoints={{
+                340: {
+                  slidesPerView: 1,
+                  spaceBetween: 20,
+                },
+                600: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                720: {
+                  slidesPerView: 2,
+                  spaceBetween: 20,
+                },
+                768: {
+                  slidesPerView: 2,
+                  spaceBetween: 40,
+                },
+                1024: {
+                  slidesPerView: 2,
+                  spaceBetween: 40,
+                },
+                1050: {
+                  slidesPerView: 3,
+                  spaceBetween: 50,
+                },
+              }}
               modules={[Pagination,Navigation]}
               className="mySwiper"
             >

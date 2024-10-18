@@ -18,7 +18,7 @@
       justify-content: center;
       align-items: center;
       position: relative;
-      
+
       .aboutvideo {
         width: 100%;
         height: 100%;
@@ -93,9 +93,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-   
-
-     
     }
 
     .right {
@@ -303,6 +300,7 @@
       align-items: center;
       gap: var(--unit);
       padding: 50px 0px;
+
       .location {
         width: 100%;
         height: 50%;
@@ -310,6 +308,7 @@
         justify-content: center;
         align-items: center;
         position: relative;
+
         .arc {
           width: 100%;
           height: 100%;
@@ -330,9 +329,11 @@
             0% {
               transform: translateY(-35%);
             }
+
             50% {
               transform: translateY(-20%);
             }
+
             100% {
               transform: translateY(-35%);
             }
@@ -364,9 +365,9 @@
 
 
 @media only screen and (max-width:800px) {
-  .mini-about-section{
+  .mini-about-section {
 
-    .mini-about-cont{
+    .mini-about-cont {
       flex-direction: column !important;
 
       .left {
@@ -391,15 +392,14 @@
 
   .counter-parent {
     .counter-cont {
+
       .right,
       .left {
         .count {
           font-size: calc(var(--unit) * 6);
         }
 
-        .text{
-
-        }
+        .text {}
       }
     }
   }
@@ -408,7 +408,7 @@
 @media only screen and (max-width: 400px) {
   .counter-parent {
     .counter-cont {
-   
+
       .right,
       .left {
         .count {
@@ -431,38 +431,57 @@
 
 @media only screen and (max-width: 650px) {
 
-  .counter-parent{
-    .counter-cont{
+  .counter-parent {
+    .counter-cont {
       flex-direction: column !important;
 
-      .right,.middle,.left{
+      .right,
+      .middle,
+      .left {
         width: 100% !important;
         aspect-ratio: 4;
       }
     }
   }
+
   .mini-gallery-parent {
+    padding: calc(var(--unit) * 2) !important;
+
     .mini-gallery-cont {
       flex-direction: column !important;
+      gap: 0px !important;
+
+
 
       .left {
         width: 100%;
+
       }
 
-      .right{
+      .right {
         width: 100%;
+        height: 80% !important;
+
       }
+    }
+
+    .bottom-cont {
+    
+      padding: 10px 0px 0px 0px !important;
     }
   }
 
   .place-visit-parent {
     height: 500px;
+
     .place-visit-cont {
       flex-direction: column !important;
+
       .left {
         width: 100%;
         border-bottom: 1px dotted var(--accent);
         border-right: none !important;
+
         .location {
           .loc-icon {
             font-size: calc(var(--unit) * 3);
@@ -475,17 +494,17 @@
       }
     }
   }
-
-
 }
 
 @media only screen and (max-width: 550px) {
   .place-visit-parent {
     height: auto !important;
     padding: 20px 0px;
+
     .place-visit-cont {
       .left {
         height: 50%;
+
         .location {
           .arc {
             width: 50%;
@@ -498,38 +517,35 @@
         }
       }
 
-      .right{
+      .right {}
+    }
+  }
 
+  .mini-about-section {
+    .mini-about-cont {
+      .left {
+        aspect-ratio: 1 !important;
       }
     }
   }
-
-.mini-about-section{
-  .mini-about-cont{
-    .left{
-      aspect-ratio: 1 !important;
-    }
-  }
-}
 }
 
 
 @media only screen and (max-width: 400px) {
-  .place-visit-parent{
-    .place-visit-cont{
+  .place-visit-parent {
+    .place-visit-cont {
 
-      .left{
-        .visit-text{
+      .left {
+        .visit-text {
 
-          .linetext
-          {
+          .linetext {
             font-size: calc(var(--unit)*2);
           }
         }
       }
 
-      .right{
-        .righttext{
+      .right {
+        .righttext {
           font-size: calc(var(--unit)*2);
         }
       }
