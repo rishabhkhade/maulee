@@ -11,8 +11,11 @@ import AfterFooter from "./comp/afterFooter/AfterFooter";
 import Blog from "./pages/blogs/Blog";
 import ScrollToTop from "./comp/scrolltotop/ScrollToTop";
 import PopUp from "./comp/popup/PopUp";
+import { useState } from "react";
 
 function App() {
+
+  const [popup, setPopup] =  useState(false)
   return (
     <div className="App">
       <BrowserRouter>
