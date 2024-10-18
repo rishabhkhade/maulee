@@ -30,7 +30,7 @@ const PopUp = ({setPopup}) => {
       };
   return (
     <>
-       <div className="popup-parent parent"  onClick={()=>setPopup(false)} >
+       <div className="popup-parent parent"  >
        <div className="contact-right">
             <div className="contact-top">
               <h3>Get In Touch</h3>
