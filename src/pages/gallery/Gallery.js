@@ -96,9 +96,7 @@ const Gallery = () => {
     {
       image: video,
     },
-    {
-      image: video,
-    },
+    
   ];
 
   const [gallerypages, setgalleryPage] = useState({
