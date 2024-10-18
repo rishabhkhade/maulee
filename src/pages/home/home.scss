@@ -301,6 +301,7 @@
       gap: var(--unit);
       padding: 50px 0px;
 
+   
       .location {
         width: 100%;
         height: 50%;
@@ -445,6 +446,7 @@
   }
 
   .mini-gallery-parent {
+   
     padding: calc(var(--unit) * 2) !important;
 
     .mini-gallery-cont {
@@ -482,6 +484,8 @@
         border-bottom: 1px dotted var(--accent);
         border-right: none !important;
 
+        height: 50%;
+        position: relative;
         .location {
           .loc-icon {
             font-size: calc(var(--unit) * 3);
@@ -518,6 +522,13 @@
       }
 
       .right {}
+      .right{
+height: 50% !important;
+padding: 20px 0px;
+.righttext{
+  font-size: calc(var(--unit)*2);
+}
+      }
     }
   }
 
@@ -541,11 +552,15 @@
           .linetext {
             font-size: calc(var(--unit)*2);
           }
+         font-size: calc(var(--unit)*2);
         }
       }
 
       .right {
         .righttext {
+      .right{
+       
+        .righttext{
           font-size: calc(var(--unit)*2);
         }
       }

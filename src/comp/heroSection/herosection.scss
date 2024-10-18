@@ -1,7 +1,7 @@
 .hero-parent {
   height: 100vh;
   overflow: hidden;
-
+  position: relative;
   .swiper {
     height: 100%;
     width: 100vw;
@@ -20,65 +20,76 @@
         top: 0;
         left: 0;
       }
+    }
+  }
 
-      .hero-slide-cont {
-        height: 100%;
+  .hero-slide-cont {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--unit) * 2);
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    .top {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: calc(var(--unit) / 3);
+
+      .heroheading {
         display: flex;
-        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      p {
+        color: var(--accent);
+        text-align: center;
+      }
+    }
+
+    .cta_btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: calc(var(--unit) / 2);
+
+      .icons {
+        display: flex;
         justify-content: center;
         align-items: center;
         gap: calc(var(--unit) * 2);
-        position: relative;
-z-index: 3;
 
-        .top {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          gap: calc(var(--unit) / 3);
-
-          
-
-          .heroheading {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            span {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-            }
-          }
-
-          p {
-            color: var(--accent);
-            text-align: center;
-          }
-        }
-
-        .cta_btn {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          gap: calc(var(--unit) / 2);
-
-          .icons {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: calc(var(--unit) * 2);
-
-            a {
-              font-size: calc(var(--unit) + 10px);
-              color: var(--white);
-            }
-          }
+        a {
+          font-size: calc(var(--unit) + 10px);
+          color: var(--white);
         }
       }
+    }
+  }
+}
+
+
+@media only screen and (max-width:600px) {
+  .hero-parent{
+
+    .hero-slide-cont{
+      width: 100% !important;
     }
   }
 }
