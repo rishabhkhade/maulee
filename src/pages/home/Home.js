@@ -10,7 +10,7 @@ import { IoLocationOutline } from "react-icons/io5";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-
+import aboutVideo from "../../assets/video/about_video.mp4"
 // import required modules
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
@@ -19,6 +19,7 @@ import { IoIosStar } from "react-icons/io";
 import icon1 from "../../assets/Mask group.png";
 import image from "../../assets/IMG_9164.jpg";
 import heroimage from "../../assets/hero.png";
+import ReactPlayer from "react-player";
 const Home = () => {
   const herodata = [
     {
@@ -91,10 +92,34 @@ const Home = () => {
       {/* mini about */}
 
       <div className="mini-about-section parent">
-        <div className="mini-about-cont cont" data-aos="fade-up"
-                data-aos-delay="100"
-                data-aos-duration="1000">
-          <div className="left"></div>
+        <div
+          className="mini-about-cont cont"
+          data-aos="fade-up"
+          data-aos-delay="100"
+          data-aos-duration="1000"
+        >
+          <div className="left">
+            <ReactPlayer
+              config={{
+                file: {
+                  forceVideo: true,
+                  attributes: {
+                    preload: "metadata",
+                  },
+                },
+              }}
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls={false}
+              playing={true}
+              width="100%"
+              height="100%"
+              className="aboutvideo"
+              url={aboutVideo}
+            />
+          </div>
 
           <div className="right">
             <div className="top">
@@ -129,9 +154,12 @@ const Home = () => {
 
       {/* gallery semi section */}
       <div className="mini-gallery-parent parent">
-        <div className="mini-gallery-cont cont" data-aos="fade-up"
-                data-aos-delay="300"
-                data-aos-duration="1000">
+        <div
+          className="mini-gallery-cont cont"
+          data-aos="fade-up"
+          data-aos-delay="300"
+          data-aos-duration="1000"
+        >
           <div className="left">
             <h2 className="heading">Lorem ipsum dolor sit.</h2>
           </div>
@@ -141,11 +169,19 @@ const Home = () => {
               spaceBetween={30}
               centeredSlides={false}
               pagination={false}
-              navigation={{
-                nextEl: ".custom-circle-prev",
-                prevEl: ".custom-circle-next",
+              autoplay={{
+                delay: 3500,
+                disableOnInteraction: false,
               }}
-              modules={[Pagination]}
+              navigation={{
+                
+                nextEl: ".custom-circle-next",
+                prevEl: ".custom-circle-prev",
+              
+              }
+            
+            }
+              modules={[Pagination,Navigation]}
               className="mySwiper"
             >
               {images.map((item, index) => (
@@ -169,9 +205,12 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="bottom-cont cont" data-aos="fade-up"
-                data-aos-delay="300"
-                data-aos-duration="1000">
+        <div
+          className="bottom-cont cont"
+          data-aos="fade-up"
+          data-aos-delay="300"
+          data-aos-duration="1000"
+        >
           <Link className="btn">
             <h5 className="btn_text">Know More</h5>
           </Link>
@@ -180,9 +219,12 @@ const Home = () => {
 
       {/* counter */}
       <div className="counter-parent parent">
-        <div className="counter-cont cont" data-aos="fade-up"
-                data-aos-delay="500"
-                data-aos-duration="1000">
+        <div
+          className="counter-cont cont"
+          data-aos="fade-up"
+          data-aos-delay="500"
+          data-aos-duration="1000"
+        >
           <div className="right ">
             <h1 className="count">
               <span>
@@ -207,9 +249,12 @@ const Home = () => {
 
       {/* testimoneal */}
 
-      <div className="testmonial-parent parent" data-aos="fade-up"
-                data-aos-delay="700"
-                data-aos-duration="1000">
+      <div
+        className="testmonial-parent parent"
+        data-aos="fade-up"
+        data-aos-delay="700"
+        data-aos-duration="1000"
+      >
         <div className="overlay"></div>
         <Swiper
           spaceBetween={0}
@@ -260,9 +305,12 @@ const Home = () => {
       </div>
 
       <div className="place-visit-parent parent">
-        <div className="place-visit-cont cont" data-aos="fade-up"
-                data-aos-delay="800"
-                data-aos-duration="1000">
+        <div
+          className="place-visit-cont cont"
+          data-aos="fade-up"
+          data-aos-delay="800"
+          data-aos-duration="1000"
+        >
           <div className="left">
             <div className="location bg-img-contain"></div>
             <div className="visit-text">

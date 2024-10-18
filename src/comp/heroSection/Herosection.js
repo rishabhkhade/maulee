@@ -24,7 +24,7 @@ const Herosection = ({ herodata }) => {
           spaceBetween={0}
           centeredSlides={true}
           autoplay={{
-            delay: 3500000,
+            delay: 3500,
             disableOnInteraction: false,
           }}
           pagination={false}
