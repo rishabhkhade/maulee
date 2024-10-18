@@ -320,7 +320,9 @@ const Home = () => {
           </div>
           <div className="right">
             <h5 className="righttext">Contact With Us</h5>
-            <div className="btn">Click Here</div>
+            <div className="btn">
+                    <h5 className="btn_text">Click here</h5>
+                  </div>
           </div>
         </div>
       </div>

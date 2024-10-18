@@ -54,9 +54,7 @@ const Gallery = () => {
     {
       image: image,
     },
-    {
-      image: image,
-    },
+
   ];
   const videos = [
     {
