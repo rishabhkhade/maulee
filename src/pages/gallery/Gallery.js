@@ -9,6 +9,10 @@ import ReactPlayer from "react-player";
 import { BiSolidVideos } from "react-icons/bi";
 import { IoMdPhotos } from "react-icons/io";
 import { BsYoutube } from "react-icons/bs";
+import gallery_top_img from "../../assets/hero.png";
+
+
+
 const Gallery = () => {
   const images = [
     {
@@ -140,7 +144,7 @@ const Gallery = () => {
   };
   return (
     <>
-      <Pagetop pageHeader="Maulees's Work" />
+      <Pagetop pageHeader="Maulees's Work" backgroundImage={gallery_top_img} />
 
       <div className="gallery-parent parent">
         <div className="gallery-cont cont">
