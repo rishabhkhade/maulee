@@ -67,6 +67,10 @@ html {
   scroll-behavior: smooth;
 }
 
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Gilroy';
+}
+
 p {
   text-align: justify;
   font-size: 1rem;
@@ -75,6 +79,8 @@ p {
   word-spacing: 2px;
   font-weight: 300;
   color: var(--text);
+  font-family: 'Intelo';
+
 }
 
 .bg-img-cover {
@@ -235,10 +241,10 @@ a {
     font-size: calc(var(--unit) * 3);
     font-weight: 800;
     letter-spacing: 2px;
-    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-width: 0.5px;
     -webkit-text-stroke-color: var(--black);
     color: transparent;
-    opacity: 0.5;
+    opacity: 0.3;
   }
 
   .fill-text {
