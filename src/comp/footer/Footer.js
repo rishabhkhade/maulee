@@ -2,6 +2,7 @@ import React from "react";
 import "./footer.scss";
 import logo_footer from "../../assets/logo.png";
 import { Link } from "react-router-dom";
+import BottomIcons from "../bottom-icons/BottomIcons";
 
 const Footer = () => {
   return (
@@ -22,6 +23,7 @@ const Footer = () => {
           <p>Copyright/Maulees Tatoos</p>
         </div>
       </div>
+      <BottomIcons />
     </>
   );
 };
