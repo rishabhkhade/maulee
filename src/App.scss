@@ -119,6 +119,7 @@ a {
   position: relative;
   overflow: hidden;
   transition: var(--trans);
+  border: none;
 
   &::after {
     content: "";
@@ -177,6 +178,7 @@ a {
   position: relative;
   overflow: hidden;
   transition: var(--trans);
+  border: none;
 
   &::after {
     content: "";
