@@ -9,12 +9,14 @@ import Gallery from "./pages/gallery/Gallery";
 import Contact from "./pages/contact/Contact";
 import AfterFooter from "./comp/afterFooter/AfterFooter";
 import Blog from "./pages/blogs/Blog";
+import ScrollToTop from "./comp/scrolltotop/ScrollToTop";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Header />
+        <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
