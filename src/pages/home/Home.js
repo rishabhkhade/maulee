@@ -174,8 +174,8 @@ const Home = () => {
                 disableOnInteraction: false,
               }}
               navigation={{
-                nextEl: ".custom-circle-prev",
-                prevEl: ".custom-circle-next",
+                nextEl: ".custom-circle-next",
+                prevEl: ".custom-circle-prev",
               }}
               modules={[Pagination,Navigation]}
               className="mySwiper"
