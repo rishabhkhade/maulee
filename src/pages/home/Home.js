@@ -95,7 +95,28 @@ const Home = () => {
         <div className="mini-about-cont cont" data-aos="fade-up"
                 data-aos-delay="100"
                 data-aos-duration="1000">
-          <div className="left"></div>
+          <div className="left">
+          <ReactPlayer
+              config={{
+                file: {
+                  forceVideo: true,
+                  attributes: {
+                    preload: "metadata",
+                  },
+                },
+              }}
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls={false}
+              playing={true}
+              width="100%"
+              height="100%"
+              className="aboutvideo"
+              url={aboutVideo}
+            />
+          </div>
 
           <div className="right">
             <div className="top">
