@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./gallery.scss";
 import Pagetop from "../../comp/pagetop/Pagetop";
 import { CiPlay1 } from "react-icons/ci";
@@ -10,52 +10,19 @@ import { BiSolidVideos } from "react-icons/bi";
 import { IoMdPhotos } from "react-icons/io";
 import { BsYoutube } from "react-icons/bs";
 import gallery_top_img from "../../assets/hero.png";
+import axios from "axios";
 
 
 
 const Gallery = () => {
-  const images = [
-    {
-      image: image,
-    },
-    {
-      image: image,
-    },
-    {
-      image: image,
-    },
-    {
-      image: image,
-    },
-    {
-      image: image,
-    },
-    {
-      image: image,
-    },
-    {
-      image: image,
-    },
-    {
-      image: image,
-    },
-    {
-      image: image,
-    },
-    {
-      image: image,
-    },
-    {
-      image: image,
-    },
-    {
-      image: image,
-    },
-    {
-      image: image,
-    },
 
-  ];
+
+  const [visibleImages, setVisibleImages] = useState(15);
+ 
+  const loadMore = () => {
+    setVisibleImages((prev) => prev + 15);
+  };
+
   const videos = [
     {
       image: video,
@@ -69,34 +36,12 @@ const Gallery = () => {
     {
       image: video,
     },
+   
     {
       image: video,
     },
-    {
-      image: video,
-    },
-    {
-      image: video,
-    },
-    {
-      image: video,
-    },
-    {
-      image: video,
-    },
-    {
-      image: video,
-    },
-    {
-      image: video,
-    },
-    {
-      image: video,
-    },
-    {
-      image: video,
-    },
-    
+   
+  
   ];
 
   const [gallerypages, setgalleryPage] = useState({
@@ -138,6 +83,30 @@ const Gallery = () => {
     setLightboxOpen(false);
     setSelectedImage(null);
   };
+
+
+const [images, setImages] = useState([])
+
+  const photos = async () => {
+    try {
+      const response = await axios.get(
+        `${process.env.REACT_APP_URL}/media`,
+        {
+          params: {
+            per_page: 100,
+          }
+        }
+      );
+      setImages(response.data);
+      console.log(response)
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(()=>{
+    photos()
+  },[])
   return (
     <>
       <Pagetop pageHeader="Maulees's Work" backgroundImage={gallery_top_img} />
@@ -191,10 +160,10 @@ const Gallery = () => {
           <div className="gallery-section">
             {gallerypages.photossection && (
               <>
-                {images.map((item, index) => (
+                {images.slice(0,visibleImages).map((item, index) => (
                   <div
                     className=" class bg-img-cover"
-                    style={{ backgroundImage: `url(${item.image})` }}
+                    style={{ backgroundImage: `url(${item.source_url})` }}
                     key={index}
                     onClick={() => openLightbox(item.image)}
                   ></div>
@@ -234,6 +203,11 @@ const Gallery = () => {
               </>
             )}
           </div>
+          {visibleImages < images.length && (
+        <button onClick={loadMore} className="read-more">
+          Read More
+        </button>
+      )}
         </div>
       </div>
 
