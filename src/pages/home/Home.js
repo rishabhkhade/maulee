@@ -315,7 +315,7 @@ const Home = () => {
               </div>
             </div>
             <div className="visit-text">
-              <h5 className="linetext">Viman Nagar , Pune</h5>
+              <h5 className="">Viman Nagar , Pune</h5>
             </div>
           </div>
           <div className="right">
