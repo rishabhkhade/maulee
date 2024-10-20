@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./header.scss";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { MdOutlineSort } from "react-icons/md";
 import logo_img from "../../assets/logo.png";
 import AOS from "aos";
@@ -37,6 +37,37 @@ const Header = () => {
     }
   }, [navOpen]);
 
+  const routePath = useLocation();
+
+
+
+  const navLinksData = [
+    {
+      nav :"Home",
+      path:"/"
+    },
+    {
+      nav :"About us",
+      path:"/about"
+    },
+    {
+      nav :"service",
+      path:"/service"
+    },
+    {
+      nav :"Moulees work",
+      path:"/mauleeswork"
+    },
+    {
+      nav :"blog",
+      path:"/blog"
+    },
+    {
+      nav :"contact us",
+      path:"/contact"
+    },
+  ]
+
   return (
     <>
       <div className="parent header-parent">
@@ -57,14 +88,20 @@ const Header = () => {
       >
         <div className="cont nav-container">
           <div className="links">
+        {
+          navLinksData.map((item,index)=>(
             <Link
-              to="/"
-              ref={(el) => (navLinks.current[0] = el)}
-              onClick={() => setNavOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
+            to={item.path}
+            key={index}
+            ref={(el) => (navLinks.current[index] = el)}
+            onClick={() => setNavOpen(false)}
+            className={routePath.pathname === `${item.path}`? "active" :""}
+          >
+            {item.nav}
+          </Link>
+          ))
+        }
+            {/* <Link
               to="/about"
               ref={(el) => (navLinks.current[1] = el)}
               onClick={() => setNavOpen(false)}
@@ -98,7 +135,7 @@ const Header = () => {
               onClick={() => setNavOpen(false)}
             >
               Contact
-            </Link>
+            </Link> */}
           </div>
 
           <div className="cross" onClick={() => setNavOpen(false)}>
