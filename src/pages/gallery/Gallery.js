@@ -11,14 +11,11 @@ import { IoMdPhotos } from "react-icons/io";
 import { BsYoutube } from "react-icons/bs";
 import gallery_top_img from "../../assets/hero.png";
 import axios from "axios";
-
-
+import { IoIosArrowBack } from "react-icons/io";
 
 const Gallery = () => {
-
-
   const [visibleImages, setVisibleImages] = useState(15);
- 
+
   const loadMore = () => {
     setVisibleImages((prev) => prev + 15);
   };
@@ -36,12 +33,10 @@ const Gallery = () => {
     {
       image: video,
     },
-   
+
     {
       image: video,
     },
-   
-  
   ];
 
   const [gallerypages, setgalleryPage] = useState({
@@ -84,29 +79,26 @@ const Gallery = () => {
     setSelectedImage(null);
   };
 
+  const [images, setImages] = useState([]);
 
-const [images, setImages] = useState([])
+  const [pageNumber, setPageNumber] = useState(1);
 
   const photos = async () => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_URL}/media`,
-        {
-          params: {
-            per_page: 100,
-          }
-        }
+        `${process.env.REACT_APP_URL}/media?page=${pageNumber}`
       );
       setImages(response.data);
-      console.log(response)
+      console.log(response);
     } catch (error) {
       console.log(error);
     }
   };
 
-  useEffect(()=>{
-    photos()
-  },[])
+  useEffect(() => {
+    photos();
+  }, [pageNumber]);
+
   return (
     <>
       <Pagetop pageHeader="Maulees's Work" backgroundImage={gallery_top_img} />
@@ -126,7 +118,7 @@ const [images, setImages] = useState([])
               }}
             >
               <span className="icon">
-              <IoMdPhotos />
+                <IoMdPhotos />
               </span>
 
               <p className="text">Photos</p>
@@ -151,7 +143,7 @@ const [images, setImages] = useState([])
             <div className="btn-tag">
               {" "}
               <span className="icon">
-              <BsYoutube />
+                <BsYoutube />
               </span>
               <p className="text">YT links</p>
             </div>
@@ -160,7 +152,7 @@ const [images, setImages] = useState([])
           <div className="gallery-section">
             {gallerypages.photossection && (
               <>
-                {images.slice(0,visibleImages).map((item, index) => (
+                {images.slice(0, visibleImages).map((item, index) => (
                   <div
                     className=" class bg-img-cover"
                     style={{ backgroundImage: `url(${item.source_url})` }}
@@ -204,10 +196,29 @@ const [images, setImages] = useState([])
             )}
           </div>
           {visibleImages < images.length && (
-        <button onClick={loadMore} className="read-more">
-          Read More
-        </button>
-      )}
+            <button onClick={loadMore} className="read-more">
+              Read More
+            </button>
+          )}
+
+          <div className="pagination">
+            <div
+              className={`left-arrow arrow ${
+                pageNumber <= 1 ? "disabled" : "left-arrow arrow"
+              }`}
+              onClick={
+                pageNumber > 1 ? () => setPageNumber(pageNumber - 1) : null
+              }
+            >
+              <IoIosArrowBack />
+            </div>
+            <div
+              className="right-arrow arrow"
+              onClick={() => setPageNumber(pageNumber + 1)}
+            >
+              <IoIosArrowBack />
+            </div>
+          </div>
         </div>
       </div>
 
