@@ -17,7 +17,11 @@ function Blog() {
   const blogsData = async () => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_URL}/posts?_embed`
+        `${process.env.REACT_APP_URL}/posts?_embed`,{
+          params:{
+            per_page:100
+          }
+        }
       );
       setBlogData(response.data);
     } catch (error) {
