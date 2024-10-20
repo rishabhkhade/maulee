@@ -5,7 +5,7 @@ import { FiPlus } from "react-icons/fi";
 import ReactPaginate from "react-paginate";
 import Pagetop from "../../comp/pagetop/Pagetop";
 import axios from "axios";
-
+import gallery_top_img from "../../assets/hero.png";
 function Blog() {
   const [blogData, setBlogData] = useState([]);
   const [search, setSearch] = useState("");
@@ -50,7 +50,7 @@ function Blog() {
 
   return (
     <>
-      <Pagetop pageHeader="Blogs" />
+      <Pagetop pageHeader="Blogs" backgroundImage={gallery_top_img} />
 
       <div className="blog-parent parent">
         <div className="blog-container cont">
