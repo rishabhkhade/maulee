@@ -49,6 +49,8 @@ function Blog() {
     setItemOffset(newOffset);
   };
 
+
+  console.log(blogData)
   return (
     <>
       <Pagetop pageHeader="Blogs" backgroundImage={gallery_top_img} />
@@ -69,9 +71,15 @@ function Blog() {
               // Get the image URL from the embedded field
               const imageUrl =
                 item._embedded?.["wp:featuredmedia"]?.[0]?.source_url; // Fallback image
+//  // Get categories from the embedded field
+//  const categories = item._embedded?.["wp:term"]?.[0] || [];
+              
+//  // Example: Select the first category or filter based on your criteria
+//  const specificCategory = categories.length > 0 ? categories[0].name : "Uncategorized";
 
               return (
                 <div className="blog-card" key={index}>
+                  {/* <h1>{specificCategory}</h1> */}
                   <div className="blog-img-box">
                     <div className="card-img-overlay">
                       <span className="plus-icon">
