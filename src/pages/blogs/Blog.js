@@ -17,10 +17,11 @@ function Blog() {
   const blogsData = async () => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_URL}/posts?_embed`,{
-          params:{
-            per_page:100
-          }
+        `${process.env.REACT_APP_URL}/posts?_embed`,
+        {
+          params: {
+            per_page: 100,
+          },
         }
       );
       setBlogData(response.data);
@@ -68,7 +69,7 @@ function Blog() {
               // Get the image URL from the embedded field
               const imageUrl =
                 item._embedded?.["wp:featuredmedia"]?.[0]?.source_url; // Fallback image
-              
+
               return (
                 <div className="blog-card" key={index}>
                   <div className="blog-img-box">
@@ -85,7 +86,12 @@ function Blog() {
                   <div className="blog-content-section">
                     {/* <div className="section-indicator-2">{item.categories[0]}</div> */}
                     <h2 className="blog-title">{item.title.rendered}</h2>
-                    <p className="blog-description" dangerouslySetInnerHTML={{ __html: item.excerpt.rendered.slice(0,50) }} />
+                    <p
+                      className="blog-description"
+                      dangerouslySetInnerHTML={{
+                        __html: item.excerpt.rendered.slice(0, 50),
+                      }}
+                    />
                     <div className="date-comment-box">
                       <p className="date">
                         <span className="d-icon">
@@ -104,8 +110,9 @@ function Blog() {
             breakLabel="..."
             nextLabel=" >"
             onPageChange={handlePageClick}
-            pageRangeDisplayed={5}
-            pageCount={pageCount}
+            pageRangeDisplayed={2} // Number of middle page numbers
+            marginPagesDisplayed={2} // Number of pages shown at the beginning and end
+            pageCount={pageCount} // Total number of pages (dynamic)
             previousLabel="< "
             renderOnZeroPageCount={null}
             containerClassName={"pagination"}

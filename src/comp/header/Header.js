@@ -51,19 +51,19 @@ const Header = () => {
       path:"/about"
     },
     {
-      nav :"service",
+      nav :"Service",
       path:"/service"
     },
     {
-      nav :"Moulees work",
+      nav :"Moulees Work",
       path:"/mauleeswork"
     },
     {
-      nav :"blog",
+      nav :"Blog",
       path:"/blog"
     },
     {
-      nav :"contact us",
+      nav :"Contact us",
       path:"/contact"
     },
   ]
