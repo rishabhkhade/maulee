@@ -19,7 +19,7 @@ const Pagetop = ({ pageHeader, backgroundImage }) => {
             <img src={logo} alt="" />
           </div>
           <div className="text">
-            <h5>{pageHeader}</h5>
+            <h1>{pageHeader}</h1>
           </div>
         </div>
       </div>

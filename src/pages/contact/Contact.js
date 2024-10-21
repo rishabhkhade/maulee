@@ -46,8 +46,8 @@ const Contact = () => {
             <div className="contact-top">
               <h3>Get In Touch</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Reprehenderit, rerum met consectetur.
+                Got questions or want to book a consultation? Just fill out the
+                form below, and we’ll get back to you soon. Can’t wait to chat!
               </p>
             </div>
             <div className="contact-bottom">

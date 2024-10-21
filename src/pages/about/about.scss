@@ -190,6 +190,9 @@
 
             p{
                 color: var(--white);
+                text-align: center;
+                font-size: calc(var(--unit) - 2px);
+                line-height: 140%;
             }
 
             .icons{
@@ -225,6 +228,14 @@
         .overlay{
           h3{
             font-size: calc(var(--unit)) !important;
+          }
+        }
+      }
+
+      .backcard{
+        .blur-overlay{
+          p{
+            font-size: calc(var(--unit) - 7px);
           }
         }
       }
@@ -267,7 +278,44 @@
   }
 }
 
+@media only screen and (max-width:550px){
 
+  .artist-cont{
+    .card{
+      width: 300px !important;
+      aspect-ratio: 0.8 !important;
+      .backcard{
+      
+        .blur-overlay{
+        p{
+          font-size: calc(var(--unit)) !important;
+        }
+       
+        }
+      }
+
+    }
+  }
+
+}
+@media only screen and (max-width:750px){
+
+  .artist-cont{
+    .card{
+      .backcard{
+        .blur-overlay{
+          p{
+            font-size: calc(var(--unit) /2) ;
+          }
+        }
+      }
+
+    }
+  }
+
+
+
+}
 @media only screen and (max-width:500px){
   .journey-cont{
     .content{
@@ -287,6 +335,14 @@
 
     .card{
       width: 80% !important;
+
+      .backcard{
+        .blur-overlay{
+          p{
+            font-size: calc(var(--unit) ) !important;
+          }
+        }
+      }
     }
   }
 }

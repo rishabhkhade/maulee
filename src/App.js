@@ -19,7 +19,7 @@ function App() {
   const openPopUpdely = () => {
     setTimeout(() => {
       setPopup(true);
-    }, 5000);
+    }, 10000);
   };
   useEffect(() => {
     openPopUpdely();

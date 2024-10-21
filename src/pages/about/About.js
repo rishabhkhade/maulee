@@ -18,36 +18,36 @@ const About = () => {
   const artistData = [
     {
       image: artistImage,
-      artist_name: "lorem lipsum",
+      artist_name: "Narendra lipsum",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen ",
+        "Narendra is renowned for his obsession with fine details and his ability to create stunning, Spiritual & conceptual body art. He believes that the best tattoos come from truly understanding a client’s vision. By deeply connecting with each person, he transforms their ideas into personalized, meaningful tattoos that are both visually striking and emotionally resonant.",
       whatsapp_link: "/whatsapp",
       insta_link: "/whatsapp",
       x_link: "/whatsapp",
     },
     {
       image: artistImage,
-      artist_name: "lorem lipsum",
+      artist_name: "Sanket lipsum",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen ",
+        "Sanket may say, I look better in real life, but it's his work that truly stands out. Known for his sharp, crisp designs, he specializes in minimalism, always delivering clean, precise tattoos. Though minimalism is his signature style, he constantly pushes boundaries and embraces experimentation, ensuring each piece is elevated to its best level.",
       whatsapp_link: "/whatsapp",
       insta_link: "/whatsapp",
       x_link: "/whatsapp",
     },
     {
       image: artistImage,
-      artist_name: "lorem lipsum",
+      artist_name: "Akshay lipsum",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen ",
+        "Hi, I’m Akshay, a tattoo artist at Moulees Tattoo Art Studio. My passion lies in crafting unique, personalized designs that tell my clients' stories. I strive to create an environment where everyone feels comfortable and confident in bringing their ideas to life, always focusing on both artistry and safety.",
       whatsapp_link: "/whatsapp",
       insta_link: "/whatsapp",
       x_link: "/whatsapp",
     },
     {
       image: artistImage,
-      artist_name: "lorem lipsum",
+      artist_name: "Arpit lipsum",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen ",
+        "Hi, I’m Arpit Vyas, lead artist and mentor at Moulees Art Studio. I’m dedicated to guiding new artists in honing their craft while pushing my own creative boundaries with bold, vibrant artwork. I’m always eager to collaborate with fellow artists and share the joy of artistic exploration.",
       whatsapp_link: "/whatsapp",
       insta_link: "/whatsapp",
       x_link: "/whatsapp",
@@ -74,7 +74,7 @@ const About = () => {
 
   return (
     <>
-      <Pagetop pageHeader="About Us"  backgroundImage={about_top_img}/>
+      <Pagetop pageHeader="About Us" backgroundImage={about_top_img} />
 
       <div className="about-parent parent">
         <div
@@ -84,15 +84,16 @@ const About = () => {
           data-aos-duration="1000"
         >
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+            At Moulees Tattoo Art, our studio reflects the dedication and
+            passion we pour into every piece of work. Recognized as the Best
+            Tattoo Studio in Pune, we are proud of maintaining one of the
+            cleanest and most hygienic tattoo spaces. Our atmosphere feels like
+            a second home, where both artistry and integrity thrive. We spend
+            countless hours here, perfecting our craft and ensuring every detail
+            aligns with our high standards. Moulees even stands as the Best
+            Tattoo Studio in Viman Nagar from last 8 years. Nestled in a sleek,
+            modern building with hassle-free parking, we invite you to visit us
+            and experience our space in person.
           </p>
         </div>
       </div>
@@ -105,11 +106,9 @@ const About = () => {
           data-aos-duration="1000"
         >
           {journeyData.map((item, index) => (
-            <div className="content"  key={index} >
+            <div className="content" key={index}>
               <p className="section">{item.description} </p>
-              <h2 className="section">
-                {item.year}
-              </h2>
+              <h2 className="section">{item.year}</h2>
             </div>
           ))}
 

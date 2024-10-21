@@ -10,7 +10,7 @@ import { CiLocationOn } from "react-icons/ci";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import aboutVideo from "../../assets/video/about_video.mp4";
+import aboutVideo from "../../assets/video/about_video.webm";
 // import required modules
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { Link } from "react-router-dom";
@@ -18,50 +18,55 @@ import CountUp from "react-countup";
 import { IoIosStar } from "react-icons/io";
 import icon1 from "../../assets/Mask group.png";
 import image from "../../assets/IMG_9164.jpg";
-import heroimage from "../../assets/hero.png";
+import heroimage from "../../assets/tArtist.webp";
 import ReactPlayer from "react-player";
 const Home = () => {
   const herodata = [
     {
-      heroHeading: "MOULEE'S",
       heroimage: heroimage,
-      content:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     },
     {
-      heroHeading: "MOULEE'S",
       heroimage: heroimage,
-      content:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     },
     {
-      heroHeading: "MOULEE'S",
       heroimage: heroimage,
-      content:
-        "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
     },
   ];
 
   const testimoealData = [
     {
       clientdesc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad",
+        "I Came here for tattoo and the experience was amazing. Very friendly and experienced persons made me feel at home. Artist gave me multiple design options, and honestly exceeded my expectations by 10 times. ",
       icon: icon1,
-      name: "lorem lipsum",
+      name: "Palvi Praksah",
       star: 5,
     },
     {
       clientdesc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad",
+        "A place where you should must visit if planning to get inked.Fantastic service, guidance, desings etc. I loved the place",
       icon: icon1,
-      name: "lorem lipsum",
+      name: "Preeti Baviskar",
       star: 4,
     },
     {
       clientdesc:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad",
+        "The studio and all the equipments used are super clean and maintained. He exactly understands your thought and emotion behind the tattoo.",
       icon: icon1,
-      name: "lorem lipsum",
+      name: "Shruti Ambekar",
+      star: 3,
+    },
+    {
+      clientdesc:
+        "Moulee’s Tattoo Studio has a tendency to get involved in your dream tattoo as if it’s their own and provide you the best possible output",
+      icon: icon1,
+      name: "Nikhil Bhosale",
+      star: 3,
+    },
+    {
+      clientdesc:
+        "Tattoo is something you carry with you for life once done, I took a lot of time figuring out what I want and what goes well with my personality. Moulee's Tattoo Art Studio helped me make it better and made sure, I was satisfied.",
+      icon: icon1,
+      name: "Rahul Budakoti",
       star: 3,
     },
   ];
@@ -125,12 +130,16 @@ const Home = () => {
             <div className="top">
               <SectionHeading line_text="About Us" fill_text="About Us" />
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum et
-                ipsam debitis odit fuga, recusandae quisquam minus similique
-                laboriosam sed cum suscipit laborum aliquam ab quis. Autem
-                fugit, explicabo eaque illum doloribus velit vel ut amet labore
-                perferendis eligendi soluta optio hic iure quae doloremque
-                voluptates rerum minima! Reprehenderit, neque.
+                At Moulees Tattoo Art, our studio reflects the dedication and
+                passion we pour into every piece of work. Recognized as the Best
+                Tattoo Studio in Pune, we are proud of maintaining one of the
+                cleanest and most hygienic tattoo spaces. Our atmosphere feels
+                like a second home, where both artistry and integrity thrive. We
+                spend countless hours here, perfecting our craft and ensuring
+                every detail aligns with our high standards. Moulees even stands
+                as the Best Tattoo Studio in Viman Nagar from last 8 years.
+                Nestled in a sleek, modern building with hassle-free parking, we
+                invite you to visit us and experience our space in person.
               </p>
             </div>
             <div className="cta_btn">
@@ -203,7 +212,7 @@ const Home = () => {
                   spaceBetween: 50,
                 },
               }}
-              modules={[Pagination,Navigation]}
+              modules={[Pagination, Navigation]}
               className="mySwiper"
             >
               {images.map((item, index) => (
@@ -281,6 +290,7 @@ const Home = () => {
         <Swiper
           spaceBetween={0}
           centeredSlides={true}
+          loop={true}
           autoplay={{
             delay: 3500,
             disableOnInteraction: false,
@@ -347,8 +357,8 @@ const Home = () => {
           <div className="right">
             <h5 className="righttext">Contact With Us</h5>
             <div className="btn">
-                    <h5 className="btn_text">Click here</h5>
-                  </div>
+              <h5 className="btn_text">Click here</h5>
+            </div>
           </div>
         </div>
       </div>

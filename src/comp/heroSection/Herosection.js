@@ -19,6 +19,7 @@ const Herosection = ({ herodata }) => {
   return (
     <>
       <div className="hero-parent parent">
+      <SlideText />
         <Swiper
           spaceBetween={0}
           centeredSlides={true}
@@ -29,25 +30,20 @@ const Herosection = ({ herodata }) => {
           }}
          
           pagination={false}
-          navigation={{ nextEl: ".custom-next", prevEl: ".custom-prev" }}
-          modules={[Autoplay, Pagination, Navigation]}
+       
+          modules={[Autoplay, Pagination]}
           className="mySwiper"
         >
           {herodata.map((item, index) => (
             <SwiperSlide
               className="hero-swiperslide-parent bg-img-cover parent"
               key={index}
+              style={{backgroundImage:`url(${item.heroimage})`}}
             >
-              <SlideText />
+             
               <div className="hero-overlay"></div>
             </SwiperSlide>
-          ))}
-          <div className="custom-prev">
-            <BsArrowDown />
-          </div>
-          <div className="custom-next">
-            <BsArrowDown />
-          </div>
+          ))} 
         </Swiper>
 
         <div className="hero-slide-cont cont">
@@ -56,7 +52,7 @@ const Herosection = ({ herodata }) => {
               {/* <span>
                       <img src={item.logo} alt="" />
                     </span> */}
-              Maulees's
+              Moulee's
             </h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
