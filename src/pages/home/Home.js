@@ -46,28 +46,28 @@ const Home = () => {
         "A place where you should must visit if planning to get inked.Fantastic service, guidance, desings etc. I loved the place",
       icon: icon1,
       name: "Preeti Baviskar",
-      star: 4,
+      star: 5,
     },
     {
       clientdesc:
         "The studio and all the equipments used are super clean and maintained. He exactly understands your thought and emotion behind the tattoo.",
       icon: icon1,
       name: "Shruti Ambekar",
-      star: 3,
+      star: 5,
     },
     {
       clientdesc:
         "Moulee’s Tattoo Studio has a tendency to get involved in your dream tattoo as if it’s their own and provide you the best possible output",
       icon: icon1,
       name: "Nikhil Bhosale",
-      star: 3,
+      star: 5,
     },
     {
       clientdesc:
         "Tattoo is something you carry with you for life once done, I took a lot of time figuring out what I want and what goes well with my personality. Moulee's Tattoo Art Studio helped me make it better and made sure, I was satisfied.",
       icon: icon1,
       name: "Rahul Budakoti",
-      star: 3,
+      star: 5,
     },
   ];
 

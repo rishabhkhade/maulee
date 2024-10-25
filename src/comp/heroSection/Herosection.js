@@ -55,8 +55,7 @@ const Herosection = ({ herodata }) => {
               Moulee's
             </h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Cupiditate, distinctio?
+            We are known as the best tattoo studio in Pune.
             </p>
           </div>
           <div className="cta_btn">

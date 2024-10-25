@@ -20,7 +20,7 @@ const About = () => {
       image: artistImage,
       artist_name: "Narendra lipsum",
       description:
-        "Narendra is renowned for his obsession with fine details and his ability to create stunning, Spiritual & conceptual body art. He believes that the best tattoos come from truly understanding a client’s vision. By deeply connecting with each person, he transforms their ideas into personalized, meaningful tattoos that are both visually striking and emotionally resonant.",
+        "Hey, I'm Narendra. I'm passionate about fine details and specialize in creating stunning spiritual and conceptual body art. I believe the best tattoos come from truly understanding a client’s vision. By forming a deep connection with each person, I transform their ideas into personalized, meaningful tattoos that are both visually captivating and emotionally impactful.",
       whatsapp_link: "/whatsapp",
       insta_link: "/whatsapp",
       x_link: "/whatsapp",
@@ -29,7 +29,7 @@ const About = () => {
       image: artistImage,
       artist_name: "Sanket lipsum",
       description:
-        "Sanket may say, I look better in real life, but it's his work that truly stands out. Known for his sharp, crisp designs, he specializes in minimalism, always delivering clean, precise tattoos. Though minimalism is his signature style, he constantly pushes boundaries and embraces experimentation, ensuring each piece is elevated to its best level.",
+        "I'm Sanket, known for creating sharp, crisp designs with a focus on minimalism. I consistently deliver clean and precise tattoos, but while minimalism is my signature style, I love pushing boundaries and experimenting to take each piece to the next level.",
       whatsapp_link: "/whatsapp",
       insta_link: "/whatsapp",
       x_link: "/whatsapp",
