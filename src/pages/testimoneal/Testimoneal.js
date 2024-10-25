@@ -3,6 +3,7 @@ import "./tesimoneal.scss";
 import Pagetop from "../../comp/pagetop/Pagetop";
 import ReactPlayer from "react-player";
 import video from "../../assets/video.webm";
+import service_top_img from "../../assets/hero.png";
 import SectionHeading from "../../comp/sectionHeading/SectionHeading";
 const Testimoneal = () => {
   const testimoneal = [
@@ -26,7 +27,7 @@ const Testimoneal = () => {
 
   return (
     <>
-      <Pagetop pageHeader="Our Clients" />
+      <Pagetop pageHeader="Our Clients" backgroundImage={service_top_img} />
 
 
 

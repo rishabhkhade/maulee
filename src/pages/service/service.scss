@@ -76,10 +76,16 @@
     display: flex;
     justify-content: center;
     align-items: stretch;
+    gap: calc(var(--unit)*2);
 
     .left {
       width: 50%;
-      height: 100%;
+      height: auto;
+      background-image: url("../../assets/faq_img.webp");
+      background-position: top center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: calc(var(--unit)/2);
     }
 
     .right {

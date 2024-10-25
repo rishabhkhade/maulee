@@ -121,7 +121,7 @@ const Service = () => {
           data-aos-delay="700"
           data-aos-duration="1000"
         >
-          <div className="left"></div>
+          <div className="left "></div>
 
           <div className="right">
             <h5>Faq</h5>
