@@ -124,10 +124,9 @@ const Service = () => {
           <div className="left"></div>
 
           <div className="right">
-            <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h5>
+            <h5>Faq</h5>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Nesciunt, inventore.
+             Frequently Asked Questions
             </p>
 
             <div className="faq-list">

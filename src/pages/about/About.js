@@ -3,6 +3,9 @@ import "./about.scss";
 import Pagetop from "../../comp/pagetop/Pagetop";
 import SectionHeading from "../../comp/sectionHeading/SectionHeading";
 import artistImage from "../../assets/dummy-artist.png";
+import narendraImage from "../../assets/narendra.webp";
+import sanketImage from "../../assets/sanket.webp";
+import arpitImage from "../../assets/arpit.webp";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoLogoInstagram } from "react-icons/io";
 import { FaXTwitter } from "react-icons/fa6";
@@ -17,7 +20,7 @@ const About = () => {
 
   const artistData = [
     {
-      image: artistImage,
+      image: narendraImage,
       artist_name: "Narendra lipsum",
       description:
         "Hey, I'm Narendra. I'm passionate about fine details and specialize in creating stunning spiritual and conceptual body art. I believe the best tattoos come from truly understanding a client’s vision. By forming a deep connection with each person, I transform their ideas into personalized, meaningful tattoos that are both visually captivating and emotionally impactful.",
@@ -26,7 +29,7 @@ const About = () => {
       x_link: "/whatsapp",
     },
     {
-      image: artistImage,
+      image: sanketImage,
       artist_name: "Sanket lipsum",
       description:
         "I'm Sanket, known for creating sharp, crisp designs with a focus on minimalism. I consistently deliver clean and precise tattoos, but while minimalism is my signature style, I love pushing boundaries and experimenting to take each piece to the next level.",
@@ -44,8 +47,8 @@ const About = () => {
       x_link: "/whatsapp",
     },
     {
-      image: artistImage,
-      artist_name: "Arpit lipsum",
+      image: arpitImage,
+      artist_name: "Arpit Vyas",
       description:
         "Hi, I’m Arpit Vyas, lead artist and mentor at Moulees Art Studio. I’m dedicated to guiding new artists in honing their craft while pushing my own creative boundaries with bold, vibrant artwork. I’m always eager to collaborate with fellow artists and share the joy of artistic exploration.",
       whatsapp_link: "/whatsapp",

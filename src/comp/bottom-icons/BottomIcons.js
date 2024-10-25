@@ -7,7 +7,7 @@ function BottomIcons({setPopup}) {
   return (
     <>
       <div className="side-icons">
-        <a href="" className="two-icon">
+        <a href="https://www.instagram.com/moulees_tattoo_art" target="blank" className="two-icon">
           <FaInstagram />
         </a>
         <span className="two-icon" onClick={()=>setPopup(true)} >

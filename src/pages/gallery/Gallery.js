@@ -13,12 +13,74 @@ import gallery_top_img from "../../assets/hero.png";
 import axios from "axios";
 import { IoIosArrowBack } from "react-icons/io";
 
+
+
+// images 
+
+import img1 from "../../assets/tatto_images/img_1.webp"
+import img2 from "../../assets/tatto_images/img_2.webp"
+import img3 from "../../assets/tatto_images/img_3.webp"
+import img4 from "../../assets/tatto_images/img_4.webp"
+import img5 from "../../assets/tatto_images/img_5.webp"
+import img6 from "../../assets/tatto_images/img_6.webp"
+import img7 from "../../assets/tatto_images/img_7.webp"
+import img8 from "../../assets/tatto_images/img_8.webp"
+import img9 from "../../assets/tatto_images/img_9.webp"
+import img10 from "../../assets/tatto_images/img_10.webp"
+import img11 from "../../assets/tatto_images/img_11.webp"
+import img12 from "../../assets/tatto_images/img_12.webp"
+import img13 from "../../assets/tatto_images/img_13.webp"
+
 const Gallery = () => {
-  const [visibleImages, setVisibleImages] = useState(15);
+  const [visibleImages, setVisibleImages] = useState(13);
 
   const loadMore = () => {
     setVisibleImages((prev) => prev + 15);
   };
+
+
+const galleryimg = [
+  {
+    image:img1
+  },
+  {
+    image:img2
+  },
+  {
+    image:img3
+  },
+  {
+    image:img4
+  },
+  {
+    image:img5
+  },
+  {
+    image:img6
+  },
+  {
+    image:img7
+  },
+  {
+    image:img8
+  },
+  {
+    image:img9
+  },
+  {
+    image:img10
+  },
+  {
+    image:img11
+  },
+  {
+    image:img12
+  },
+  {
+    image:img13
+  },
+
+]
 
   const videos = [
     {
@@ -152,10 +214,10 @@ const Gallery = () => {
           <div className="gallery-section">
             {gallerypages.photossection && (
               <>
-                {images.slice(0, visibleImages).map((item, index) => (
+                {galleryimg.slice(0, visibleImages).map((item, index) => (
                   <div
                     className=" class bg-img-cover"
-                    style={{ backgroundImage: `url(${item.source_url})` }}
+                    style={{ backgroundImage: `url(${item.image})` }}
                     key={index}
                     onClick={() => openLightbox(item.image)}
                   ></div>
