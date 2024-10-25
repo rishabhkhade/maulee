@@ -128,7 +128,7 @@ const Home = () => {
 
           <div className="right">
             <div className="top">
-              <SectionHeading line_text="About Us" fill_text="About Us" />
+              <SectionHeading line_text="About Us" fill_text="About Us" textalign="start"  />
               <p>
                 At Moulees Tattoo Art, our studio reflects the dedication and
                 passion we pour into every piece of work. Recognized as the Best
