@@ -3,7 +3,7 @@ import "./gallery.scss";
 import Pagetop from "../../comp/pagetop/Pagetop";
 import { CiPlay1 } from "react-icons/ci";
 // image
-import image from "../../assets/IMG_9164.jpg";
+
 import video from "../../assets/video.webm";
 import ReactPlayer from "react-player";
 import { BiSolidVideos } from "react-icons/bi";

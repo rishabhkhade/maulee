@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 import CountUp from "react-countup";
 import { IoIosStar } from "react-icons/io";
 import icon1 from "../../assets/Mask group.png";
-import image from "../../assets/IMG_9164.jpg";
+import image from "../../assets/tatto_images/img_1.webp";
 import heroimage from "../../assets/tArtist.webp";
 import ReactPlayer from "react-player";
 const Home = () => {
