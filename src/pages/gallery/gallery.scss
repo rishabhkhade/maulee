@@ -172,6 +172,11 @@
         justify-content: center;
         align-items: center;
         color: var(--white);
+        
+        &.disabled {
+          opacity: 0.5;
+          pointer-events: none; /* Prevents any interaction */
+        }
       }
 
       .left-arrow {
@@ -187,6 +192,7 @@
         svg{
           transform: rotate(-180deg);
         }
+
       }
     }
   }

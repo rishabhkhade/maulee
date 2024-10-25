@@ -7,80 +7,17 @@ import { CiPlay1 } from "react-icons/ci";
 import video from "../../assets/video.webm";
 import ReactPlayer from "react-player";
 import { BiSolidVideos } from "react-icons/bi";
-import { IoMdPhotos } from "react-icons/io";
+import { IoIosArrowDropright, IoMdPhotos } from "react-icons/io";
 import { BsYoutube } from "react-icons/bs";
 import gallery_top_img from "../../assets/hero.png";
 import axios from "axios";
 import { IoIosArrowBack } from "react-icons/io";
 
-
-
-// images 
-
-import img1 from "../../assets/tatto_images/img_1.webp"
-import img2 from "../../assets/tatto_images/img_2.webp"
-import img3 from "../../assets/tatto_images/img_3.webp"
-import img4 from "../../assets/tatto_images/img_4.webp"
-import img5 from "../../assets/tatto_images/img_5.webp"
-import img6 from "../../assets/tatto_images/img_6.webp"
-import img7 from "../../assets/tatto_images/img_7.webp"
-import img8 from "../../assets/tatto_images/img_8.webp"
-import img9 from "../../assets/tatto_images/img_9.webp"
-import img10 from "../../assets/tatto_images/img_10.webp"
-import img11 from "../../assets/tatto_images/img_11.webp"
-import img12 from "../../assets/tatto_images/img_12.webp"
-import img13 from "../../assets/tatto_images/img_13.webp"
-
 const Gallery = () => {
-  const [visibleImages, setVisibleImages] = useState(13);
-
+  const [visibleImages, setVisibleImages] = useState(15);
   const loadMore = () => {
     setVisibleImages((prev) => prev + 15);
   };
-
-
-const galleryimg = [
-  {
-    image:img1
-  },
-  {
-    image:img2
-  },
-  {
-    image:img3
-  },
-  {
-    image:img4
-  },
-  {
-    image:img5
-  },
-  {
-    image:img6
-  },
-  {
-    image:img7
-  },
-  {
-    image:img8
-  },
-  {
-    image:img9
-  },
-  {
-    image:img10
-  },
-  {
-    image:img11
-  },
-  {
-    image:img12
-  },
-  {
-    image:img13
-  },
-
-]
 
   const videos = [
     {
@@ -145,22 +82,58 @@ const galleryimg = [
 
   const [pageNumber, setPageNumber] = useState(1);
 
-  const photos = async () => {
+  const fetchGallery = async () => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_URL}/media?page=${pageNumber}`
+        `${process.env.REACT_APP_URL}/posts?_embed`,
+        {
+          params: {
+            per_page: 13, // Set per_page here
+            page: pageNumber, // Adjust page number as needed
+          },
+        }
       );
-      setImages(response.data);
-      console.log(response);
+  
+      const data = response.data;
+      const images = data
+        .filter((post) => {
+          return (
+            post._embedded &&
+            post._embedded['wp:term'] &&
+            post._embedded['wp:term'][0].some(
+              (category) => category.name === 'Gallery'
+            )
+          );
+        })
+        .map((post) => {
+          if (
+            post._embedded &&
+            post._embedded['wp:featuredmedia'] &&
+            post._embedded['wp:featuredmedia'].length > 0
+          ) {
+            const featuredMedia = post._embedded['wp:featuredmedia'][0];
+            return {
+              imageUrl: featuredMedia.source_url,
+              imageId: featuredMedia.id,
+            };
+          }
+          return null; // If no featured media, return null
+        })
+        .filter((item) => item !== null); // Filter out null values
+  
+      console.log(images, 'Filtered images with Gallery category');
+      setImages(images); // Save filtered images to state
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 
   useEffect(() => {
-    photos();
+    fetchGallery();
   }, [pageNumber]);
 
+
+  console.log(images.length)
   return (
     <>
       <Pagetop pageHeader="Maulees's Work" backgroundImage={gallery_top_img} />
@@ -214,12 +187,12 @@ const galleryimg = [
           <div className="gallery-section">
             {gallerypages.photossection && (
               <>
-                {galleryimg.slice(0, visibleImages).map((item, index) => (
+                {images.slice(0, visibleImages).map((item, index) => (
                   <div
                     className=" class bg-img-cover"
-                    style={{ backgroundImage: `url(${item.image})` }}
+                    style={{ backgroundImage: `url(${item.imageUrl})` }}
                     key={index}
-                    onClick={() => openLightbox(item.image)}
+                    onClick={() => openLightbox(item.imageUrl)}
                   ></div>
                 ))}
               </>
@@ -275,7 +248,9 @@ const galleryimg = [
               <IoIosArrowBack />
             </div>
             <div
-              className="right-arrow arrow"
+              className={`right-arrow arrow ${
+                images.length < 13 && images.length !== 13 ? "disabled" : "right-arrow arrow"
+              }`}
               onClick={() => setPageNumber(pageNumber + 1)}
             >
               <IoIosArrowBack />

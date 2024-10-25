@@ -2,18 +2,17 @@ import React, { useEffect, useState } from "react";
 import "./Blog.scss";
 import { GoClock } from "react-icons/go";
 import { FiPlus } from "react-icons/fi";
-import ReactPaginate from "react-paginate";
 import Pagetop from "../../comp/pagetop/Pagetop";
 import axios from "axios";
 import gallery_top_img from "../../assets/hero.png";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+
 function Blog() {
   const [blogData, setBlogData] = useState([]);
   const [search, setSearch] = useState("");
-  const [itemOffset, setItemOffset] = useState(0);
-
+  const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 6;
 
-  // Fetch the blog data from the API
   const blogsData = async () => {
     try {
       const response = await axios.get(
@@ -24,7 +23,30 @@ function Blog() {
           },
         }
       );
-      setBlogData(response.data);
+  
+      const data = response.data;
+      const blogPosts = data
+        .filter((post) => {
+          // Check if the post belongs to the 'Blog' category
+          return (
+            post._embedded &&
+            post._embedded['wp:term'] &&
+            post._embedded['wp:term'][0].some((category) => category.name === 'Blog')
+          );
+        })
+        .map((post) => {
+          const featuredMedia = post._embedded['wp:featuredmedia']?.[0] || {};
+          return {
+            title: post.title.rendered,
+            description: post.excerpt.rendered,
+            uploadDate: post.date,
+            imageUrl: featuredMedia.source_url || "",
+            imageId: featuredMedia.id || null,
+            category: "Blog"
+          };
+        });
+  
+      setBlogData(blogPosts);
     } catch (error) {
       console.log(error);
     }
@@ -34,23 +56,21 @@ function Blog() {
     blogsData();
   }, []);
 
-  // Filter the blog data based on the search query
-  const filteredData = blogData.filter((item) =>
-    item.title.rendered.toLowerCase().includes(search.toLowerCase())
-  );
+  const startOffset = currentPage * itemsPerPage;
+  const paginatedBlogs = blogData.slice(startOffset, startOffset + itemsPerPage);
 
-  // Pagination logic
-  const endOffset = itemOffset + itemsPerPage;
-  const currentItems = filteredData.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(filteredData.length / itemsPerPage);
-
-  const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % filteredData.length;
-    setItemOffset(newOffset);
+  const handleNextPage = () => {
+    if (startOffset + itemsPerPage < blogData.length) {
+      setCurrentPage(currentPage + 1);
+    }
   };
 
+  const handlePreviousPage = () => {
+    if (currentPage > 0) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
 
-  console.log(blogData)
   return (
     <>
       <Pagetop pageHeader="Blogs" backgroundImage={gallery_top_img} />
@@ -67,19 +87,9 @@ function Blog() {
             />
           </div>
           <div className="blog-data-cont">
-            {currentItems.map((item, index) => {
-              // Get the image URL from the embedded field
-              const imageUrl =
-                item._embedded?.["wp:featuredmedia"]?.[0]?.source_url; // Fallback image
-//  // Get categories from the embedded field
-//  const categories = item._embedded?.["wp:term"]?.[0] || [];
-              
-//  // Example: Select the first category or filter based on your criteria
-//  const specificCategory = categories.length > 0 ? categories[0].name : "Uncategorized";
-
+            {paginatedBlogs.map((item, index) => {
               return (
                 <div className="blog-card" key={index}>
-                  {/* <h1>{specificCategory}</h1> */}
                   <div className="blog-img-box">
                     <div className="card-img-overlay">
                       <span className="plus-icon">
@@ -88,16 +98,19 @@ function Blog() {
                     </div>
                     <div
                       className="blog-img bg-img-cover"
-                      style={{ backgroundImage: `url(${imageUrl})` }}
-                    ></div>
+                      style={{ backgroundImage: `url(${item.imageUrl})` }}
+                    >
+                      <p className="cat">
+                        {item.category}
+                      </p>
+                    </div>
                   </div>
                   <div className="blog-content-section">
-                    {/* <div className="section-indicator-2">{item.categories[0]}</div> */}
-                    <h2 className="blog-title">{item.title.rendered}</h2>
+                    <h2 className="blog-title">{item.title}</h2>
                     <p
                       className="blog-description"
                       dangerouslySetInnerHTML={{
-                        __html: item.excerpt.rendered.slice(0, 50),
+                        __html: item.description.slice(0, 50),
                       }}
                     />
                     <div className="date-comment-box">
@@ -105,7 +118,7 @@ function Blog() {
                         <span className="d-icon">
                           <GoClock />
                         </span>
-                        <span>{new Date(item.date).toLocaleDateString()}</span>
+                        <span>{new Date(item.uploadDate).toLocaleDateString()}</span>
                       </p>
                     </div>
                   </div>
@@ -114,18 +127,20 @@ function Blog() {
             })}
           </div>
 
-          <ReactPaginate
-            breakLabel="..."
-            nextLabel=" >"
-            onPageChange={handlePageClick}
-            pageRangeDisplayed={2} // Number of middle page numbers
-            marginPagesDisplayed={2} // Number of pages shown at the beginning and end
-            pageCount={pageCount} // Total number of pages (dynamic)
-            previousLabel="< "
-            renderOnZeroPageCount={null}
-            containerClassName={"pagination"}
-            activeClassName={"active"}
-          />
+          <div className="pagination">
+            <div
+              className={`left-arrow arrow ${currentPage === 0 ? "disabled" : ""}`}
+              onClick={handlePreviousPage}
+            >
+              <IoIosArrowBack />
+            </div>
+            <div
+              className={`right-arrow arrow ${startOffset + itemsPerPage >= blogData.length ? "disabled" : ""}`}
+              onClick={handleNextPage}
+            >
+              <IoIosArrowForward />
+            </div>
+          </div>
         </div>
       </div>
     </>
