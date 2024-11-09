@@ -369,6 +369,10 @@ position: relative;
       gap: var(--unit);
       padding: 0px 10px;
 
+      .number{
+        font-size: calc(var(--unit)*2);
+      }
+
       .righttext {
         font-size: calc(var(--unit) * 3);
         color: var(--accent);

@@ -359,6 +359,9 @@ const Home = () => {
             </div>
           </div>
           <div className="right">
+            <p className="number">
+              1234567890
+            </p>
             <h5 className="righttext">Contact With Us</h5>
             <div className="btn">
               <h5 className="btn_text">Click here</h5>
