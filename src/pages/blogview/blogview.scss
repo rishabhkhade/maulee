@@ -1,0 +1,39 @@
+.blogView-section {
+  width: 100%;
+  height: auto;
+  padding: 20px 0px;
+
+  .blog-view-cont {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--unit);
+
+    .image {
+      width: 100%;
+      height: 500px;
+      backdrop-filter: blur(16px) saturate(180%);
+      -webkit-backdrop-filter: blur(16px) saturate(180%);
+      background-color: rgba(48, 48, 48, 0.373);
+
+      border: 1px solid rgba(209, 213, 219, 0.3);
+      border-radius: var(--unit);
+      padding: calc(var(--unit)/2);
+
+      img {
+        height: 100%;
+        width: 100%;
+        border-radius: calc(var(--unit) / 2);
+      }
+    }
+
+    .top-line {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+}

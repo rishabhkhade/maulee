@@ -27,13 +27,13 @@ const Testimoneal = () => {
 
   return (
     <>
-      <Pagetop pageHeader="Our Clients" backgroundImage={service_top_img} />
+      <Pagetop pageHeader="Client's Voice" backgroundImage={service_top_img} />
 
 
 
       <div class="testimoneal-parent parent">
        <div class="test-heading cont">
-       <SectionHeading  line_text="Client Voice" fill_text="Client Voice" />
+       <SectionHeading  line_text="Client's Voice" fill_text="Client's Voice" />
        </div>
         <div class="testimoneal-cont cont">
           <div class="client-video">

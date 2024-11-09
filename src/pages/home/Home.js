@@ -7,6 +7,7 @@ import { MdOutlineCall } from "react-icons/md";
 import { BsArrowDown } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { CiLocationOn } from "react-icons/ci";
+import { FaPlus } from "react-icons/fa6";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -152,9 +153,9 @@ const Home = () => {
                     <MdOutlineCall />
                   </a>
                 </div>
-                <div className="btn2">
+                <Link to="/about" className="btn2">
                   <h5 className="btn_text">Know More</h5>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -166,11 +167,11 @@ const Home = () => {
         <div
           className="mini-gallery-cont cont"
           data-aos="fade-up"
-          data-aos-delay="300"
+         
           data-aos-duration="1000"
         >
           <div className="left">
-            <h2 className="heading">Lorem ipsum dolor sit.</h2>
+            <h2 className="heading">Our Best Tattoo Works</h2>
           </div>
           <div className="right">
             <Swiper
@@ -217,12 +218,14 @@ const Home = () => {
             >
               {images.map((item, index) => (
                 <SwiperSlide className="gallery-swiperslide" key={index}>
-                  <div
+                 <Link to="/mauleeswork" >
+                 <div
                     className="tatto-image bg-img-cover"
                     style={{ backgroundImage: `url(${item.image})` }}
                   >
                     <p className="tatto-name"> {item.tattoName} </p>
                   </div>
+                 </Link>
                 </SwiperSlide>
               ))}
 
@@ -238,11 +241,9 @@ const Home = () => {
 
         <div
           className="bottom-cont cont"
-          data-aos="fade-up"
-          data-aos-delay="300"
-          data-aos-duration="1000"
+         
         >
-          <Link className="btn">
+          <Link className="btn"  to="/mauleeswork" >
             <h5 className="btn_text">Know More</h5>
           </Link>
         </div>
@@ -259,21 +260,24 @@ const Home = () => {
           <div className="right ">
             <h1 className="count">
               <span>
-                <CountUp end={50} />
+                <CountUp end={6500} />
               </span>
+              <span className="plus_icon"> <FaPlus /></span>
             </h1>
-            <h6 className="text">lorem limpsum</h6>
+          
+            <h6 className="text">Tattoo designs</h6>
           </div>
           <div className="middle">
-            <h4 className="countTitle">Lorem ipsum dolor sit.</h4>
+            <h4 className="countTitle">Our Happy Success</h4>
           </div>
           <div className="left">
             <h1 className="count">
               <span>
-                <CountUp end={50} />
+                <CountUp end={5000} />
               </span>
+              <span className="plus_icon"> <FaPlus /></span>
             </h1>
-            <h6 className="text">lorem limpsum</h6>
+            <h6 className="text">Our Clients</h6>
           </div>
         </div>
       </div>
@@ -319,9 +323,9 @@ const Home = () => {
                         ))}
                     </div>
                   </div>
-                  <div className="btn2">
+                  <Link className="btn2"  to="our_Clients" >
                     <h5 className="btn_text">Know More</h5>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </SwiperSlide>

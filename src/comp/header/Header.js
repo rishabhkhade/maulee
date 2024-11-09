@@ -59,7 +59,7 @@ const Header = () => {
       path:"/mauleeswork"
     },
     {
-      nav :"Our Clients",
+      nav :"Client's Voice",
       path:"/our_Clients"
     },
     {

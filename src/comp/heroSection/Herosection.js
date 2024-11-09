@@ -14,6 +14,7 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import SlideText from "../slideText/SlideText";
+import { Link } from "react-router-dom";
 
 const Herosection = ({ herodata }) => {
   return (
@@ -67,9 +68,9 @@ const Herosection = ({ herodata }) => {
                 <MdOutlineCall />
               </a>
             </div>
-            <div className="btn">
+            <Link className="btn"  to="/contact" >
               <h5 className="btn_text">Book an appoinment</h5>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

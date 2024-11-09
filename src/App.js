@@ -13,10 +13,11 @@ import ScrollToTop from "./comp/scrolltotop/ScrollToTop";
 import PopUp from "./comp/popup/PopUp";
 import { useEffect, useState } from "react";
 import Testimoneal from "./pages/testimoneal/Testimoneal";
+import BlogView from "./pages/blogview/BlogView";
 
 function App() {
   const [popup, setPopup] = useState(false);
-
+const [blogview, setBlogView] = useState([])
   const openPopUpdely = () => {
     setTimeout(() => {
       setPopup(true);
@@ -38,7 +39,8 @@ function App() {
           <Route path="/service" element={<Service />} />
           <Route path="/mauleeswork" element={<Gallery />} />
           <Route path="/our_Clients" element={<Testimoneal />} />
-          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog" element={<Blog setBlogView={setBlogView} />} />
+          <Route path="/blogView" element={<BlogView blogview={blogview} />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer setPopup={setPopup} />

@@ -162,18 +162,28 @@
       .count {
         height: 100%;
         width: 100%;
-        font-size: calc(var(--unit) * 10);
+        font-size: calc(var(--unit) * 5);
         color: var(--accent);
         display: flex;
         justify-content: center;
         align-items: center;
-
+position: relative;
         span {
           height: 100%;
           width: 100%;
           display: flex;
           justify-content: center;
           align-items: center;
+        }
+
+        .plus_icon{
+          position: absolute;
+          right: -10%;
+          z-index: 2;
+          top: 50%;
+          height: auto;
+          width: auto;
+          transform: translateY(-50%);
         }
       }
 
@@ -185,7 +195,8 @@
         width: 100%;
         text-align: center;
         background-color: var(--black);
-        padding: calc(var(--unit) / 4) 0px;
+        // padding: calc(var(--unit) / 4) 0px;
+        line-height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
