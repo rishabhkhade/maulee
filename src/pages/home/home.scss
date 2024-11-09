@@ -409,6 +409,11 @@ position: relative;
       .left {
         .count {
           font-size: calc(var(--unit) * 6);
+
+
+          .plus_icon{
+            right: 0 !important;
+          }
         }
 
         .text {
