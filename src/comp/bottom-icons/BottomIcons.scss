@@ -25,6 +25,21 @@
         border: 1px solid var(--accent);
         transition: var(--trans);
 
+        img{
+            height: 70%;
+            width: 70%;
+
+
+        }
+
+        .white_icon{
+            display: flex;
+        }
+
+        .fill_icon{
+            display: none;
+        }
+
         svg {
             font-size: calc(var(--unit)*1.4);
         }
@@ -33,6 +48,14 @@
             border: 1px solid var(--accent);
             color: var(--accent);
             background: transparent;
+
+.fill_icon{
+    display: flex;
+}
+.white_icon{
+    display: none;
+}
+
         }
     }
 }

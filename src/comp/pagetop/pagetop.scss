@@ -45,6 +45,11 @@
         font-size: calc(var(--unit) * 3);
         color: var(--white);
       }
+
+      p{
+        color: var(--accent);
+        text-align: center;
+      }
     }
   }
 }

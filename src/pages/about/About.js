@@ -59,19 +59,34 @@ const About = () => {
 
   const journeyData = [
     {
+      title: "The Beginning",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      year: "2000",
+        "In 2015, Narendra, an engineering student from a non-artistic background, discovered tattooing and quickly realized his true passion. Despite the lack of clear guidance, he decided to pursue tattoo art full-time, dedicating himself to mastering the craft.",
+      year: "2015",
     },
     {
+      title: "The First Studio",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      year: "2000",
+        "By 2016, Narendra opened his first small 100-square-foot studio. This space became his full-time commitment, focused on creating lifetime memories through tattoo art. Sanket joined, and they began building a team, sharing a deep passion for art and personal connections with clients.",
+      year: "2016",
     },
     {
+      title: "Growing the Family",
       description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-      year: "2000",
+        "Over the next few years, the team grew with artists like Akshay and Arpit joining the studio. Despite the small size, the studio became known for its personalized tattoos, trusted by clients due to the artists’ passion and spiritual connections to their work. The studio became the most trusted in Viman Nagar and ranked top on Google in Pune.",
+      year: "2017-21",
+    },
+    {
+      title: "Expansion and New Visiong",
+      description:
+        "In 2022, the studio expanded to a larger row house, still maintaining its homely vibe. The new space allowed the team to grow and evolve, providing a platform for artists to collaborate and a welcoming environment for clients to get custom tattoos and build connections.",
+      year: "2022",
+    },
+    {
+      title: "Luxury with Homely Comfort",
+      description:
+        "In 2024, the studio moved to a commercial space with luxury elements, offering more visibility while maintaining the warm, homely atmosphere. The studio continued to provide a comfortable, inspiring environment for both artists and clients, solidifying its reputation as the base tattoo studio in Pune.",
+      year: "2024",
     },
   ];
 
@@ -87,16 +102,16 @@ const About = () => {
           data-aos-duration="1000"
         >
           <p>
-            At Moulees Tattoo Art, our studio reflects the dedication and
-            passion we pour into every piece of work. Recognized as the Best
-            Tattoo Studio in Pune, we are proud of maintaining one of the
-            cleanest and most hygienic tattoo spaces. Our atmosphere feels like
-            a second home, where both artistry and integrity thrive. We spend
-            countless hours here, perfecting our craft and ensuring every detail
-            aligns with our high standards. Moulees even stands as the Best
-            Tattoo Studio in Viman Nagar from last 8 years. Nestled in a sleek,
-            modern building with hassle-free parking, we invite you to visit us
-            and experience our space in person.
+            At Moulee’s Tattoo Art Studio, we believe in creating more than just
+            tattoos—we create lasting memories and genuine connections. Our
+            studio is a second home for our clients, offering a comfortable,
+            welcoming environment where you can relax and feel at ease.
+            <br /> <br />
+            Specialising in completely customized designs, our talented artists
+            work closely with you to bring your vision to life, infusing each
+            tattoo with a personal and spiritual connection. As one of the best
+            tattoo studios in Pune, we pride ourselves on delivering
+            high-quality, meaningful art that leaves a lasting impression.
           </p>
         </div>
       </div>
@@ -110,7 +125,10 @@ const About = () => {
         >
           {journeyData.map((item, index) => (
             <div className="content" key={index}>
-              <p className="section">{item.description} </p>
+              <p className="section">
+                {" "}
+                <strong>{item.title}</strong> {item.description}{" "}
+              </p>
               <h2 className="section">{item.year}</h2>
             </div>
           ))}
@@ -118,6 +136,8 @@ const About = () => {
           <div className="middle-line">
             <div className="line"></div>
 
+            <div className="circle"></div>
+            <div className="circle"></div>
             <div className="circle"></div>
             <div className="circle"></div>
             <div className="circle"></div>
@@ -159,15 +179,11 @@ const About = () => {
                     <p>{item.description}</p>
 
                     <div className="icons">
-                      <a href={item.whatsapp_link}>
-                        <FaWhatsapp />
-                      </a>
+                   
                       <a href={item.insta_link}>
                         <IoLogoInstagram />
                       </a>
-                      <a href={item.x_link}>
-                        <FaXTwitter />
-                      </a>
+                     
                     </div>
                   </div>
                 </div>

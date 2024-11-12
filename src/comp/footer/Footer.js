@@ -20,7 +20,7 @@ const Footer = ({setPopup}) => {
             <Link to="/blog">Blogs</Link>
             <Link to="/contact">Contact</Link>
           </div>
-          <p>Copyright/Maulees Tatoos</p>
+          <p>Copyright/Moulees Tattoo</p>
         </div>
       </div>
       <BottomIcons setPopup={setPopup}  />

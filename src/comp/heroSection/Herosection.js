@@ -68,8 +68,8 @@ const Herosection = ({ herodata }) => {
                 <MdOutlineCall />
               </a>
             </div>
-            <Link className="btn"  to="/contact" >
-              <h5 className="btn_text">Book an appoinment</h5>
+            <Link className="btn"  to="/Moulee’s_care" >
+              <h5 className="btn_text">Moulee’s Care</h5>
             </Link>
           </div>
         </div>

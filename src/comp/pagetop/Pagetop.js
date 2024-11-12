@@ -3,7 +3,7 @@ import SlideText from "../slideText/SlideText";
 import "./pagetop.scss";
 import logo from "../../assets/logo2.png";
 
-const Pagetop = ({ pageHeader, backgroundImage }) => {
+const Pagetop = ({ pageHeader, backgroundImage, page_tagline }) => {
   return (
     <>
       <div
@@ -20,6 +20,9 @@ const Pagetop = ({ pageHeader, backgroundImage }) => {
           </div>
           <div className="text">
             <h1>{pageHeader}</h1>
+            <p>
+              {page_tagline}
+            </p>
           </div>
         </div>
       </div>
