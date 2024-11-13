@@ -1,0 +1,320 @@
+.tattoo-care-parent {
+  height: auto;
+  width: 100%;
+  padding: 40px 0px;
+
+  .tatto-care-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--unit);
+
+    img {
+      width: 20%;
+    }
+
+    .promise-title {
+      display: flex;
+      gap: calc(var(--unit) / 2);
+      justify-content: center;
+      align-items: center;
+      p {
+        font-size: calc(var(--unit) - 2px);
+        line-height: 100%;
+        text-align: center;
+      }
+      .strong_heading {
+        width: fit-content;
+        color: var(--accent);
+        font-size: calc(var(--unit));
+      }
+    }
+  }
+}
+
+.tattoo-care-about {
+  height: auto;
+  padding: 40px 0px;
+
+  .tattoo-care-about-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--unit) / 2);
+
+    .heading {
+      color: var(--accent);
+    }
+
+    p {
+      text-align: center;
+    }
+  }
+}
+
+.tattoo-care-list {
+  width: 100%;
+  height: auto;
+  background-color: var(--lightgrey);
+  padding: 20px 0px;
+
+  .tattoo-care-list-cont {
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: var(--unit);
+
+    .left-image {
+      width: 50%;
+      //   height: 100%;
+      display: flex;
+      position: relative;
+      justify-content: flex-start;
+      align-items: flex-end;
+
+      .right {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        .logo {
+          height: 50%;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img {
+            width: 100%;
+          }
+        }
+        .tattoo_care_image_2 {
+          height: 50%;
+          width: 100%;
+        }
+      }
+
+      .tattoo_care_image_1 {
+        height: 100%;
+        width: 50%;
+      }
+    }
+
+    .right-list {
+      padding: 50px;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: var(--unit);
+
+      h4 {
+        color: var(--accent);
+      }
+    }
+  }
+}
+
+.tattoo-care-product {
+  height: auto;
+  width: 100%;
+
+  padding: 40px 0px;
+
+  .tattoo-care-product-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--unit);
+
+    h1 {
+      font-size: calc(var(--unit) + 5px);
+    }
+
+    .product_list {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--unit);
+
+      .card {
+        aspect-ratio: 1;
+        background-color: var(--white);
+        box-shadow: var(--shadow);
+        border-radius: var(--unit);
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+
+        .pi {
+          width: 100%;
+          height: 100%;
+
+          &:nth-child(1) {
+            background-image: url("../../assets/tattoo_care_image.jpeg");
+          }
+         &.pi2 {
+            background-image: url("../../assets/tattoo_care_image_1.jpeg");
+          }
+        }
+
+        .content {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          background-color: white;
+          top: 85%;
+          left: 0;
+          transition: var(--trans);
+          padding: 0px 10px;
+          backdrop-filter: blur(5px);
+         
+          h1 {
+            height: 15%;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+
+          p {
+            height: 85%;
+            color: var(--white);
+            text-align: center;
+          }
+        }
+
+        &:hover {
+          .content {
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.389);
+           
+
+            h1 {
+              color: var(--accent);
+            }
+          }
+        }
+
+        &:nth-child(3){
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: var(--unit);
+
+            p{
+                text-align: center;
+            }
+        }
+      }
+    }
+  }
+}
+
+
+.why-tatto-care{
+    width: 100%;
+    background-color: var(--lightgrey);
+    padding: 40px 0px;
+
+    .why-tattoo-care-cont{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      gap: var(--unit);
+
+      h1{
+        font-size: calc(var(--unit));
+        color: var(--accent);
+      }
+
+      p{
+        text-align: center;
+      }
+    }
+}
+
+.connect-tattoo-care{
+width: 100%;
+padding: 20px 0px;
+background-color: var(--white);
+
+.connect-tatto-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--unit);
+
+    p{
+        text-align: center;
+    }
+}
+}
+
+@media screen and (max-width: 980px) {
+  .tattoo-care-list {
+    .tattoo-care-list-cont {
+      flex-direction: column !important;
+
+      .left-image {
+        width: 100%;
+      }
+
+      .right-list {
+        width: 100%;
+        padding: 20px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 650px) {
+  .tatto-care-cont {
+    .promise-title {
+      flex-direction: column !important;
+      text-align: center;
+    }
+  }
+
+  .tattoo-care-product{
+
+    .tattoo-care-product-cont {
+
+
+        .product_list{
+            padding: 20px !important;
+
+        }
+    }
+}
+}
+
+
+@media screen and (max-width: 880px){
+    .tattoo-care-product{
+
+        .tattoo-care-product-cont {
+
+
+            .product_list{
+                padding: 0px 150px;
+grid-template-columns: repeat(1, 1fr);
+            }
+        }
+    }
+
+}

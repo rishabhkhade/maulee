@@ -14,7 +14,7 @@ const SlideText = ({
       <div class="marquee-w parent"   style={{top:topPosition}} >
         <div class="marquee">
           <h1>
-          We Are The Best&nbsp;
+          We Are The Best&nbsp;&nbsp;&nbsp;
           </h1>
         </div>
         <div class="marquee marquee2">

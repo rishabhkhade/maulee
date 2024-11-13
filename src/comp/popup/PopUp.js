@@ -92,7 +92,7 @@ const PopUp = ({setPopup}) => {
                   required
                 />
 
-                <button className="btn2" type="submit">
+                <button className="btn" type="submit">
                   <div className="btn_text ">Submit</div>
                 </button>
               </form>
