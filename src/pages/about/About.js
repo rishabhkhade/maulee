@@ -136,11 +136,10 @@ const About = () => {
           <div className="middle-line">
             <div className="line"></div>
 
-            <div className="circle"></div>
-            <div className="circle"></div>
-            <div className="circle"></div>
-            <div className="circle"></div>
-            <div className="circle"></div>
+            {journeyData.map((index) => (
+              <div className="circle" key={index}></div>
+            ))}
+             
           </div>
         </div>
       </div>
@@ -179,11 +178,9 @@ const About = () => {
                     <p>{item.description}</p>
 
                     <div className="icons">
-                   
                       <a href={item.insta_link}>
                         <IoLogoInstagram />
                       </a>
-                     
                     </div>
                   </div>
                 </div>
