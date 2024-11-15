@@ -1,0 +1,29 @@
+.cookies-parent {
+    // background-color: var(--white);
+    margin-top: 80px;
+
+
+    .cookies {
+        overflow: hidden !important;
+        padding: 10px 0px;
+
+        h4 {
+            font-weight: bold;
+        }
+
+    }
+
+    .cookies {
+      
+
+        h1 {
+            text-align: center;
+        }
+
+        .suggest-text {
+            font-weight: bold !important;
+            color: rgba(0, 0, 0, 0.726) !important;
+            font-size: 17px;
+        }
+    }
+}

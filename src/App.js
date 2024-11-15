@@ -15,6 +15,8 @@ import { useEffect, useState } from "react";
 import Testimoneal from "./pages/testimoneal/Testimoneal";
 import BlogView from "./pages/blogview/BlogView";
 import Tatto_care from "./pages/tattocare/Tatto_care";
+import Privacy from "./pages/privacy/Privacy";
+import Cookies from "./pages/cookies/Cookies";
 
 function App() {
   const [popup, setPopup] = useState(false);
@@ -44,6 +46,8 @@ const [blogview, setBlogView] = useState([])
           <Route path="/Moulee’s_care" element={<Tatto_care />} />
           <Route path="/blogView" element={<BlogView blogview={blogview} />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/cookies" element={<Cookies />} />
         </Routes>
         <Footer setPopup={setPopup} />
         <AfterFooter />

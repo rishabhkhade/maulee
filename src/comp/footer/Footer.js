@@ -4,7 +4,7 @@ import logo_footer from "../../assets/logo.png";
 import { Link } from "react-router-dom";
 import BottomIcons from "../bottom-icons/BottomIcons";
 
-const Footer = ({setPopup}) => {
+const Footer = ({ setPopup }) => {
   return (
     <>
       <div className="parent footer-parent">
@@ -20,10 +20,21 @@ const Footer = ({setPopup}) => {
             <Link to="/blog">Blogs</Link>
             <Link to="/contact">Contact</Link>
           </div>
-          <p>Copyright/Moulees Tattoo</p>
+          <div className="copyright-div">
+          
+              <a href="">Developed by RK</a>
+          
+        
+              <p>Copyright/Moulees Tattoo</p>
+      
+            <Link className="privacy-cookies">
+              <Link to="/privacy">Privacy</Link>
+              <Link to="/cookies">Cookies</Link>
+            </Link>
+          </div>
         </div>
       </div>
-      <BottomIcons setPopup={setPopup}  />
+      <BottomIcons setPopup={setPopup} />
     </>
   );
 };
