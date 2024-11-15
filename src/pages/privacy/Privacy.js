@@ -6,7 +6,7 @@ function Privacy() {
     <>
       <div className="privacy-parent parent">
         <div className="privacy-cont cont">
-          <h1 className="title">Privacy Policy for Moulee Tattoo</h1>
+          <h1 className="title">Privacy Policy for Moulee's Tattoo</h1>
           <p>
             <span>
               {" "}

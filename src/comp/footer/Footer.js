@@ -22,7 +22,7 @@ const Footer = ({ setPopup }) => {
           </div>
           <div className="copyright-div">
           
-              <a href="">Developed by RK</a>
+              <a href="https://wa.me/+917028997574">Developed by RK</a>
           
         
               <p>Copyright/Moulees Tattoo</p>
