@@ -45,6 +45,10 @@
         letter-spacing: 1px;
         word-spacing: 2px;
         font-weight: 300;
+
+        &:hover {
+          color: var(--white);
+        }
       }
 
       .privacy-cookies {
