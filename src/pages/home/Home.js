@@ -8,6 +8,7 @@ import { BsArrowDown } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { CiLocationOn } from "react-icons/ci";
 import { FaPlus } from "react-icons/fa6";
+import { Helmet } from "react-helmet";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -93,6 +94,45 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Moulee's Tattoo Art Studio | Best Tattoo Studio</title>
+        <meta
+          name="description"
+          content="Best tattoo studio in Pune. Moulee's Tattoo Art offers customized permanent tattoo services in Pune. Our artists believe in being genuine with our designs."
+        />
+        <meta
+          name="keywords"
+          content="Best tattoo studio in Pune, Moulee's Tattoo Art, Moulee's Art, Moulee's Tattoo, Tattoo in viman nagar, best tatto in viman nagar, near by tattoo, tattoos, vintage tattoos, back tattoos, sleeve tattoos"
+        />
+        <link rel="canonical" href="https://www.mouleestattooart.com/" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "Moulee's Tattoo Art Studio",
+            description:
+              "Best tattoo studio in Pune. Moulee's Tattoo Art offers customized permanent tattoo services in Pune. Our artists believe in being genuine with our designs.",
+            url: "https://www.mouleestattooart.com/",
+            telephone: "+91-1234567890", // Add your phone number
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "Viman Nagar",
+              addressLocality: "Pune",
+              addressRegion: "Maharashtra",
+              postalCode: "411014",
+              addressCountry: "IN",
+            },
+            openingHours: "Mo-Su 10:00-20:00",
+            sameAs: [
+              "https://www.facebook.com/mouleestattooart",
+              "https://www.instagram.com/mouleestattooart",
+              "https://www.twitter.com/mouleestattooart",
+            ],
+            image: "https://www.mouleestattooart.com/logo.jpg", // Replace with your logo/image URL
+          })}
+        </script>
+      </Helmet>
+
       <Herosection herodata={herodata} />
 
       {/* mini about */}
@@ -129,7 +169,11 @@ const Home = () => {
 
           <div className="right">
             <div className="top">
-              <SectionHeading line_text="About Us" fill_text="About Us" textalign="start"  />
+              <SectionHeading
+                line_text="About Us"
+                fill_text="About Us"
+                textalign="start"
+              />
               <p>
                 At Moulees Tattoo Art, our studio reflects the dedication and
                 passion we pour into every piece of work. Recognized as the Best
@@ -167,7 +211,6 @@ const Home = () => {
         <div
           className="mini-gallery-cont cont"
           data-aos="fade-up"
-         
           data-aos-duration="1000"
         >
           <div className="left">
@@ -218,14 +261,14 @@ const Home = () => {
             >
               {images.map((item, index) => (
                 <SwiperSlide className="gallery-swiperslide" key={index}>
-                 <Link to="/mauleeswork" >
-                 <div
-                    className="tatto-image bg-img-cover"
-                    style={{ backgroundImage: `url(${item.image})` }}
-                  >
-                    <p className="tatto-name"> {item.tattoName} </p>
-                  </div>
-                 </Link>
+                  <Link to="/mauleeswork">
+                    <div
+                      className="tatto-image bg-img-cover"
+                      style={{ backgroundImage: `url(${item.image})` }}
+                    >
+                      <p className="tatto-name"> {item.tattoName} </p>
+                    </div>
+                  </Link>
                 </SwiperSlide>
               ))}
 
@@ -239,11 +282,8 @@ const Home = () => {
           </div>
         </div>
 
-        <div
-          className="bottom-cont cont"
-         
-        >
-          <Link className="btn"  to="/mauleeswork" >
+        <div className="bottom-cont cont">
+          <Link className="btn" to="/mauleeswork">
             <h5 className="btn_text">Know More</h5>
           </Link>
         </div>
@@ -262,9 +302,12 @@ const Home = () => {
               <span>
                 <CountUp end={6500} />
               </span>
-              <span className="plus_icon"> <FaPlus /></span>
+              <span className="plus_icon">
+                {" "}
+                <FaPlus />
+              </span>
             </h1>
-          
+
             <h6 className="text">Tattoo designs</h6>
           </div>
           <div className="middle">
@@ -275,7 +318,10 @@ const Home = () => {
               <span>
                 <CountUp end={5000} />
               </span>
-              <span className="plus_icon"> <FaPlus /></span>
+              <span className="plus_icon">
+                {" "}
+                <FaPlus />
+              </span>
             </h1>
             <h6 className="text">Our Clients</h6>
           </div>
@@ -323,7 +369,7 @@ const Home = () => {
                         ))}
                     </div>
                   </div>
-                  <Link className="btn2"  to="our_Clients" >
+                  <Link className="btn2" to="our_Clients">
                     <h5 className="btn_text">Know More</h5>
                   </Link>
                 </div>
@@ -359,9 +405,7 @@ const Home = () => {
             </div>
           </div>
           <div className="right">
-            <p className="number">
-              1234567890
-            </p>
+            <p className="number">1234567890</p>
             <h5 className="righttext">Contact With Us</h5>
             <div className="btn">
               <h5 className="btn_text">Click here</h5>
