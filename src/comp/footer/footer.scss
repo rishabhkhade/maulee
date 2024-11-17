@@ -33,19 +33,18 @@
     }
 
     .copyright-div {
-        width: 100%;
+      width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
 
-      a{
+      a {
         color: rgba(255, 255, 255, 0.473);
-          font-size: 1rem;
-          line-height: 28px;
-          letter-spacing: 1px;
-          word-spacing: 2px;
-          font-weight: 300;
-
+        font-size: 1rem;
+        line-height: 28px;
+        letter-spacing: 1px;
+        word-spacing: 2px;
+        font-weight: 300;
       }
 
       .privacy-cookies {
@@ -61,7 +60,7 @@
           word-spacing: 2px;
           font-weight: 300;
 
-          &:hover{
+          &:hover {
             color: var(--white);
           }
         }
@@ -84,6 +83,16 @@
       img {
         width: 200px !important;
       }
+    }
+  }
+}
+
+@media (max-width: 620px) {
+  .copyright-div {
+    flex-direction: column;
+    gap: calc(var(--unit)/2);
+
+    .privacy-cookies {
     }
   }
 }
