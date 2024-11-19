@@ -17,6 +17,7 @@ import BlogView from "./pages/blogview/BlogView";
 import Tatto_care from "./pages/tattocare/Tatto_care";
 import Privacy from "./pages/privacy/Privacy";
 import Cookies from "./pages/cookies/Cookies";
+import ArtClasses from "./pages/artClasses/ArtClasses";
 
 function App() {
   const [popup, setPopup] = useState(false);
@@ -48,6 +49,7 @@ const [blogview, setBlogView] = useState([])
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/cookies" element={<Cookies />} />
+          <Route path="/artclasses" element={<ArtClasses />} />
         </Routes>
         <Footer setPopup={setPopup} />
         <AfterFooter />

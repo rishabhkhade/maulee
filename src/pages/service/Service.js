@@ -15,6 +15,7 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Navigation, Pagination } from "swiper/modules";
+import { Link } from "react-router-dom";
 const Service = () => {
   const serviceContent = [
     {
@@ -41,6 +42,7 @@ const Service = () => {
       content:
         "Explore our collection of fine art and paintings, crafted by our talented artists. From stunning watercolor pieces to intricate, detailed artwork, each painting is a unique expression of creativity. Perfect for enhancing your home or workspace, our original pieces are available for purchase.",
       title: "Art Classes",
+      path_link:"/artclasses"
     },
   ];
 
@@ -180,7 +182,7 @@ const Service = () => {
               <SwiperSlide className="swiperslide">
                 <div className="service" key={index}>
                   <p>{item.content}</p>
-                  <div className="tag-text">{item.title}</div>
+                  <Link to={item.path_link} className="tag-text">{item.title}</Link>
                 </div>
               </SwiperSlide>
             ))}
