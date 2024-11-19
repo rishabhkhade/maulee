@@ -7,7 +7,7 @@ import { CiPlay1 } from "react-icons/ci";
 import video from "../../assets/video.webm";
 import ReactPlayer from "react-player";
 import { BiSolidVideos } from "react-icons/bi";
-import { IoIosArrowDropright, IoMdPhotos } from "react-icons/io";
+import { IoMdPhotos } from "react-icons/io";
 import { BsYoutube } from "react-icons/bs";
 import gallery_top_img from "../../assets/hero.png";
 import axios from "axios";
