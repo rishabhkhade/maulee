@@ -14,12 +14,12 @@ const SlideText = ({
       <div class="marquee-w parent"   style={{top:topPosition}} >
         <div class="marquee">
           <h1>
-          We Are The Best&nbsp;&nbsp;&nbsp;
+          Moulee's Tattoo Artist&nbsp;&nbsp;&nbsp;
           </h1>
         </div>
         <div class="marquee marquee2">
           <h1>
-          Tattoo Studio In Pune&nbsp;&nbsp;&nbsp;
+          Moulee's Tattoo Artist&nbsp;&nbsp;&nbsp;
           </h1>
         </div>
       </div>

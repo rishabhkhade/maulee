@@ -6,9 +6,8 @@ import akshayImage from "../../assets/akshay.webp";
 import narendraImage from "../../assets/narendra.webp";
 import sanketImage from "../../assets/sanket.webp";
 import arpitImage from "../../assets/arpit.webp";
-import { FaWhatsapp } from "react-icons/fa";
 import { IoLogoInstagram } from "react-icons/io";
-import { FaXTwitter } from "react-icons/fa6";
+import { Helmet } from "react-helmet";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import about_top_img from "../../assets/hero.png";
@@ -92,6 +91,23 @@ const About = () => {
 
   return (
     <>
+      <Helmet>
+        <title>
+          About Moulee’s Tattoo Art Studio | Personalized Tattoo Designs in Pune
+        </title>
+        <meta
+          name="description"
+          content="Moulee’s Tattoo Art Studio in Pune specializes in custom tattoo designs that create lasting memories. Our skilled artists work closely with clients to deliver high-quality, personalized tattoos in a comfortable and welcoming environment. Discover meaningful artwork tailored just for you."
+        />
+        <meta
+          name="keywords"
+          content="Moulee's Tattoo Art Studio,
+          Custom tattoos in Pune,Best tattoo studio Pune,Personalized tattoo designs,Spiritual tattoos Pune,High-quality tattoo art,
+          Tattoo artists Pune,Unique tattoo designs Pune,Tattoo studio near me,Comfortable tattoo studio Pune"
+        />
+        <link rel="canonical" href="https://www.mouleestattooart.com/about" />
+      </Helmet>
+
       <Pagetop pageHeader="About Us" backgroundImage={about_top_img} />
 
       <div className="about-parent parent">
@@ -139,7 +155,6 @@ const About = () => {
             {journeyData.map((index) => (
               <div className="circle" key={index}></div>
             ))}
-             
           </div>
         </div>
       </div>

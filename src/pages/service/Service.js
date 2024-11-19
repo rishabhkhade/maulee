@@ -4,6 +4,7 @@ import Pagetop from "../../comp/pagetop/Pagetop";
 import SectionHeading from "../../comp/sectionHeading/SectionHeading";
 import { IoIosArrowDown } from "react-icons/io";
 import service_top_img from "../../assets/hero.png";
+import { Helmet } from "react-helmet";
 
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -78,6 +79,33 @@ const Service = () => {
   };
   return (
     <>
+      <Helmet>
+        <title>
+          Moulee's Tattoo Art Studio | Best Tattoo Studio in Pune & Viman Nagar
+          | Art Classes by Moulee's Tattoo Art | Fine Art & Painting Creations |
+          Temporary Tattoos in Pune | Beautiful, Non-Permanent Designs |
+          Professional Piercing Services in Pune | Hygienic & Safe | Custom
+          Tattoos in Pune | Realism, Watercolor, & Traditional Styles | Fine Art
+          & Paintings by Moulee's Tattoo Art | Unique Creative Pieces
+        </title>
+        <meta
+          name="description"
+          content="Moulee's Tattoo Art Studio, the best tattoo studio in Pune and Viman Nagar, specializes in custom tattoo designs, expert cover-ups, and diverse styles like realism, traditional, and watercolor tattoos. Our skilled artists ensure every tattoo is a masterpiece tailored to your vision. Explore professional piercing services in a hygienic and safe environment, along with temporary tattoos that last 5-7 days, perfect for special occasions or testing a design. Enhance your creativity with our fine art classes and discover stunning paintings crafted by talented artists, ideal for home or workspace decoration. Experience exceptional artistry, personalized service, and a welcoming atmosphere at our clean and modern studio."
+        />
+        <meta
+          name="keywords"
+          content="Best tattoo studio in Pune,Best tattoo studio in Viman Nagar,Custom tattoo designs Pune,
+          Realism tattoos Pune,Watercolor tattoos Pune,
+          Traditional tattoos Pune,Neo-traditional tattoos Pune,
+          Tattoo cover-ups Pune,Professional piercing services Pune,
+          Hygienic piercing studio Pune,Temporary tattoos Pune,
+          Non-permanent tattoos Pune,Art classes Pune,
+          Fine art and paintings Pune,Original artwork for home,
+          Modern tattoo and art studio Pune"
+        />
+        <link rel="canonical" href="https://www.mouleestattooart.com/service" />
+      </Helmet>
+
       <Pagetop pageHeader="Our services" backgroundImage={service_top_img} />
 
       <div className="service-parent parent">
@@ -127,26 +155,25 @@ const Service = () => {
             navigation={{
               clickable: true,
             }}
-
             breakpoints={{
-              350:{
-                slidesPerView:1,
-                spaceBetween:30
+              350: {
+                slidesPerView: 1,
+                spaceBetween: 30,
               },
-              700:{
-                slidesPerView:2,
-                spaceBetween:50
+              700: {
+                slidesPerView: 2,
+                spaceBetween: 50,
               },
-              1000:{
-                slidesPerView:3,
-                spaceBetween:30
+              1000: {
+                slidesPerView: 3,
+                spaceBetween: 30,
               },
-              1200:{
-                slidesPerView:4,
-                spaceBetween:30
+              1200: {
+                slidesPerView: 4,
+                spaceBetween: 30,
               },
             }}
-            modules={[Pagination,Navigation]}
+            modules={[Pagination, Navigation]}
             className="mySwiper"
           >
             {serviceContent.map((item, index) => (

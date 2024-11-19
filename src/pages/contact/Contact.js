@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Contact.scss";
 import Pagetop from "../../comp/pagetop/Pagetop";
 import contact_top_img from "../../assets/hero.png";
+import { Helmet } from "react-helmet";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -33,6 +34,30 @@ const Contact = () => {
 
   return (
     <>
+      <Helmet>
+        <title>
+        Contact Us | Get in Touch with Moulee's Tattoo Art Studio
+        </title>
+        <meta
+          name="description"
+          content="Reach out to Moulee's Tattoo Art Studio for inquiries, appointments, and consultations. We're here to assist you with custom tattoos, piercing services, and more. Visit us in Pune or contact us online for exceptional service and artistry."
+        />
+        <meta
+          name="keywords"
+          content="Contact Moulee's Tattoo Art Studio,
+          Tattoo studio contact Pune,
+          Best tattoo studio Pune location,
+          Appointment for tattoos Pune,
+          Piercing services contact Pune,
+          Custom tattoo consultation Pune,
+          Tattoo and piercing inquiries,
+          Get in touch with Moulee's Tattoo Art,
+          Contact details for Moulee's Tattoo Art Studio,
+          Tattoo studio near me contact"
+        />
+        <link rel="canonical" href="https://www.mouleestattooart.com/contact" />
+      </Helmet>
+
       <Pagetop pageHeader="Contact Us" backgroundImage={contact_top_img} />
       <div className="parent contact-parent">
         <div
