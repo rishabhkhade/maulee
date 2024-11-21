@@ -9,16 +9,16 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
 function Blog({ setBlogView }) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [blogData, setBlogData] = useState([]);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 6;
 
-  const blogViewPage = (id)=>{
+  const blogViewPage = (id) => {
     setBlogView(id);
-    navigate("/blogView")
-  }
+    navigate("/blogView");
+  };
   const blogsData = async () => {
     try {
       const response = await axios.get(
@@ -55,7 +55,6 @@ function Blog({ setBlogView }) {
         });
 
       setBlogData(blogPosts);
-
     } catch (error) {
       console.log(error);
     }
@@ -99,48 +98,56 @@ function Blog({ setBlogView }) {
             />
           </div>
           <div className="blog-data-cont">
-            {paginatedBlogs.filter((item)=>search === " " ? true :item.title.toLowerCase().includes(search.toLocaleLowerCase())).map((item, index) => {
-              return (
-                <div
-                  className="blog-card"
-                  key={index}
-                 onClick={()=>blogViewPage(item.imageId)}
-                >
-                  <div className="blog-img-box">
-                    <div className="card-img-overlay">
-                      <span className="plus-icon">
-                        <FiPlus />
-                      </span>
+            {paginatedBlogs
+              .filter((item) =>
+                search === " "
+                  ? true
+                  : item.title
+                      .toLowerCase()
+                      .includes(search.toLocaleLowerCase())
+              )
+              .map((item, index) => {
+                return (
+                  <div
+                    className="blog-card"
+                    key={index}
+                    onClick={() => blogViewPage(item.imageId)}
+                  >
+                    <div className="blog-img-box">
+                      <div className="card-img-overlay">
+                        <span className="plus-icon">
+                          <FiPlus />
+                        </span>
+                      </div>
+                      <div
+                        className="blog-img bg-img-cover"
+                        style={{ backgroundImage: `url(${item.imageUrl})` }}
+                      >
+                        <p className="cat">{item.category}</p>
+                      </div>
                     </div>
-                    <div
-                      className="blog-img bg-img-cover"
-                      style={{ backgroundImage: `url(${item.imageUrl})` }}
-                    >
-                      <p className="cat">{item.category}</p>
+                    <div className="blog-content-section">
+                      <h2 className="blog-title">{item.title}</h2>
+                      <p
+                        className="blog-description"
+                        dangerouslySetInnerHTML={{
+                          __html: item.description.slice(0, 50),
+                        }}
+                      />
+                      <div className="date-comment-box">
+                        <p className="date">
+                          <span className="d-icon">
+                            <GoClock />
+                          </span>
+                          <span>
+                            {new Date(item.uploadDate).toLocaleDateString()}
+                          </span>
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <div className="blog-content-section">
-                    <h2 className="blog-title">{item.title}</h2>
-                    <p
-                      className="blog-description"
-                      dangerouslySetInnerHTML={{
-                        __html: item.description.slice(0, 50),
-                      }}
-                    />
-                    <div className="date-comment-box">
-                      <p className="date">
-                        <span className="d-icon">
-                          <GoClock />
-                        </span>
-                        <span>
-                          {new Date(item.uploadDate).toLocaleDateString()}
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
+                );
+              })}
           </div>
 
           <div className="pagination">
