@@ -114,6 +114,11 @@
         gap: var(--unit);
         padding: 40px var(--unit) 0px var(--unit);
 
+        h1{
+          font-size: var(--unit);
+          text-align: center;
+        }
+
         h5 {
           text-align: center;
           color: var(--accent);

@@ -206,6 +206,20 @@ const Home = () => {
         </div>
       </div>
 
+      {/* tattoo care */}
+      <div class="tattoo-care-strip parent">
+        <div class="tattoo-care-cont cont">
+          <p>
+          Moulee’s Care - a lifetime Commitment !!!
+          </p>
+          <Link to="/Moulee’s_care" class="btn">
+            <div class="btn_text">
+              Explore Now
+            </div>
+          </Link>
+        </div>
+      </div>
+
       {/* gallery semi section */}
       <div className="mini-gallery-parent parent">
         <div
@@ -214,7 +228,7 @@ const Home = () => {
           data-aos-duration="1000"
         >
           <div className="left">
-            <h2 className="heading">Our Best Tattoo Works</h2>
+            <h2 className="heading">Tattoo's Gallery</h2>
           </div>
           <div className="right">
             <Swiper
@@ -316,14 +330,14 @@ const Home = () => {
           <div className="left">
             <h1 className="count">
               <span>
-                <CountUp end={5000} />
+                <CountUp end={8} />
               </span>
               <span className="plus_icon">
                 {" "}
                 <FaPlus />
               </span>
             </h1>
-            <h6 className="text">Our Clients</h6>
+            <h6 className="text">Our Experience</h6>
           </div>
         </div>
       </div>
@@ -405,11 +419,11 @@ const Home = () => {
             </div>
           </div>
           <div className="right">
-            <p className="number">1234567890</p>
+            <p className="number">9890665043</p>
             <h5 className="righttext">Contact With Us</h5>
-            <div className="btn">
+            <Link to="/contact" className="btn">
               <h5 className="btn_text">Click here</h5>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

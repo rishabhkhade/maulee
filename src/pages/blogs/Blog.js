@@ -99,7 +99,7 @@ function Blog({ setBlogView }) {
             />
           </div>
           <div className="blog-data-cont">
-            {paginatedBlogs.map((item, index) => {
+            {paginatedBlogs.filter((item)=>search === " " ? true :item.title.toLowerCase().includes(search.toLocaleLowerCase())).map((item, index) => {
               return (
                 <div
                   className="blog-card"

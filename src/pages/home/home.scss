@@ -74,6 +74,26 @@
   }
 }
 
+
+.tattoo-care-strip{
+  width: 100%;
+  background-color: var(--accent);
+  padding: 10px 0px;
+
+
+  .tattoo-care-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--unit)/2);
+
+    p{
+      color: var(--white);
+    }
+  }
+}
+
 .mini-gallery-parent {
   width: 100%;
   height: auto;

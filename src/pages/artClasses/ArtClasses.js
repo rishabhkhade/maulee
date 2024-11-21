@@ -1,7 +1,7 @@
 import React from "react";
 import Pagetop from "../../comp/pagetop/Pagetop";
 import "./artclasses.scss";
-
+import service_top_img from "../../assets/hero.png";
 // icons
 
 import mission_icon from "../../assets/mission_icon.png";
@@ -66,10 +66,50 @@ const ArtClasses = () => {
         "Ethical Considerations",
       ],
     },
+    {
+      id: 4,
+      title: "Communication",
+      heading:
+        "Master tattooing by selling experiences through meaningful communication with clients.",
+      points: [
+        "Professionalism",
+        "Active Listening",
+        "Articulation of Ideas",
+        "Portfolio Presentation",
+        "Client Consultations"
+      ],
+    },
+    {
+      id: 5,
+      title: "Technicals Aspects of Tattooing",
+      heading:
+        "We will tech all technical knowledge to apply artistic vision or live skin very efficient.",
+      points: [
+        "Tattoo Machine mechanism and handling",
+        "Needles theory",
+        "Lining shading filling texture",
+        "Color theory as per tattooing.",
+        "Developing a unique style."
+      ],
+    },
+    {
+      id: 6,
+      title: "Business Management",
+      heading:
+        "Instructing business management in the tattoo industry involves imparting strategic skills for studio success",
+      points: [
+        "Artistic FundamentalsIntroduction to Business Basics",
+        "Financial Management",
+        "Marketing and Branding",
+        "Client Relations",
+        "Inventory and Equipment Management",
+        "Employee Management"
+      ],
+    },
   ];
   return (
     <>
-      <Pagetop pageHeader="Art Classes" />
+      <Pagetop pageHeader="Art Classes"  backgroundImage={service_top_img} />
 
       <div class="art-classes parent">
         <div class="art-classes-cont cont">
@@ -107,9 +147,30 @@ const ArtClasses = () => {
        
           />
           <div class="top">
-            {curriculam.map((item, index) => (
+            {curriculam.slice(0,3).map((item, index) => (
               <div class="card-data">
                 <div class="index">{item.id}</div>
+                <h1>
+                  {item.title}
+                </h1>
+                <h5>{item.heading}</h5>
+                <ul>
+                  {item.points.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+
+                <ul></ul>
+              </div>
+            ))}
+          </div>
+          <div class="top">
+            {curriculam.slice(3,6).map((item, index) => (
+              <div class="card-data">
+                <div class="index">{item.id}</div>
+                <h1>
+                  {item.title}
+                </h1>
                 <h5>{item.heading}</h5>
                 <ul>
                   {item.points.map((item) => (

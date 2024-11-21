@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./afterFooter.scss";
 import { FaWhatsapp } from "react-icons/fa";
 import { IoCallOutline } from "react-icons/io5";
@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import { BsArrowDown } from "react-icons/bs";
 
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import axios from "axios";
 
 function AfterFooter() {
   const data = [
@@ -29,6 +30,56 @@ function AfterFooter() {
         " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum rem perferendis quas placeat, amet officiis atque ab! Natus, distinctio qui? perferendis quas placeat, amet officiis atque ab! Natus, distinctio qui? distinctio qui?atque ab! Natus, distinctio qui? distinctio qui? 4",
     },
   ];
+
+  const [blogData, setBlogData] = useState([]);
+
+  const blogsData = async () => {
+    try {
+      const response = await axios.get(
+        `${process.env.REACT_APP_URL}/posts?_embed`,
+        {
+          params: {
+            per_page: 100,
+          },
+        }
+      );
+
+      const data = response.data;
+      const blogPosts = data
+        .filter((post) => {
+          // Check if the post belongs to the 'Blog' category
+          return (
+            post._embedded &&
+            post._embedded["wp:term"] &&
+            post._embedded["wp:term"][0].some(
+              (category) => category.name === "Blog"
+            )
+          );
+        })
+        .map((post) => {
+          const featuredMedia = post._embedded["wp:featuredmedia"]?.[0] || {};
+          return {
+            title: post.title.rendered,
+            description: post.excerpt.rendered,
+            uploadDate: post.date,
+            imageUrl: featuredMedia.source_url || "",
+            imageId: featuredMedia.id || null,
+            category: "Blog",
+          };
+        });
+
+      setBlogData(blogPosts);
+
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    blogsData();
+  }, []);
+
+
 
   return (
     <>
@@ -52,9 +103,15 @@ function AfterFooter() {
           modules={[Autoplay, Navigation]}
           className="mySwiper parent"
         >
-          {data.map((item, index) => (
+          {blogData.slice(0,4).map((item, index) => (
             <SwiperSlide className="parent">
-              <p className="cont paragraph ">{item.description}</p>
+                <p
+                      className="cont paragraph"
+                      dangerouslySetInnerHTML={{
+                        __html: item.description.slice(0, 80),
+                      }}
+                    />
+            
             </SwiperSlide>
           ))}
           <div className="custom-prev">
