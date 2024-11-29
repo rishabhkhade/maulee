@@ -5,32 +5,33 @@ import contact_top_img from "../../assets/hero.png";
 import { Helmet } from "react-helmet";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    lastname: "",
-    contact: "",
-    email: "",
-    message: "",
-  });
+ 
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
+  function Submit(e) {
     e.preventDefault();
-    alert("Form submitted!");
-    setFormData({
-      name: "",
-      lastname: "",
-      contact: "",
-      email: "",
-      message: "",
-    });
-  };
+  
+    const formEle = document.querySelector("form");
+    const formDatab = new FormData(formEle);
+  
+    fetch(
+      "https://script.google.com/macros/s/AKfycbyja3Pim7AHQvnRZWueQDFuDTuLKvWagL1NchT_bmLTT9dwpN00_MPs9bdAQLr4bD0R/exec",
+      {
+        method: "POST",
+        body: formDatab,
+      }
+    )
+      .then((res) => res.text())
+      .then((data) => {
+        console.log(data);
+        alert(data); 
+        formEle.reset(); 
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert("Something went wrong. Please try again.");
+      });
+  }
+  
 
   return (
     <>
@@ -76,15 +77,14 @@ const Contact = () => {
               </p>
             </div>
             <div className="contact-bottom">
-              <form onSubmit={handleSubmit}>
+              <form className="form" onSubmit={(e) => Submit(e)}>
                 <div className="form-group">
                   <input
                     type="text"
                     id="name"
                     name="name"
                     placeholder="First Name"
-                    value={formData.name}
-                    onChange={handleChange}
+                  
                     required
                   />
                   <input
@@ -92,8 +92,7 @@ const Contact = () => {
                     id="lastname"
                     name="lastname"
                     placeholder="Last Name"
-                    value={formData.lastname}
-                    onChange={handleChange}
+                   
                     required
                   />
                 </div>
@@ -104,8 +103,7 @@ const Contact = () => {
                     id="email"
                     name="email"
                     placeholder="Email"
-                    value={formData.email}
-                    onChange={handleChange}
+                   
                     required
                   />
                   <input
@@ -113,8 +111,7 @@ const Contact = () => {
                     id="contact"
                     name="contact"
                     placeholder="Contact"
-                    value={formData.contact}
-                    onChange={handleChange}
+                  
                     required
                   />
                 </div>
@@ -123,8 +120,7 @@ const Contact = () => {
                   id="message"
                   name="message"
                   placeholder="Your Message"
-                  value={formData.message}
-                  onChange={handleChange}
+                 
                   required
                 />
 
