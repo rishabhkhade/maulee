@@ -59,6 +59,7 @@ const Testimoneal = () => {
             line_text="Client's Voice"
             fill_text="Client's Voice"
           />
+          <p>Your <strong>stories</strong> matter to us. Here's what our <strong>amazing clients</strong> have shared about their <strong>experiences</strong> at <strong style={{color:"var(--accent)"}}>Moulees Tatoo Art Studio</strong>.</p>
         </div>
         <div class="testimoneal-cont cont">
           <div class="client-video">

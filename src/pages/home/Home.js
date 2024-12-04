@@ -175,13 +175,13 @@ const Home = () => {
                 textalign="start"
               />
               <p>
-                At Moulees Tattoo Art, our studio reflects the dedication and
+                &nbsp; At <strong style={{color:"var(--accent)"}}>Moulee's Tattoo Art</strong>, our studio reflects the dedication and
                 passion we pour into every piece of work. Recognized as the Best
                 Tattoo Studio in Pune, we are proud of maintaining one of the
-                cleanest and most hygienic tattoo spaces. Our atmosphere feels
-                like a second home, where both artistry and integrity thrive. We
+                <strong> cleanest</strong> and <strong>most hygienic</strong> tattoo spaces.<br/> &nbsp;&nbsp;Our atmosphere feels
+                like a <strong>second home</strong>, where both artistry and integrity thrive. We
                 spend countless hours here, perfecting our craft and ensuring
-                every detail aligns with our high standards. Moulees even stands
+                every detail aligns with our <strong>high standards</strong>.<br/>&nbsp; Moulees even stands
                 as the Best Tattoo Studio in Viman Nagar from last 8 years.
                 Nestled in a sleek, modern building with hassle-free parking, we
                 invite you to visit us and experience our space in person.
@@ -210,7 +210,7 @@ const Home = () => {
       <div class="tattoo-care-strip parent">
         <div class="tattoo-care-cont cont">
           <p>
-          Moulee’s Care - a lifetime Commitment !!!
+          <strong>Moulee’s Care</strong> - a lifetime Commitment !!!
           </p>
           <Link to="/Moulee’s_care" class="btn">
             <div class="btn_text">
@@ -228,7 +228,7 @@ const Home = () => {
           data-aos-duration="1000"
         >
           <div className="left">
-            <h2 className="heading">Tattoo's Gallery</h2>
+            <h2 className="heading">Our Creation's</h2>
           </div>
           <div className="right">
             <Swiper
@@ -280,7 +280,7 @@ const Home = () => {
                       className="tatto-image bg-img-cover"
                       style={{ backgroundImage: `url(${item.image})` }}
                     >
-                      <p className="tatto-name"> {item.tattoName} </p>
+                      {/* <p className="tatto-name"> {item.tattoName} </p> */}
                     </div>
                   </Link>
                 </SwiperSlide>
@@ -298,7 +298,7 @@ const Home = () => {
 
         <div className="bottom-cont cont">
           <Link className="btn" to="/mauleeswork">
-            <h5 className="btn_text">Know More</h5>
+            <h5 className="btn_text">Explore Gallery</h5>
           </Link>
         </div>
       </div>
@@ -322,7 +322,7 @@ const Home = () => {
               </span>
             </h1>
 
-            <h6 className="text">Tattoo designs</h6>
+            <h4 className="text">Tattoo Creations</h4>
           </div>
           <div className="middle">
             <h4 className="countTitle">Our Happy Success</h4>
@@ -330,7 +330,7 @@ const Home = () => {
           <div className="left">
             <h1 className="count">
               <span>
-                <CountUp end={8} />
+                <CountUp end={9} />
               </span>
               <span className="plus_icon">
                 {" "}
@@ -420,7 +420,7 @@ const Home = () => {
           </div>
           <div className="right">
             <p className="number">9890665043</p>
-            <h5 className="righttext">Contact With Us</h5>
+            <h5 className="righttext">Connect With Us</h5>
             <Link to="/contact" className="btn">
               <h5 className="btn_text">Click here</h5>
             </Link>
