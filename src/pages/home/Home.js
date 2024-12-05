@@ -7,6 +7,8 @@ import { MdOutlineCall } from "react-icons/md";
 import { BsArrowDown } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { CiLocationOn } from "react-icons/ci";
+import fill_protectionlicon from "../../assets/fill_protection.webp"
+
 import { FaPlus } from "react-icons/fa6";
 import { Helmet } from "react-helmet";
 // Import Swiper styles
@@ -22,6 +24,14 @@ import icon1 from "../../assets/Mask group.png";
 import image from "../../assets/tatto_images/img_1.webp";
 import heroimage from "../../assets/tArtist.webp";
 import ReactPlayer from "react-player";
+
+// home gallery image 
+import image1 from "../../assets/tatto_images/tatto_1.webp"
+import image2 from "../../assets/tatto_images/tattoo_2.webp"
+import image3 from "../../assets/tatto_images/tattoo_3.webp"
+import image4 from "../../assets/tatto_images/tattoo_4.webp"
+import image5 from "../../assets/tatto_images/tattoo_5.webp"
+import image6 from "../../assets/tatto_images//image_6.webp"
 const Home = () => {
   const herodata = [
     {
@@ -75,19 +85,27 @@ const Home = () => {
 
   const images = [
     {
-      image: image,
+      image: image1,
       tattoName: "lorem lipsum",
     },
     {
-      image: image,
+      image: image2,
       tattoName: "lorem lipsum",
     },
     {
-      image: image,
+      image: image3,
       tattoName: "lorem lipsum",
     },
     {
-      image: image,
+      image: image4,
+      tattoName: "lorem lipsum",
+    },
+    {
+      image: image5,
+      tattoName: "lorem lipsum",
+    },
+    {
+      image: image6,
       tattoName: "lorem lipsum",
     },
   ];
@@ -212,7 +230,8 @@ const Home = () => {
           <p>
           <strong>Moulee’s Care</strong> - a lifetime Commitment !!!
           </p>
-          <Link to="/Moulee’s_care" class="btn">
+          <Link to="/Moulee’s_care" class="btn care_btn">
+          <img className="btn_text" src={fill_protectionlicon} alt=""/>
             <div class="btn_text">
               Explore Now
             </div>

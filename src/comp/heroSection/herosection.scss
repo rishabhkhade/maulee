@@ -81,6 +81,14 @@
           font-size: calc(var(--unit) + 10px);
           color: var(--white);
         }
+
+      }
+
+      .hero_btn{
+        padding: 10px 20px;
+        img{
+          height: 40px;
+        }
       }
     }
   }

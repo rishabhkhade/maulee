@@ -58,5 +58,6 @@ transform: translateY(-20px);
     .paragraph{
         font-size: calc(var(--unit)/2) !important;
         line-height: 15px !important;   
+        text-align: center !important;
     }
 }

@@ -6,6 +6,8 @@ import video from "../../assets/video.webm";
 import service_top_img from "../../assets/hero.png";
 import SectionHeading from "../../comp/sectionHeading/SectionHeading";
 import { Helmet } from "react-helmet";
+import { ImQuotesLeft } from "react-icons/im";
+import { ImQuotesRight } from "react-icons/im";
 const Testimoneal = () => {
   const testimoneal = [
     {
@@ -59,7 +61,15 @@ const Testimoneal = () => {
             line_text="Client's Voice"
             fill_text="Client's Voice"
           />
-          <p>Your <strong>stories</strong> matter to us. Here's what our <strong>amazing clients</strong> have shared about their <strong>experiences</strong> at <strong style={{color:"var(--accent)"}}>Moulees Tatoo Art Studio</strong>.</p>
+          <p>
+            Your <strong>stories</strong> matter to us. Here's what our{" "}
+            <strong>amazing clients</strong> have shared about their{" "}
+            <strong>experiences</strong> at{" "}
+            <strong style={{ color: "var(--accent)" }}>
+              Moulees Tatoo Art Studio
+            </strong>
+            .
+          </p>
         </div>
         <div class="testimoneal-cont cont">
           <div class="client-video">
@@ -77,6 +87,55 @@ const Testimoneal = () => {
                 <h2 class="client_name">{item.name}</h2>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="client_text parent">
+        <div class="cont text-cont">
+         <h2>
+         Our Client Words
+         </h2>
+        </div>
+        <div class="client_text_cont cont">
+          <div class="card">
+            <p>
+              <span>
+                <ImQuotesLeft />
+              </span>
+               Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, <span className="second_qoute">
+              <ImQuotesRight />
+              </span>
+              
+            </p>
+          </div>
+          <div class="card">
+            <p>
+              <span>
+                <ImQuotesLeft />
+              </span>
+               Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, <span className="second_qoute">
+              <ImQuotesRight />
+              </span>
+              
+            </p>
+          </div>
+          <div class="card">
+            <p>
+              <span>
+                <ImQuotesLeft />
+              </span>
+               Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, <span className="second_qoute">
+              <ImQuotesRight />
+              </span>
+              
+            </p>
           </div>
         </div>
       </div>

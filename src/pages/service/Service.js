@@ -41,7 +41,7 @@ const Service = () => {
     {
       content:
         "This program is not just a service for us; it's a mission! Our goal is to create a healthy community, foster culture, and enhance careers. Beyond the syllabus, we'll have curricular guest artists and workshops. So, don't miss the chance to be a part of the first wave of this mission.",
-      title: "Art Classes",
+      title: "tattoo course",
       path_link:"/artclasses"
     },
   ];

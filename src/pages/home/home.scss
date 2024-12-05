@@ -74,22 +74,29 @@
   }
 }
 
-
-.tattoo-care-strip{
+.tattoo-care-strip {
   width: 100%;
   background-color: var(--accent);
   padding: 10px 0px;
 
-
-  .tattoo-care-cont{
+  .tattoo-care-cont {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: calc(var(--unit)/2);
+    gap: calc(var(--unit) / 2);
 
-    p{
+    p {
       color: var(--white);
+      text-align: center;
+    }
+
+    .care_btn {
+      padding: 10px 20px;
+
+      img {
+        height: 40px;
+      }
     }
   }
 }
@@ -161,6 +168,7 @@
   width: 100%;
   height: auto;
   background-color: var(--black);
+  padding: 30px 0px;
 
   .counter-cont {
     height: 100%;
@@ -172,55 +180,51 @@
     .right,
     .middle,
     .left {
-      width: calc(100% / 4);
-      aspect-ratio: 1;
+      width: auto;
+      height: auto;
       display: flex;
       justify-content: center;
       align-items: center;
-      position: relative;
-
+  
+      flex-direction: column;
+      gap: var(--unit);
       .count {
-        height: 100%;
-        width: 100%;
+        height: auto;
+        width: auto;
         font-size: calc(var(--unit) * 5);
         color: var(--accent);
         display: flex;
         justify-content: center;
         align-items: center;
-position: relative;
+        gap: var(--unit);
+
         span {
-          height: 100%;
-          width: 100%;
+          height: auto;
+          width: auto;
           display: flex;
           justify-content: center;
           align-items: center;
         }
 
-        .plus_icon{
-          position: absolute;
-          right: -10%;
-          z-index: 2;
-          top: 50%;
+        .plus_icon {
           height: auto;
           width: auto;
-          transform: translateY(-50%);
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
 
       .text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         width: 100%;
         text-align: center;
-        background-color: var(--black);
-        // padding: calc(var(--unit) / 4) 0px;
+        
+    
         line-height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: var(--unit);
+        font-size: calc(var(--unit) + 5px);
         color: var(--white);
         letter-spacing: 1px;
       }
@@ -389,8 +393,8 @@ position: relative;
       gap: var(--unit);
       padding: 0px 10px;
 
-      .number{
-        font-size: calc(var(--unit)*2);
+      .number {
+        font-size: calc(var(--unit) * 2);
       }
 
       .righttext {
@@ -432,15 +436,13 @@ position: relative;
       .right,
       .left {
         .count {
-          font-size: calc(var(--unit) * 6);
+          font-size: calc(var(--unit)*2);
 
-
-          .plus_icon{
-            right: 0 !important;
-          }
+       
         }
 
         .text {
+          font-size: calc(var(--unit));
         }
       }
     }
@@ -475,12 +477,7 @@ position: relative;
     .counter-cont {
       flex-direction: column !important;
 
-      .right,
-      .middle,
-      .left {
-        width: 100% !important;
-        aspect-ratio: 4;
-      }
+   
     }
   }
 
@@ -541,6 +538,18 @@ position: relative;
 }
 
 @media only screen and (max-width: 550px) {
+
+  .counter-parent {
+    .counter-cont {
+      .left,.right{
+        .text{
+          font-size: calc(var(--unit)*2);
+        }
+      }
+
+   
+    }
+  }
   .place-visit-parent {
     height: auto !important;
     padding: 20px 0px;
@@ -590,10 +599,9 @@ position: relative;
       .left {
         padding: 10px 0px;
 
-
-        .location{
-          .loc-icon{
-            font-size: calc(var(--unit)*5) !important;
+        .location {
+          .loc-icon {
+            font-size: calc(var(--unit) * 5) !important;
             top: 20%;
           }
         }
@@ -617,8 +625,6 @@ position: relative;
           }
         }
       }
-
-   
     }
   }
 }

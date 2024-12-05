@@ -16,18 +16,30 @@ const PopUp = ({setPopup}) => {
           [e.target.name]: e.target.value,
         });
       };
-    
-      const handleSubmit = (e) => {
+      function Submit(e) {
         e.preventDefault();
-        alert("Form submitted!");
-        setFormData({
-          name: "",
-          lastname: "",
-          contact: "",
-          email: "",
-          message: "",
-        });
-      };
+      
+        const formEle = document.querySelector("form");
+        const formDatab = new FormData(formEle);
+      
+        fetch(
+          "https://script.google.com/macros/s/AKfycbyja3Pim7AHQvnRZWueQDFuDTuLKvWagL1NchT_bmLTT9dwpN00_MPs9bdAQLr4bD0R/exec",
+          {
+            method: "POST",
+            body: formDatab,
+          }
+        )
+          .then((res) => res.text())
+          .then((data) => {
+            console.log(data);
+            alert(data); 
+            formEle.reset(); 
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert("Something went wrong. Please try again.");
+          });
+      }
   return (
     <>
        <div className="popup-parent parent"  >
@@ -40,7 +52,7 @@ const PopUp = ({setPopup}) => {
               </p>
             </div>
             <div className="contact-bottom">
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={Submit}>
                 <div className="form-group">
                   <input
                     type="text"

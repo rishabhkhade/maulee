@@ -2,6 +2,7 @@ import React from "react";
 import "./herosection.scss";
 import { FaWhatsapp } from "react-icons/fa";
 import { MdOutlineCall } from "react-icons/md";
+import fill_protectionlicon from "../../assets/fill_protection.webp"
 // swiper
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -68,7 +69,8 @@ const Herosection = ({ herodata }) => {
                 <MdOutlineCall />
               </a>
             </div>
-            <Link className="btn"  to="/Moulee’s_care" >
+            <Link className="btn hero_btn"  to="/Moulee’s_care" >
+              <img className="btn_text" src={fill_protectionlicon} alt=""/>
               <h5 className="btn_text">Moulee’s Care</h5>
             </Link>
           </div>

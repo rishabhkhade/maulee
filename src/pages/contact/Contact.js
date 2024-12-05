@@ -77,7 +77,7 @@ const Contact = () => {
               </p>
             </div>
             <div className="contact-bottom">
-              <form className="form" onSubmit={(e) => Submit(e)}>
+            <form className="form" onSubmit={(e) => Submit(e)}>
                 <div className="form-group">
                   <input
                     type="text"
@@ -125,7 +125,7 @@ const Contact = () => {
                 />
 
                 <button className="btn2" type="submit">
-                  <div className="btn_text ">Submit</div>
+                  <span className="btn_text ">Submit</span>
                 </button>
               </form>
             </div>

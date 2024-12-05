@@ -317,7 +317,7 @@ h2{
       
         .blur-overlay{
         p{
-          font-size: calc(var(--unit)) !important;
+          font-size: calc(var(--unit));
         }
        
         }
@@ -368,7 +368,7 @@ h2{
       .backcard{
         .blur-overlay{
           p{
-            font-size: calc(var(--unit) ) !important;
+            font-size: calc(var(--unit) - 5px ) !important;
           }
         }
       }
