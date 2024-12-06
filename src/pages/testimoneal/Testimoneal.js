@@ -8,18 +8,24 @@ import SectionHeading from "../../comp/sectionHeading/SectionHeading";
 import { Helmet } from "react-helmet";
 import { ImQuotesLeft } from "react-icons/im";
 import { ImQuotesRight } from "react-icons/im";
+
+// testimoneal videos
+
+import video1 from "../../assets/video/test_1.webm";
+import video2 from "../../assets/video/video_2.webm";
+import video3 from "../../assets/video/test_3.webm";
 const Testimoneal = () => {
   const testimoneal = [
     {
-      video: video,
+      video: video1,
       name: "lorem lipsum",
     },
     {
-      video: video,
+      video: video2,
       name: "lorem lipsum",
     },
     {
-      video: video,
+      video: video3,
       name: "lorem lipsum",
     },
     {

@@ -62,10 +62,10 @@ const Herosection = ({ herodata }) => {
           </div>
           <div className="cta_btn">
             <div className="icons">
-              <a href="">
+              <a target="blank" href="https://wa.me/+919890665043">
                 <FaWhatsapp />
               </a>
-              <a href="">
+              <a target="blank" href="tel:+919890665043">
                 <MdOutlineCall />
               </a>
             </div>

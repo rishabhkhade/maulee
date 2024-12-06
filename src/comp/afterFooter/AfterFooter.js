@@ -84,8 +84,12 @@ function AfterFooter() {
   return (
     <>
       <div className="icons-box">
-        <FaWhatsapp />
-        <IoCallOutline />
+       <a target="blank" href="https://wa.me/+919890665043">
+       <FaWhatsapp />
+       </a>
+       <a target="blank" href="tel:+919890665043">
+       <IoCallOutline />
+       </a>
       </div>
 
       <div className="footer-swiper parent">
