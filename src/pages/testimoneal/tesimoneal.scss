@@ -1,8 +1,7 @@
 .testimoneal-parent {
   padding: 30px 0px;
 
-
-  .test-heading{
+  .test-heading {
     text-align: center;
     padding: calc(var(--unit)) 10px;
     display: flex;
@@ -11,7 +10,7 @@
     flex-direction: column;
     gap: calc(var(--unit));
 
-    p{
+    p {
       text-align: center;
     }
   }
@@ -49,62 +48,84 @@
               height: 100%;
               width: 100%;
               object-fit: cover;
-              object-position: top center;
-            
+              object-position: top top;
             }
-          }
 
-        
+            // &::after{
+            //   content: "";
+            //   position: absolute;
+            //   top: 0;
+            //   left: 0;
+            //   height: 100%;
+            //   width: 100%;
+            //   background: linear-gradient(to top , black, transperant);
+            //   z-index: 0;
+            // }
+          }
         }
 
         .client_name {
-            height: 30%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
+          height: 30%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
       }
     }
   }
 }
 
-.client_text{
+.client_text {
   width: 100%;
   padding: 40px 0px;
   background-color: var(--black);
-height: auto;
-
-.text-cont{
-  padding: 30px;
+  height: auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  h2{
-    color: var(--accent);
-  }
-}
+  gap: calc(var(--unit) * 2);
 
-  .client_text_cont{
+  .text-cont {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      color: var(--accent);
+      font-size: calc(var(--unit) * 2);
+    }
+  }
+
+  .client_text_cont {
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: calc(var(--unit)*2);
+    gap: calc(var(--unit) * 2);
     flex-wrap: wrap;
 
-    .card{
+    .card {
       width: 400px;
       padding: 10px;
       border-radius: 30px 0px 30px 0px;
       height: auto;
       background-color: var(--white);
 
-      p{
-        
-       span{
-        padding: 10px;
-       }
-   
+      p {
+        span {
+          padding: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .client_text {
+    .client_text_cont {
+      .card {
+        width: 100% !important;
       }
     }
   }

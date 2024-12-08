@@ -13,6 +13,13 @@ import gallery_top_img from "../../assets/hero.png";
 import axios from "axios";
 import { IoIosArrowBack } from "react-icons/io";
 
+// videos
+import gl1 from "../../assets/video/gl_1.webm";
+import gl2 from "../../assets/video/gl_2.webm";
+import gl3 from "../../assets/video/gl_3.webm";
+import gl4 from "../../assets/video/gl_4.webm";
+import gl5 from "../../assets/video/gl_5.webm";
+
 const Gallery = () => {
   const [visibleImages, setVisibleImages] = useState(15);
   const loadMore = () => {
@@ -21,20 +28,20 @@ const Gallery = () => {
 
   const videos = [
     {
-      image: video,
+      image: gl1,
     },
     {
-      image: video,
+      image: gl2,
     },
     {
-      image: video,
+      image: gl3,
     },
     {
-      image: video,
+      image: gl4,
     },
 
     {
-      image: video,
+      image: gl5,
     },
   ];
 
@@ -93,25 +100,25 @@ const Gallery = () => {
           },
         }
       );
-  
+
       const data = response.data;
       const images = data
         .filter((post) => {
           return (
             post._embedded &&
-            post._embedded['wp:term'] &&
-            post._embedded['wp:term'][0].some(
-              (category) => category.name === 'Gallery'
+            post._embedded["wp:term"] &&
+            post._embedded["wp:term"][0].some(
+              (category) => category.name === "Gallery"
             )
           );
         })
         .map((post) => {
           if (
             post._embedded &&
-            post._embedded['wp:featuredmedia'] &&
-            post._embedded['wp:featuredmedia'].length > 0
+            post._embedded["wp:featuredmedia"] &&
+            post._embedded["wp:featuredmedia"].length > 0
           ) {
-            const featuredMedia = post._embedded['wp:featuredmedia'][0];
+            const featuredMedia = post._embedded["wp:featuredmedia"][0];
             return {
               imageUrl: featuredMedia.source_url,
               imageId: featuredMedia.id,
@@ -120,8 +127,8 @@ const Gallery = () => {
           return null; // If no featured media, return null
         })
         .filter((item) => item !== null); // Filter out null values
-  
-      console.log(images, 'Filtered images with Gallery category');
+
+      console.log(images, "Filtered images with Gallery category");
       setImages(images); // Save filtered images to state
     } catch (error) {
       console.error(error);
@@ -132,8 +139,7 @@ const Gallery = () => {
     fetchGallery();
   }, [pageNumber]);
 
-
-  console.log(images.length)
+  console.log(images.length);
   return (
     <>
       <Pagetop pageHeader="Maulees's Work" backgroundImage={gallery_top_img} />
@@ -175,7 +181,17 @@ const Gallery = () => {
 
               <p className="text">Videos</p>
             </div>
-            <div className="btn-tag">
+            <div
+              className={
+                gallerypages.ytlinkssection ? "btn-tag active" : "btn-tag"
+              }
+              onClick={() => {
+                closeAll();
+                setgalleryPage({
+                  ytlinkssection: true,
+                });
+              }}
+            >
               {" "}
               <span className="icon">
                 <BsYoutube />
@@ -195,6 +211,31 @@ const Gallery = () => {
                     onClick={() => openLightbox(item.imageUrl)}
                   ></div>
                 ))}
+
+                <div className="pagination">
+                  <div
+                    className={`left-arrow arrow ${
+                      pageNumber <= 1 ? "disabled" : "left-arrow arrow"
+                    }`}
+                    onClick={
+                      pageNumber > 1
+                        ? () => setPageNumber(pageNumber - 1)
+                        : null
+                    }
+                  >
+                    <IoIosArrowBack />
+                  </div>
+                  <div
+                    className={`right-arrow arrow ${
+                      images.length < 13 && images.length !== 13
+                        ? "disabled"
+                        : "right-arrow arrow"
+                    }`}
+                    onClick={() => setPageNumber(pageNumber + 1)}
+                  >
+                    <IoIosArrowBack />
+                  </div>
+                </div>
               </>
             )}
             {gallerypages.videossection && (
@@ -235,27 +276,6 @@ const Gallery = () => {
               Read More
             </button>
           )}
-
-          <div className="pagination">
-            <div
-              className={`left-arrow arrow ${
-                pageNumber <= 1 ? "disabled" : "left-arrow arrow"
-              }`}
-              onClick={
-                pageNumber > 1 ? () => setPageNumber(pageNumber - 1) : null
-              }
-            >
-              <IoIosArrowBack />
-            </div>
-            <div
-              className={`right-arrow arrow ${
-                images.length < 13 && images.length !== 13 ? "disabled" : "right-arrow arrow"
-              }`}
-              onClick={() => setPageNumber(pageNumber + 1)}
-            >
-              <IoIosArrowBack />
-            </div>
-          </div>
         </div>
       </div>
 

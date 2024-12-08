@@ -12,25 +12,26 @@ import { ImQuotesRight } from "react-icons/im";
 // testimoneal videos
 
 import video1 from "../../assets/video/test_1.webm";
-import video2 from "../../assets/video/video_2.webm";
+import video2 from "../../assets/video/test_2.webm";
 import video3 from "../../assets/video/test_3.webm";
+import video4 from "../../assets/video/test_4.webm";
 const Testimoneal = () => {
   const testimoneal = [
     {
       video: video1,
-      name: "lorem lipsum",
+      name: "Shruti Nagar",
     },
     {
       video: video2,
-      name: "lorem lipsum",
+      name: "Nidhi saha",
     },
     {
       video: video3,
-      name: "lorem lipsum",
+      name: "Vishal sharma",
     },
     {
-      video: video,
-      name: "lorem lipsum",
+      video: video4,
+      name: "Sumit wakade",
     },
   ];
 
@@ -99,9 +100,7 @@ const Testimoneal = () => {
 
       <div class="client_text parent">
         <div class="cont text-cont">
-         <h2>
-         Our Client Words
-         </h2>
+          <h2>Our Client Words</h2>
         </div>
         <div class="client_text_cont cont">
           <div class="card">
@@ -109,12 +108,15 @@ const Testimoneal = () => {
               <span>
                 <ImQuotesLeft />
               </span>
-               Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, <span className="second_qoute">
-              <ImQuotesRight />
+              Great place to get piercings and tattoos done. Moulees has been
+              with me through my tattoos and piercings and their unwavering
+              quality and support is truly immaculate. The place has amazing
+              vibes and great people who are skilled and make you feel
+              comfortable throughout the process.{" "}
+              <strong style={{ color: "var(--accent)" }}> -Arjun Nair</strong>
+              <span className="second_qoute">
+                <ImQuotesRight />
               </span>
-              
             </p>
           </div>
           <div class="card">
@@ -122,12 +124,18 @@ const Testimoneal = () => {
               <span>
                 <ImQuotesLeft />
               </span>
-               Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, <span className="second_qoute">
-              <ImQuotesRight />
+              This is my 3rd tattoo with Moulee's. It is my go-to place whenever
+              I think of getting inked. Narendra and his team is amazing in
+              ideation and consultation. They provide great suggestions and
+              design elements that add different perspective to your design
+              idea.{" "}
+              <strong style={{ color: "var(--accent)" }}>
+                {" "}
+                -Hriticka Choudhurry
+              </strong>
+              <span className="second_qoute">
+                <ImQuotesRight />
               </span>
-              
             </p>
           </div>
           <div class="card">
@@ -135,15 +143,30 @@ const Testimoneal = () => {
               <span>
                 <ImQuotesLeft />
               </span>
-               Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, <span className="second_qoute">
-              <ImQuotesRight />
+              I had my first tattoo from the studio 5 years back. The new place
+              now is very beautiful and aesthetic. I wanted to have a custom
+              tattoo dedicated to my two cute little fur babies.It was a great
+              experience getting my tattoo designed and done by Narendra. Fully
+              satisfied with the results. Would definitely recommend to others
+              as well 😊{" "}
+              <strong style={{ color: "var(--accent)" }}>
+                {" "}
+                -tamalika rakshit
+              </strong>
+              <span className="second_qoute">
+                <ImQuotesRight />
               </span>
-              
             </p>
           </div>
         </div>
+
+        <a
+          href="https://www.google.com/search?q=moulees+tattoo+reviews&sca_esv=3addb3f1ad5146cd&rlz=1C1RXQR_enIN1021IN1021&sxsrf=ADLYWIIow7nv-t2wAqsWOMa039k8Sxobhg%3A1733682411572&ei=6-RVZ8LOIsDH4-EP6ouPaA&ved=0ahUKEwiC8K2i5piKAxXA4zgGHerFAw0Q4dUDCBA&uact=5&oq=moulees+tattoo+reviews&gs_lp=Egxnd3Mtd2l6LXNlcnAiFm1vdWxlZXMgdGF0dG9vIHJldmlld3MyBRAhGKABMgUQIRifBUiNElD9BVi9EHABeACQAQCYAekBoAH-CqoBBTAuOC4xuAEDyAEA-AEBmAIJoAKXCsICBxAjGLADGCfCAgoQABiwAxjWBBhHwgIEECMYJ8ICDhAuGIAEGMcBGI4FGK8BwgIGEAAYFhgewgICECbCAggQABiABBiiBMICBxAhGKABGAqYAwCIBgGQBgeSBwUxLjcuMaAHliE&sclient=gws-wiz-serp"
+          target="blank"
+          class="btn"
+        >
+          <span class="btn_text">Explore Our Goggle Reviews</span>
+        </a>
       </div>
     </>
   );

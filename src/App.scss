@@ -410,3 +410,50 @@ gap: 10px;
   opacity: 0.5;
   text-align: center;
 }
+
+.pagination {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+  gap: var(--unit);
+  position: absolute;
+  bottom: -70%;
+  left: 0;
+
+
+  .arrow {
+    width: 30px;
+    aspect-ratio: 1;
+    background-color: var(--accent);
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    
+    &.disabled {
+      opacity: 0.5;
+      pointer-events: none; /* Prevents any interaction */
+    }
+  }
+
+  .left-arrow {
+
+
+    &.disabled {
+      opacity: 0.5;
+      pointer-events: none; /* Prevents any interaction */
+    }
+  }
+
+  .right-arrow{
+    svg{
+      transform: rotate(-180deg);
+    }
+
+  }
+}
