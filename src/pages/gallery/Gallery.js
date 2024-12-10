@@ -139,7 +139,15 @@ const Gallery = () => {
     fetchGallery();
   }, [pageNumber]);
 
-  console.log(images.length);
+
+  const ytlinks = [
+    "https://www.youtube.com/embed/cn6sKqhjE5c?si=RliRdRvMlYjnJSDf",
+    "https://www.youtube.com/embed/YqgxKlGtpYY?si=xxCc016nj2QR67Eb",
+    "https://www.youtube.com/embed/ov73yZLWLZo?si=a3Uu9_A0Z0mHsM0s",
+    "https://www.youtube.com/embed/M-ZcZwUst28?si=Dzd4Q5iavkjgC-6v",
+    "https://www.youtube.com/embed/TWryAu1oi5g?si=26VMpP4coQyiqSHg"
+
+  ]
   return (
     <>
       <Pagetop pageHeader="Maulees's Work" backgroundImage={gallery_top_img} />
@@ -268,6 +276,21 @@ const Gallery = () => {
                     </div>
                   </div>
                 ))}
+              </>
+            )}
+            {gallerypages.ytlinkssection && (
+              <>
+              {
+                ytlinks.map((item, index)=>(
+                  <div className=" class " key={index} >
+                  <iframe
+                    src={item}
+                    frameborder="0"
+                 className="iframe_tag"
+                  ></iframe>
+                </div>
+                ))
+              }
               </>
             )}
           </div>
