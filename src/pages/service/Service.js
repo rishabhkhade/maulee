@@ -5,6 +5,9 @@ import SectionHeading from "../../comp/sectionHeading/SectionHeading";
 import { IoIosArrowDown } from "react-icons/io";
 import service_top_img from "../../assets/hero.png";
 import { Helmet } from "react-helmet";
+import tattoo from "../../assets/services/tattoo.webp";
+import piercing from "../../assets/services/piersing.webp";
+import temporary_tattoo from "../../assets/services/temporary_tattoo.webp";
 
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -19,30 +22,37 @@ import { Link } from "react-router-dom";
 const Service = () => {
   const serviceContent = [
     {
+      service_img: tattoo,
       content:
         "At Moulees Tattoo Art, we specialize in custom designs, realism, color realism, traditional, and watercolor tattoos. Our studio ensures a clean, safe, and welcoming environment, delivering personalized, high-quality tattoos that reflect your unique style and vision. ",
       title: "Tattoo",
     },
     {
+      service_img: piercing,
       content:
         "We offer professional piercing services in a clean, hygienic environment. From ear and nose piercings to more intricate body piercings, our skilled piercers ensure a safe and comfortable experience, using sterile equipment and providing detailed aftercare instructions.",
       title: "Piercing",
     },
     {
+      service_img: temporary_tattoo,
       content:
         "Looking for a tattoo without the lifelong commitment? Our temporary tattoos last 5-7 days, allowing you to enjoy beautiful, intricate designs for special occasions or to test out a look before going permanent. Safe, non-toxic, and perfect for all skin types!",
       title: "Temporary Tattoo",
     },
     {
+      service_img: tattoo,
+
       content:
         "Explore our collection of fine art and paintings, crafted by our talented artists. From stunning watercolor pieces to intricate, detailed artwork, each painting is a unique expression of creativity. Perfect for enhancing your home or workspace, our original pieces are available for purchase.",
       title: "Fine Art",
     },
     {
+      service_img: tattoo,
+
       content:
         "This program is not just a service for us; it's a mission! Our goal is to create a healthy community, foster culture, and enhance careers. Beyond the syllabus, we'll have curricular guest artists and workshops. So, don't miss the chance to be a part of the first wave of this mission.",
       title: "tattoo course",
-      path_link:"/artclasses"
+      path_link: "/artclasses",
     },
   ];
 
@@ -171,7 +181,7 @@ const Service = () => {
                 spaceBetween: 30,
               },
               1200: {
-                slidesPerView: 4,
+                slidesPerView: 3,
                 spaceBetween: 30,
               },
             }}
@@ -181,8 +191,14 @@ const Service = () => {
             {serviceContent.map((item, index) => (
               <SwiperSlide className="swiperslide">
                 <div className="service" key={index}>
+                  <div
+                    class="service-photo bg-img-cover"
+                    style={{ backgroundImage: `url(${item.service_img})` }}
+                  ></div>
                   <p>{item.content}</p>
-                  <Link to={item.path_link} className="tag-text">{item.title}</Link>
+                  <Link to={item.path_link} className="tag-text">
+                    {item.title}
+                  </Link>
                 </div>
               </SwiperSlide>
             ))}
