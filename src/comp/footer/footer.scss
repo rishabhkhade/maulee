@@ -84,8 +84,16 @@
 @media (max-width: 500px) {
   .footer-parent {
     .footer-cont {
+      gap: 20px !important;
       img {
         width: 200px !important;
+      }
+
+      .copyright-div{
+       a,p{
+        font-size: calc(var(--unit) - 5px) !important;
+        line-height: 100%;
+       }
       }
     }
   }

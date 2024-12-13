@@ -32,8 +32,8 @@ const Herosection = ({ herodata }) => {
           }}
          
           pagination={false}
-       
-          modules={[Autoplay, Pagination]}
+          // navigation={{ nextEl: ".custom-next", prevEl: ".custom-prev" }}
+          modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
         >
           {herodata.map((item, index) => (
@@ -46,6 +46,13 @@ const Herosection = ({ herodata }) => {
               <div className="hero-overlay"></div>
             </SwiperSlide>
           ))} 
+
+{/* <div className="custom-prev">
+            <BsArrowDown />
+          </div>
+          <div className="custom-next">
+            <BsArrowDown />
+          </div> */}
         </Swiper>
 
         <div className="hero-slide-cont cont">

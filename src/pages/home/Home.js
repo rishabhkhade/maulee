@@ -7,7 +7,7 @@ import { MdOutlineCall } from "react-icons/md";
 import { BsArrowDown } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { CiLocationOn } from "react-icons/ci";
-import fill_protectionlicon from "../../assets/fill_protection.webp"
+import fill_protectionlicon from "../../assets/fill_protection.webp";
 
 import { FaPlus } from "react-icons/fa6";
 import { Helmet } from "react-helmet";
@@ -25,13 +25,13 @@ import image from "../../assets/tatto_images/img_1.webp";
 import heroimage from "../../assets/tArtist.webp";
 import ReactPlayer from "react-player";
 
-// home gallery image 
-import image1 from "../../assets/tatto_images/tatto_1.webp"
-import image2 from "../../assets/tatto_images/tattoo_2.webp"
-import image3 from "../../assets/tatto_images/tattoo_3.webp"
-import image4 from "../../assets/tatto_images/tattoo_4.webp"
-import image5 from "../../assets/tatto_images/tattoo_5.webp"
-import image6 from "../../assets/tatto_images//image_6.webp"
+// home gallery image
+import image1 from "../../assets/tatto_images/tatto_1.webp";
+import image2 from "../../assets/tatto_images/tattoo_2.webp";
+import image3 from "../../assets/tatto_images/tattoo_3.webp";
+import image4 from "../../assets/tatto_images/tattoo_4.webp";
+import image5 from "../../assets/tatto_images/tattoo_5.webp";
+import image6 from "../../assets/tatto_images//image_6.webp";
 const Home = () => {
   const herodata = [
     {
@@ -193,16 +193,24 @@ const Home = () => {
                 textalign="start"
               />
               <p>
-                &nbsp; At <strong style={{color:"var(--accent)"}}>Moulee's Tattoo Art</strong>, our studio reflects the dedication and
-                passion we pour into every piece of work. Recognized as the Best
-                Tattoo Studio in Pune, we are proud of maintaining one of the
-                <strong> cleanest</strong> and <strong>most hygienic</strong> tattoo spaces.<br/> &nbsp;&nbsp;Our atmosphere feels
-                like a <strong>second home</strong>, where both artistry and integrity thrive. We
-                spend countless hours here, perfecting our craft and ensuring
-                every detail aligns with our <strong>high standards</strong>.<br/>&nbsp; Moulees even stands
-                as the Best Tattoo Studio in Viman Nagar from last 8 years.
-                Nestled in a sleek, modern building with hassle-free parking, we
-                invite you to visit us and experience our space in person.
+                &nbsp; At{" "}
+                <strong style={{ color: "var(--accent)" }}>
+                  Moulee's Tattoo Art
+                </strong>
+                , our studio reflects the dedication and passion we pour into
+                every piece of work. Recognized as the Best Tattoo Studio in
+                Pune, we are proud of maintaining one of the
+                <strong> cleanest</strong> and <strong>most hygienic</strong>{" "}
+                tattoo spaces.
+                <br /> &nbsp;&nbsp;Our atmosphere feels like a{" "}
+                <strong>second home</strong>, where both artistry and integrity
+                thrive. We spend countless hours here, perfecting our craft and
+                ensuring every detail aligns with our{" "}
+                <strong>high standards</strong>.<br />
+                &nbsp; Moulees even stands as the Best Tattoo Studio in Viman
+                Nagar from last 8 years. Nestled in a sleek, modern building
+                with hassle-free parking, we invite you to visit us and
+                experience our space in person.
               </p>
             </div>
             <div className="cta_btn">
@@ -228,13 +236,11 @@ const Home = () => {
       <div class="tattoo-care-strip parent">
         <div class="tattoo-care-cont cont">
           <p>
-          <strong>Moulee’s Care</strong> - a lifetime Commitment !!!
+            <strong>Moulee’s Care</strong> - a lifetime Commitment !!!
           </p>
           <Link to="/Moulee’s_care" class="btn care_btn">
-          <img className="btn_text" src={fill_protectionlicon} alt=""/>
-            <div class="btn_text">
-              Explore Now
-            </div>
+            <img className="btn_text" src={fill_protectionlicon} alt="" />
+            <div class="btn_text">Explore Now</div>
           </Link>
         </div>
       </div>
@@ -294,7 +300,7 @@ const Home = () => {
             >
               {images.map((item, index) => (
                 <SwiperSlide className="gallery-swiperslide" key={index}>
-                  <Link to="/mauleeswork">
+                  <Link to="/mouleeswork">
                     <div
                       className="tatto-image bg-img-cover"
                       style={{ backgroundImage: `url(${item.image})` }}
@@ -316,7 +322,7 @@ const Home = () => {
         </div>
 
         <div className="bottom-cont cont">
-          <Link className="btn" to="/mauleeswork">
+          <Link className="btn" to="/mouleeswork">
             <h5 className="btn_text">Explore Gallery</h5>
           </Link>
         </div>
@@ -354,6 +360,9 @@ const Home = () => {
               <span className="plus_icon">
                 {" "}
                 <FaPlus />
+              </span>
+              <span className="text">
+                years
               </span>
             </h1>
             <h6 className="text">Our Experience</h6>
@@ -427,12 +436,12 @@ const Home = () => {
           data-aos-duration="1000"
         >
           <div className="left">
-            <div className="location ">
+            <a className="location "href="https://maps.app.goo.gl/RpE5B4t8yLJuvtGr5" target="blank"  >
               <div className="arc bg-img-contain"></div>
               <div className="loc-icon">
                 <CiLocationOn />
               </div>
-            </div>
+            </a>
             <div className="visit-text">
               <h5 className="">Viman Nagar , Pune</h5>
             </div>
