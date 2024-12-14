@@ -198,6 +198,13 @@
         align-items: center;
         gap: var(--unit);
 
+        .yrs-text{
+          position: absolute;
+          font-size: var(--unit);
+          bottom: 40%;
+          right: 0;
+        }
+
         span {
           height: auto;
           width: auto;
@@ -230,7 +237,9 @@
       }
 
       .countTitle {
-        font-size: calc(var(--unit) * 2);
+        width: fit-content;
+        height: fit-content;
+        font-size: calc(var(--unit)*3);
         color: var(--white);
         text-align: center;
         line-height: 110%;
@@ -546,7 +555,22 @@ background: linear-gradient(rgba(44, 44, 44, 0.74), rgba(44, 44, 44, 0.74)),url(
     .counter-cont {
       .left,.right{
         .text{
-          font-size: calc(var(--unit)*2);
+          font-size: calc(var(--unit));
+        }
+
+        .count{
+
+          .yrs-text{
+            bottom:10% !important;
+            right: 25% !important;
+         
+          }
+        }
+      }
+
+      .middle{
+        .countTitle{
+          font-size: calc(var(--unit)*2) !important;
         }
       }
 

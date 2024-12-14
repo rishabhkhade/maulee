@@ -34,15 +34,13 @@
     //   width: 50%;
     //   height: 100%;
 
-      
     // }
 
-
-    .content{
+    .content {
       width: 100%;
       display: flex;
 
-      &:nth-child(even){
+      &:nth-child(even) {
         flex-direction: row-reverse;
       }
 
@@ -52,16 +50,13 @@
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        gap: calc(var(--unit)/2);
+        gap: calc(var(--unit) / 2);
         padding: 0px calc(var(--unit) * 4);
         flex-direction: column;
 
-
-        strong{
+        strong {
           color: var(--accent);
         }
-
-
       }
 
       p {
@@ -99,7 +94,6 @@
         top: 10%;
         right: -468%;
 
-      
         &:nth-child(2) {
           top: 30%;
         }
@@ -140,9 +134,9 @@
     .card {
       width: calc(100% / 4);
       aspect-ratio: 0.8;
-    //   perspective: 1000px;
+      //   perspective: 1000px;
       border-radius: var(--unit);
-    overflow: hidden;
+      overflow: hidden;
 
       .card-inner {
         position: relative;
@@ -151,8 +145,6 @@
         text-align: center;
         transition: transform 0.6s;
         transform-style: preserve-3d;
-      
-        
       }
 
       .frontcard,
@@ -164,7 +156,6 @@
         backface-visibility: hidden;
         border-radius: var(--unit);
         overflow: hidden;
-
       }
 
       .frontcard {
@@ -184,50 +175,44 @@
         }
       }
 
-      
       .backcard {
         background-color: #2980b9;
         color: white;
         transform: rotateY(180deg);
-     
 
+        .blur-overlay {
+          height: 100%;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.308);
+          backdrop-filter: blur(5px);
+          padding: var(--unit);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: var(--unit);
 
-        .blur-overlay{
-            height: 100%;
-            width: 100%;
-            background-color:rgba(0, 0, 0, 0.308);
-            backdrop-filter: blur(5px);
-            padding: var(--unit);
+          p {
+            color: var(--white);
+            text-align: center;
+            font-size: calc(var(--unit) - 2px);
+            line-height: 140%;
+          }
+
+          .icons {
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
             gap: var(--unit);
 
-            p{
+            a {
+              svg {
                 color: var(--white);
-                text-align: center;
-                font-size: calc(var(--unit) - 2px);
-                line-height: 140%;
+              }
             }
-
-            .icons{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: var(--unit);
-
-                a{
-
-                    svg{
-                        color: var(--white);
-                    }
-                }
-            }
+          }
         }
       }
-
-
 
       &:hover .card-inner {
         transform: rotateY(180deg);
@@ -236,139 +221,119 @@
   }
 }
 
-@media only screen and (max-width:1000px){
-.artist-cont{
-  .card{
-    .card-inner{
-      .frontcard{
-        .overlay{
-          h3{
-            font-size: calc(var(--unit)) !important;
+@media only screen and (max-width: 1000px) {
+  .artist-cont {
+    .card {
+      .card-inner {
+        .frontcard {
+          .overlay {
+            h3 {
+              font-size: calc(var(--unit)) !important;
+            }
           }
         }
-      }
 
-      .backcard{
-        .blur-overlay{
-          p{
-            font-size: calc(var(--unit) - 7px);
+        .backcard {
+          .blur-overlay {
+            p {
+              font-size: calc(var(--unit) - 7px);
+            }
           }
         }
       }
     }
   }
 }
-}
 
-@media only screen and (max-width:950px){
-  .journey-cont{
-    .content{
-h2{
-  font-size:calc(var(--unit)*3) !important;
-}
-
+@media only screen and (max-width: 950px) {
+  .journey-cont {
+    .content {
+      h2 {
+        font-size: calc(var(--unit) * 3) !important;
+      }
     }
   }
-
-
 }
-@media only screen and (max-width:800px){
-
+@media only screen and (max-width: 800px) {
   .journey-cont {
     gap: 20px !important;
-    .content{
+    .content {
       flex-direction: column-reverse;
 
-      &:nth-child(even){
+      &:nth-child(even) {
         flex-direction: column-reverse !important;
       }
 
-      .section{
+      .section {
         width: 100% !important;
         height: fit-content !important;
         justify-content: flex-start !important;
         padding: 0px 10px !important;
         padding-left: 30px !important;
-
-
-
       }
     }
   }
 
-
-  .middle-line{
+  .middle-line {
     left: 5% !important;
   }
 
-
-  .artist-cont{
-    flex-wrap: wrap ;
+  .artist-cont {
+    flex-wrap: wrap;
   }
 }
 
-@media only screen and (max-width:550px){
-
-  .artist-cont{
-    .card{
+@media only screen and (max-width: 550px) {
+  .artist-cont {
+    .card {
       width: 300px !important;
       aspect-ratio: 0.8 !important;
-      .backcard{
-      
-        .blur-overlay{
-        p{
-          font-size: calc(var(--unit));
-        }
-       
-        }
-      }
-
-    }
-  }
-
-}
-@media only screen and (max-width:750px){
-
-  .artist-cont{
-    .card{
-      .backcard{
-        .blur-overlay{
-          p{
-            font-size: calc(var(--unit) /2) ;
+      .backcard {
+        .blur-overlay {
+          p {
+            font-size: calc(var(--unit));
           }
         }
       }
-
     }
   }
-
-
-
 }
-@media only screen and (max-width:500px){
-  .journey-cont{
-    .content{
-
-      p{
+@media only screen and (max-width: 750px) {
+  .artist-cont {
+    .card {
+      .backcard {
+        .blur-overlay {
+          p {
+            font-size: calc(var(--unit) );
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 500px) {
+  .journey-cont {
+    .content {
+      p {
         font-size: calc(var(--unit) - 2px) !important;
       }
 
-      h2{
-        font-size: calc(var(--unit)*3) !important;
+      h2 {
+        font-size: calc(var(--unit) * 3) !important;
       }
     }
   }
 
-  .artist-cont{
+  .artist-cont {
     flex-direction: column !important;
 
-    .card{
+    .card {
       width: 80% !important;
 
-      .backcard{
-        .blur-overlay{
-          p{
-            font-size: calc(var(--unit) - 5px ) !important;
+      .backcard {
+        .blur-overlay {
+          p {
+            font-size: calc(var(--unit) - 2px) !important;
           }
         }
       }

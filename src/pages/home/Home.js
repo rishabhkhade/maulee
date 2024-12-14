@@ -32,6 +32,7 @@ import image3 from "../../assets/tatto_images/tattoo_3.webp"
 import image4 from "../../assets/tatto_images/tattoo_4.webp"
 import image5 from "../../assets/tatto_images/tattoo_5.webp"
 import image6 from "../../assets/tatto_images//image_6.webp"
+import { useInView } from "react-intersection-observer";
 const Home = () => {
   const herodata = [
     {
@@ -378,7 +379,7 @@ const Home = () => {
                 {" "}
                 <FaPlus />
               </span>
-              <span className="text">
+              <span className="yrs-text">
                 years
               </span>
             </h1>

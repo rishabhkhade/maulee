@@ -44,7 +44,7 @@ const Service = () => {
 
       content:
         "Explore our collection of fine art and paintings, crafted by our talented artists. From stunning watercolor pieces to intricate, detailed artwork, each painting is a unique expression of creativity. Perfect for enhancing your home or workspace, our original pieces are available for purchase.",
-      title: "Fine Art",
+      title: "Art studio",
     },
     {
       service_img: tattoo,
