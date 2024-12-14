@@ -41,7 +41,7 @@ const [blogview, setBlogView] = useState([])
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/service" element={<Service />} />
-          <Route path="/mauleeswork" element={<Gallery />} />
+          <Route path="/mouleeswork" element={<Gallery />} />
           <Route path="/our_Clients" element={<Testimoneal />} />
           <Route path="/blog" element={<Blog setBlogView={setBlogView} />} />
           <Route path="/Moulee’s_care" element={<Tatto_care />} />

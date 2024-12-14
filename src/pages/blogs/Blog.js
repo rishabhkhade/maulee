@@ -153,7 +153,7 @@ function Blog({ setBlogView }) {
           <div className="pagination">
             <div
               className={`left-arrow arrow ${
-                currentPage === 0 ? "disabled" : ""
+                currentPage === 0 ? "disabled" : "left-arrow arrow"
               }`}
               onClick={handlePreviousPage}
             >
@@ -161,7 +161,7 @@ function Blog({ setBlogView }) {
             </div>
             <div
               className={`right-arrow arrow ${
-                startOffset + itemsPerPage >= blogData.length ? "disabled" : ""
+                startOffset + itemsPerPage >= blogData.length ? "disabled" : "right-arrow arrow"
               }`}
               onClick={handleNextPage}
             >

@@ -2,11 +2,22 @@ import React, { useEffect, useState } from "react";
 import "./gallery.scss";
 import Pagetop from "../../comp/pagetop/Pagetop";
 import { CiPlay1 } from "react-icons/ci";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { BsArrowDown } from "react-icons/bs";
+import "swiper/css";
+import "swiper/css/pagination";
+
+import {
+
+  EffectCoverflow,
+  Navigation,
+  Autoplay,
+} from "swiper/modules";
 // image
 
 import video from "../../assets/video.webm";
 import ReactPlayer from "react-player";
-import { BiSolidVideos } from "react-icons/bi";
+// import { BiSolidVideos } from "react-icons/bi";
 import { IoMdPhotos } from "react-icons/io";
 import { BsYoutube } from "react-icons/bs";
 import gallery_top_img from "../../assets/hero.png";
@@ -14,36 +25,36 @@ import axios from "axios";
 import { IoIosArrowBack } from "react-icons/io";
 
 // videos
-import gl1 from "../../assets/video/gl_1.webm";
-import gl2 from "../../assets/video/gl_2.webm";
-import gl3 from "../../assets/video/gl_3.webm";
-import gl4 from "../../assets/video/gl_4.webm";
-import gl5 from "../../assets/video/gl_5.webm";
+// import gl1 from "../../assets/video/gl_1.webm";
+// import gl2 from "../../assets/video/gl_2.webm";
+// import gl3 from "../../assets/video/gl_3.webm";
+// import gl4 from "../../assets/video/gl_4.webm";
+// import gl5 from "../../assets/video/gl_5.webm";
 
 const Gallery = () => {
-  const [visibleImages, setVisibleImages] = useState(15);
+  const [visibleImages, setVisibleImages] = useState(14);
   const loadMore = () => {
     setVisibleImages((prev) => prev + 15);
   };
 
-  const videos = [
-    {
-      image: gl1,
-    },
-    {
-      image: gl2,
-    },
-    {
-      image: gl3,
-    },
-    {
-      image: gl4,
-    },
+  // const videos = [
+  //   {
+  //     image: gl1,
+  //   },
+  //   {
+  //     image: gl2,
+  //   },
+  //   {
+  //     image: gl3,
+  //   },
+  //   {
+  //     image: gl4,
+  //   },
 
-    {
-      image: gl5,
-    },
-  ];
+  //   {
+  //     image: gl5,
+  //   },
+  // ];
 
   const [gallerypages, setgalleryPage] = useState({
     photossection: true,
@@ -59,35 +70,23 @@ const Gallery = () => {
     });
   };
 
-  const [lightboxImageOpen, setLightboxOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
+  // const [lightboxVideoOpen, setLightboxvideoOpen] = useState(false);
+  // const [selectedVideo, setSelectedVideo] = useState(null);
 
-  const [lightboxVideoOpen, setLightboxvideoOpen] = useState(false);
-  const [selectedVideo, setSelectedVideo] = useState(null);
+  // const openLightVideobox = (image) => {
+  //   setSelectedVideo(image);
+  //   setLightboxvideoOpen(true);
+  // };
 
-  const openLightVideobox = (image) => {
-    setSelectedVideo(image);
-    setLightboxvideoOpen(true);
-  };
-
-  const closeLightvideobox = () => {
-    setLightboxvideoOpen(false);
-    setSelectedVideo(null);
-  };
-
-  const openLightbox = (image) => {
-    setSelectedImage(image);
-    setLightboxOpen(true);
-  };
-
-  const closeLightbox = () => {
-    setLightboxOpen(false);
-    setSelectedImage(null);
-  };
+  // const closeLightvideobox = () => {
+  //   setLightboxvideoOpen(false);
+  //   setSelectedVideo(null);
+  // };
 
   const [images, setImages] = useState([]);
-
   const [pageNumber, setPageNumber] = useState(1);
+  const [lightboxImageOpen, setLightboxOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(0);
 
   const fetchGallery = async () => {
     try {
@@ -95,8 +94,8 @@ const Gallery = () => {
         `${process.env.REACT_APP_URL}/posts?_embed`,
         {
           params: {
-            per_page: 13, // Set per_page here
-            page: pageNumber, // Adjust page number as needed
+            per_page: 15, // Number of images per page
+            page: pageNumber,
           },
         }
       );
@@ -124,12 +123,11 @@ const Gallery = () => {
               imageId: featuredMedia.id,
             };
           }
-          return null; // If no featured media, return null
+          return null;
         })
-        .filter((item) => item !== null); // Filter out null values
-
-      console.log(images, "Filtered images with Gallery category");
-      setImages(images); // Save filtered images to state
+        .filter((item) => item !== null);
+console.log(images, "dataimages")
+      setImages(images);
     } catch (error) {
       console.error(error);
     }
@@ -139,18 +137,25 @@ const Gallery = () => {
     fetchGallery();
   }, [pageNumber]);
 
+  const openLightbox = (index) => {
+    setSelectedImage(index); // Set the clicked image index
+    setLightboxOpen(true); // Open the lightbox
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false); // Close the lightbox
+  };
 
   const ytlinks = [
     "https://www.youtube.com/embed/cn6sKqhjE5c?si=RliRdRvMlYjnJSDf",
     "https://www.youtube.com/embed/YqgxKlGtpYY?si=xxCc016nj2QR67Eb",
     "https://www.youtube.com/embed/ov73yZLWLZo?si=a3Uu9_A0Z0mHsM0s",
     "https://www.youtube.com/embed/M-ZcZwUst28?si=Dzd4Q5iavkjgC-6v",
-    "https://www.youtube.com/embed/TWryAu1oi5g?si=26VMpP4coQyiqSHg"
-
-  ]
+    "https://www.youtube.com/embed/TWryAu1oi5g?si=26VMpP4coQyiqSHg",
+  ];
   return (
     <>
-      <Pagetop pageHeader="Maulees's Work" backgroundImage={gallery_top_img} />
+      <Pagetop pageHeader="Moulees's Work" backgroundImage={gallery_top_img} />
 
       <div className="gallery-parent parent">
         <div className="gallery-cont cont">
@@ -172,7 +177,7 @@ const Gallery = () => {
 
               <p className="text">Photos</p>
             </div>
-            <div
+            {/* <div
               className={
                 gallerypages.videossection ? "btn-tag active" : "btn-tag"
               }
@@ -188,7 +193,7 @@ const Gallery = () => {
               </span>
 
               <p className="text">Videos</p>
-            </div>
+            </div> */}
             <div
               className={
                 gallerypages.ytlinkssection ? "btn-tag active" : "btn-tag"
@@ -208,7 +213,13 @@ const Gallery = () => {
             </div>
           </div>
 
-          <div className="gallery-section">
+          <div
+            className={
+              gallerypages.ytlinkssection
+                ? "gallery-section yt-section"
+                : "gallery-section"
+            }
+          >
             {gallerypages.photossection && (
               <>
                 {images.slice(0, visibleImages).map((item, index) => (
@@ -216,7 +227,7 @@ const Gallery = () => {
                     className=" class bg-img-cover"
                     style={{ backgroundImage: `url(${item.imageUrl})` }}
                     key={index}
-                    onClick={() => openLightbox(item.imageUrl)}
+                    onClick={() => openLightbox(index)}
                   ></div>
                 ))}
 
@@ -235,7 +246,8 @@ const Gallery = () => {
                   </div>
                   <div
                     className={`right-arrow arrow ${
-                      images.length < 13 && images.length !== 13
+                      images.length < visibleImages &&
+                      images.length !== visibleImages
                         ? "disabled"
                         : "right-arrow arrow"
                     }`}
@@ -246,7 +258,7 @@ const Gallery = () => {
                 </div>
               </>
             )}
-            {gallerypages.videossection && (
+            {/* {gallerypages.videossection && (
               <>
                 {videos.map((item, index) => (
                   <div className=" class bg-img-cover" key={index}>
@@ -277,40 +289,70 @@ const Gallery = () => {
                   </div>
                 ))}
               </>
-            )}
+            )} */}
             {gallerypages.ytlinkssection && (
               <>
-              {
-                ytlinks.map((item, index)=>(
-                  <div className=" class " key={index} >
-                  <iframe
-                    src={item}
-                    frameborder="0"
-                 className="iframe_tag"
-                  ></iframe>
-                </div>
-                ))
-              }
+                {ytlinks.map((item, index) => (
+                  <div className=" youtube-links " key={index}>
+                    <iframe
+                      src={item}
+                      frameborder="0"
+                      className="iframe_tag"
+                    ></iframe>
+                  </div>
+                ))}
               </>
             )}
           </div>
-          {visibleImages < images.length && (
-            <button onClick={loadMore} className="read-more">
-              Read More
-            </button>
-          )}
         </div>
       </div>
 
       {/* image popup */}
-      {lightboxImageOpen && (
+      {/* {lightboxImageOpen && (
         <div className="image-lightbox" onClick={closeLightbox}>
           <div className="image ">
             <img src={selectedImage} alt="Selected" />
           </div>
         </div>
-      )}
+      )} */}
 
+      {lightboxImageOpen && (
+        <div className="image-lightbox">
+          <Swiper
+            slidesPerView={1}
+            spaceBetween={30}
+            centeredSlides={true}
+            autoplay={{
+              delay: 3500,
+              disableOnInteraction: false,
+            }}
+            initialSlide={selectedImage} 
+            loop={true}
+            navigation={{ nextEl: ".custom-next", prevEl: ".custom-prev" }}
+      
+            modules={[ EffectCoverflow,Autoplay, Navigation]}
+            className="mySwiper"
+            onClick={closeLightbox}
+          >
+            {images.map((item, index) => (
+              <SwiperSlide key={index}  className="swiperslide" >
+                <div
+                  className="image bg-img-contain"
+                  style={{ backgroundImage: `url(${item.imageUrl})` }}
+                ></div>
+              </SwiperSlide>
+            ))}
+
+<div className="custom-prev">
+            <BsArrowDown />
+          </div>
+          <div className="custom-next">
+            <BsArrowDown />
+          </div>
+          </Swiper>
+        </div>
+      )}
+      {/* 
       {lightboxVideoOpen && (
         <div className="image-lightbox" onClick={closeLightvideobox}>
           <div className="image ">
@@ -334,7 +376,7 @@ const Gallery = () => {
             />
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 };

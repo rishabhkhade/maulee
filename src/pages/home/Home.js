@@ -25,14 +25,13 @@ import image from "../../assets/tatto_images/img_1.webp";
 import heroimage from "../../assets/tArtist.webp";
 import ReactPlayer from "react-player";
 
-// home gallery image
-import image1 from "../../assets/tatto_images/tatto_1.webp";
-import image2 from "../../assets/tatto_images/tattoo_2.webp";
-import image3 from "../../assets/tatto_images/tattoo_3.webp";
-import image4 from "../../assets/tatto_images/tattoo_4.webp";
-import image5 from "../../assets/tatto_images/tattoo_5.webp";
-import image6 from "../../assets/tatto_images//image_6.webp";
-import { useInView } from "react-intersection-observer";
+// home gallery image 
+import image1 from "../../assets/tatto_images/tatto_1.webp"
+import image2 from "../../assets/tatto_images/tattoo_2.webp"
+import image3 from "../../assets/tatto_images/tattoo_3.webp"
+import image4 from "../../assets/tatto_images/tattoo_4.webp"
+import image5 from "../../assets/tatto_images/tattoo_5.webp"
+import image6 from "../../assets/tatto_images//image_6.webp"
 const Home = () => {
   const herodata = [
     {
@@ -314,7 +313,7 @@ const Home = () => {
             >
               {images.map((item, index) => (
                 <SwiperSlide className="gallery-swiperslide" key={index}>
-                  <Link to="/mauleeswork">
+                  <Link to="/mouleeswork">
                     <div
                       className="tatto-image bg-img-cover"
                       style={{ backgroundImage: `url(${item.image})` }}
@@ -336,7 +335,7 @@ const Home = () => {
         </div>
 
         <div className="bottom-cont cont">
-          <Link className="btn" to="/mauleeswork">
+          <Link className="btn" to="/mouleeswork">
             <h5 className="btn_text">Explore Gallery</h5>
           </Link>
         </div>
@@ -378,6 +377,9 @@ const Home = () => {
               <span className="plus_icon">
                 {" "}
                 <FaPlus />
+              </span>
+              <span className="text">
+                years
               </span>
             </h1>
             <h6 className="text">Our Experience</h6>
@@ -451,12 +453,12 @@ const Home = () => {
           data-aos-duration="1000"
         >
           <div className="left">
-            <div className="location ">
+            <a className="location "href="https://maps.app.goo.gl/RpE5B4t8yLJuvtGr5" target="blank"  >
               <div className="arc bg-img-contain"></div>
               <div className="loc-icon">
                 <CiLocationOn />
               </div>
-            </div>
+            </a>
             <div className="visit-text">
               <h5 className="">Viman Nagar , Pune</h5>
             </div>
