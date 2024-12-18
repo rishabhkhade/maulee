@@ -11,7 +11,7 @@ function Privacy() {
             <span>
               {" "}
               At moulee tattoo, accessible from
-              https://www.mouleestattooart.com/, one of our main priorities is the
+              <a href="https://www.mouleestattooart.com/">https://www.mouleestattooart.com/</a>, one of our main priorities is the
               privacy of our visitors. This Privacy Policy document contains
               types of information that is collected and recorded by
             moulee tattoo and how we use it.
