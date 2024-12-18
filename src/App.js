@@ -21,7 +21,7 @@ import ArtClasses from "./pages/artClasses/ArtClasses";
 
 function App() {
   const [popup, setPopup] = useState(false);
-const [blogview, setBlogView] = useState([])
+  const [blogview, setBlogView] = useState([]);
   const openPopUpdely = () => {
     setTimeout(() => {
       setPopup(true);
@@ -46,7 +46,7 @@ const [blogview, setBlogView] = useState([])
           <Route path="/blog" element={<Blog setBlogView={setBlogView} />} />
           <Route path="/Moulee’s_care" element={<Tatto_care />} />
           <Route path="/blogView" element={<BlogView blogview={blogview} />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact-form" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/cookies" element={<Cookies />} />
           <Route path="/artclasses" element={<ArtClasses />} />

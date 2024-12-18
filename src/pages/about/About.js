@@ -20,29 +20,29 @@ const About = () => {
   const artistData = [
     {
       image: narendraImage,
-      artist_name: "Narendra lipsum",
+      artist_name: "Narendra Patil",
       description:
         "Hey, I'm Narendra. I'm passionate about fine details and specialize in creating stunning spiritual and conceptual body art. I believe the best tattoos come from truly understanding a client’s vision. By forming a deep connection with each person, I transform their ideas into personalized, meaningful tattoos that are both visually captivating and emotionally impactful.",
       whatsapp_link: "/whatsapp",
-      insta_link: "/whatsapp",
+      insta_link: "https://www.instagram.com/narendra_moulees/profilecard/?igsh=MWo4dG53dHI1N2wwcg%3D%3D",
       x_link: "/whatsapp",
     },
     {
       image: sanketImage,
-      artist_name: "Sanket lipsum",
+      artist_name: "Sanket Ahire",
       description:
         "I'm Sanket, known for creating sharp, crisp designs with a focus on minimalism. I consistently deliver clean and precise tattoos, but while minimalism is my signature style, I love pushing boundaries and experimenting to take each piece to the next level.",
       whatsapp_link: "/whatsapp",
-      insta_link: "/whatsapp",
+      insta_link: "https://www.instagram.com/sanket_moulees/profilecard/?igsh=MWYxbWoxcWhtNWZwcg%3D%3D",
       x_link: "/whatsapp",
     },
     {
       image: akshayImage,
-      artist_name: "Akshay lipsum",
+      artist_name: "Akshay Patil",
       description:
         "Hi, I’m Akshay, a tattoo artist at Moulees Tattoo Art Studio. My passion lies in crafting unique, personalized designs that tell my clients' stories. I strive to create an environment where everyone feels comfortable and confident in bringing their ideas to life, always focusing on both artistry and safety.",
       whatsapp_link: "/whatsapp",
-      insta_link: "/whatsapp",
+      insta_link: "https://www.instagram.com/akshay_moulees/profilecard/?igsh=eGlhaHkzbDJ3MGN6",
       x_link: "/whatsapp",
     },
     {
@@ -51,7 +51,7 @@ const About = () => {
       description:
         "Hi, I’m Arpit Vyas, lead artist and mentor at Moulees Art Studio. I’m dedicated to guiding new artists in honing their craft while pushing my own creative boundaries with bold, vibrant artwork. I’m always eager to collaborate with fellow artists and share the joy of artistic exploration.",
       whatsapp_link: "/whatsapp",
-      insta_link: "/whatsapp",
+      insta_link: "https://www.instagram.com/arpitvyasthai/profilecard/?igsh=OGl3OW5yODUwa3Ux",
       x_link: "/whatsapp",
     },
   ];
@@ -193,7 +193,7 @@ const About = () => {
                     <p>{item.description}</p>
 
                     <div className="icons">
-                      <a href={item.insta_link}>
+                      <a target="blank" href={item.insta_link}>
                         <IoLogoInstagram />
                       </a>
                     </div>

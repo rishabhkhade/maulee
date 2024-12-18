@@ -467,7 +467,7 @@ const Home = () => {
           <div className="right">
             <p className="number">9890665043</p>
             <h5 className="righttext">Connect With Us</h5>
-            <Link to="/contact" className="btn">
+            <Link to="/contact-form" className="btn">
               <h5 className="btn_text">Click here</h5>
             </Link>
           </div>

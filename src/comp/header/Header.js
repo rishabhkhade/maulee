@@ -68,7 +68,7 @@ const Header = () => {
     },
     {
       nav :"Contact us",
-      path:"/contact"
+      path:"/contact-form"
     },
   ]
 
