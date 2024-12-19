@@ -24,38 +24,30 @@
   margin: 0px;
   font-family: "Poppins", sans-serif;
   line-height: 120%;
-
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-
-
 //custom fonts
 @font-face {
-  font-family: 'Intelo';
-  src: local('Intelo Medium'), local('Intelo-Medium'),
-    url('./fonts/Intelo-Medium.woff2') format('woff2'),
-    url('./fonts/Intelo-Medium.woff') format('woff'),
-    url('./fonts/Intelo-Medium.ttf') format('truetype');
+  font-family: "Intelo";
+  src: local("Intelo Medium"), local("Intelo-Medium"),
+    url("./fonts/Intelo-Medium.woff2") format("woff2"),
+    url("./fonts/Intelo-Medium.woff") format("woff"),
+    url("./fonts/Intelo-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
-
 
 @font-face {
-  font-family: 'Gilroy';
-  src: local('Gilroy Medium'), local('Intelo-Medium'),
-    url('./fonts/Gilroy-Medium.ttf') format('woff2'),
-    url('./fonts/Gilroy-Light.ttf') format('woff'),
-    url('./fonts/Gilroy-Regular.ttf') format('truetype');
+  font-family: "Gilroy";
+  src: local("Gilroy Medium"), local("Intelo-Medium"),
+    url("./fonts/Gilroy-Medium.ttf") format("woff2"),
+    url("./fonts/Gilroy-Light.ttf") format("woff"),
+    url("./fonts/Gilroy-Regular.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
-
-
-
-
 
 body {
   width: 100%;
@@ -67,8 +59,13 @@ html {
   scroll-behavior: smooth;
 }
 
-h1,h2,h3,h4,h5,h6{
-  font-family: 'Gilroy';
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Gilroy";
 }
 
 p {
@@ -79,8 +76,7 @@ p {
   word-spacing: 2px;
   font-weight: 300;
   color: var(--text);
-  font-family: 'Intelo';
-
+  font-family: "Intelo";
 }
 
 .bg-img-cover {
@@ -120,10 +116,10 @@ a {
   overflow: hidden;
   transition: var(--trans);
   border: none;
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
   &::after {
     content: "";
     position: absolute;
@@ -182,6 +178,10 @@ gap: 10px;
   overflow: hidden;
   transition: var(--trans);
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 
   &::after {
     content: "";
@@ -241,7 +241,6 @@ gap: 10px;
   width: fit-content;
   height: fit-content;
   position: relative;
-  
 
   .linetext {
     font-size: calc(var(--unit) * 3);
@@ -343,27 +342,25 @@ gap: 10px;
   }
 }
 
-@media only screen and (max-width:800px) {
+@media only screen and (max-width: 800px) {
   .custom-circle-prev {
     left: 25%;
   }
 }
 
-
-@media only screen and (max-width:650px) {
+@media only screen and (max-width: 650px) {
   .custom-circle-prev {
     left: 35%;
   }
 }
 
-
-@media (max-width:500px) {
+@media (max-width: 500px) {
   .heroheading {
     font-size: calc(var(--unit) * 3);
   }
 }
 
-@media (max-width:900px) {
+@media (max-width: 900px) {
   .custom-prev {
     left: 10% !important;
   }
@@ -373,10 +370,9 @@ gap: 10px;
   }
 }
 
-@media (max-width:550px) {
+@media (max-width: 550px) {
   .custom-prev {
     left: 12% !important;
-  
 
     svg {
       font-size: 50px !important;
@@ -386,7 +382,6 @@ gap: 10px;
 
   .custom-next {
     right: 2%;
- 
 
     svg {
       font-size: 50px !important;
@@ -397,7 +392,6 @@ gap: 10px;
   .custom-circle-next {
     right: 40%;
   }
-
 }
 
 .linetext {
@@ -410,4 +404,3 @@ gap: 10px;
   opacity: 0.5;
   text-align: center;
 }
-

@@ -16,6 +16,11 @@
   }
   .testimoneal-cont {
     padding: var(--unit) 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: calc(var(--unit)*2);
     .client-video {
       display: flex;
       justify-content: center;
