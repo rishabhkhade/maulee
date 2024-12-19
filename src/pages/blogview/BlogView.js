@@ -36,7 +36,7 @@ const BlogView = ({ blogview }) => {
           return {
             id: post.id, // Include an ID or unique identifier
             title: post.title.rendered,
-            description: post.excerpt.rendered,
+            description: post.content.rendered,
             uploadDate: post.date,
             imageUrl: featuredMedia.source_url || "",
             imageId: featuredMedia.id || null,
@@ -93,7 +93,10 @@ const BlogView = ({ blogview }) => {
               </div>
               <div
                 dangerouslySetInnerHTML={{ __html: blogviewdata.description }}
+
+              
               />
+          
             </>
           ) : (
             <p>Loading...</p>
