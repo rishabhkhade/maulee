@@ -6,7 +6,7 @@ import Pagetop from "../../comp/pagetop/Pagetop";
 import axios from "axios";
 import gallery_top_img from "../../assets/hero.png";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 
 function Blog({ setBlogView }) {
   const navigate = useNavigate();
@@ -14,11 +14,22 @@ function Blog({ setBlogView }) {
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(0);
   const itemsPerPage = 6;
-
+  
   const blogViewPage = (id) => {
-    setBlogView(id);
-    navigate("/blogView");
+    navigate(`/blogView?id=${id}`);
   };
+  
+  // In your BlogView component
+  const [searchParams] = useSearchParams();
+  const blogid = searchParams.get("id");
+  
+  useEffect(() => {
+    if (blogid) {
+      console.log("Setting blogview state with id:", blogid);
+      setBlogView(blogid);
+    }
+  }, [blogid]);
+
   const blogsData = async () => {
     try {
       const response = await axios.get(
@@ -31,6 +42,8 @@ function Blog({ setBlogView }) {
       );
 
       const data = response.data;
+
+    
       const blogPosts = data
         .filter((post) => {
           // Check if the post belongs to the 'Blog' category
@@ -45,6 +58,7 @@ function Blog({ setBlogView }) {
         .map((post) => {
           const featuredMedia = post._embedded["wp:featuredmedia"]?.[0] || {};
           return {
+            id:post.id,
             title: post.title.rendered,
             description: post.excerpt.rendered,
             uploadDate: post.date,
@@ -55,6 +69,7 @@ function Blog({ setBlogView }) {
         });
 
       setBlogData(blogPosts);
+      console.log(blogPosts, "sdsdf")
     } catch (error) {
       console.log(error);
     }
@@ -111,7 +126,7 @@ function Blog({ setBlogView }) {
                   <div
                     className="blog-card"
                     key={index}
-                    onClick={() => blogViewPage(item.imageId)}
+                    onClick={() => blogViewPage(item.id)}
                   >
                     <div className="blog-img-box">
                       <div className="card-img-overlay">
@@ -161,7 +176,9 @@ function Blog({ setBlogView }) {
             </div>
             <div
               className={`right-arrow arrow ${
-                startOffset + itemsPerPage >= blogData.length ? "disabled" : "right-arrow arrow"
+                startOffset + itemsPerPage >= blogData.length
+                  ? "disabled"
+                  : "right-arrow arrow"
               }`}
               onClick={handleNextPage}
             >

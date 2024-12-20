@@ -36,7 +36,21 @@
       align-items: center;
     }
 
+  div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 
+    h3{
+      text-align: center;
+    }
+
+    figcaption{
+      text-align: center;
+    }
+  }
   }
 }
 
@@ -54,6 +68,7 @@
   
           img{
             width: 100%;
+            height: auto;
           }
 
           div{

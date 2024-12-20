@@ -82,7 +82,7 @@ const PopUp = ({setPopup}) => {
                     placeholder="Email"
                     value={formData.email}
                     onChange={handleChange}
-                    required
+                    
                   />
                   <input
                     type="text"
@@ -101,7 +101,7 @@ const PopUp = ({setPopup}) => {
                   placeholder="Your Message"
                   value={formData.message}
                   onChange={handleChange}
-                  required
+                  
                 />
 
                 <button className="btn" type="submit">

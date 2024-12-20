@@ -104,7 +104,7 @@ const Contact = () => {
                     name="email"
                     placeholder="Email"
                    
-                    required
+                    
                   />
                   <input
                     type="text"
@@ -121,7 +121,7 @@ const Contact = () => {
                   name="message"
                   placeholder="Your Message"
                  
-                  required
+                  
                 />
 
                 <button className="btn2" type="submit">

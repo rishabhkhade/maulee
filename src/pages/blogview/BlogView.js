@@ -4,59 +4,49 @@ import "./blogview.scss";
 import axios from "axios";
 import gallery_top_img from "../../assets/hero.png";
 import { Helmet } from "react-helmet";
+import { useSearchParams } from "react-router-dom";
 
 const BlogView = ({ blogview }) => {
   const [blogviewdata, setBlogviewData] = useState(null);
+  const [searchParams] = useSearchParams();
+  const blogId = searchParams.get("id");
 
-  const blogsData = async () => {
+
+  
+  const fetchBlogDataById = async (id) => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_URL}/posts?_embed`,
-        {
-          params: {
-            per_page: 100,
-          },
-        }
+        `${process.env.REACT_APP_URL}/posts/${id}?_embed` // Fetch single post by ID
       );
-
-      const data = response.data;
-      const blogPosts = data
-        .filter((post) => {
-          // Check if the post belongs to the 'Blog' category
-          return (
-            post._embedded &&
-            post._embedded["wp:term"] &&
-            post._embedded["wp:term"][0].some(
-              (category) => category.name === "Blog"
-            )
-          );
-        })
-        .map((post) => {
-          const featuredMedia = post._embedded["wp:featuredmedia"]?.[0] || {};
-          return {
-            id: post.id, // Include an ID or unique identifier
-            title: post.title.rendered,
-            description: post.content.rendered,
-            uploadDate: post.date,
-            imageUrl: featuredMedia.source_url || "",
-            imageId: featuredMedia.id || null,
-            category: "Blog",
-          };
-        });
-
-      // Filter based on the blogview index
-      const filteredData = blogPosts.find((item) => item.imageId === blogview);
-      setBlogviewData(filteredData);
-
-      console.log(filteredData, "filteredData");
+  
+      const post = response.data;
+      const featuredMedia = post._embedded["wp:featuredmedia"]?.[0] || {};
+  
+      const postData = {
+        id: post.id,
+        title: post.title.rendered,
+        description: post.content.rendered,
+        uploadDate: post.date,
+        imageUrl: featuredMedia.source_url || "",
+        imageId: featuredMedia.id || null,
+        category: "Blog",
+      };
+  
+      setBlogviewData(postData); // Set the blog data based on the single post
+  
+      console.log(postData, "Single Post Data");
+  
     } catch (error) {
       console.log(error);
     }
   };
+  
 
   useEffect(() => {
-    blogsData();
-  }, [blogview]);
+    if (blogId) {
+      fetchBlogDataById(blogId); // Fetch the blog post data based on the id from URL
+    }
+  }, [blogId]);
 
   return (
     <>
