@@ -25,7 +25,7 @@ const Footer = ({ setPopup }) => {
               <a href="https://wa.me/+917028997574">Developed by RK</a>
           
         
-              <p>Copyright/Moulees Tattoo</p>
+              <p>Copyright@Moulees Tattoo</p>
       
             <Link className="privacy-cookies">
               <Link to="/privacy">Privacy</Link>

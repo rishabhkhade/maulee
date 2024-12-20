@@ -150,6 +150,18 @@
             color: var(--white);
             font-weight: 700;
           }
+
+          &.last_image {
+            background: linear-gradient(transparent, var(--accent)),
+              url("../../assets/tatto_images/img_8.webp");
+              display: flex;
+              justify-content: center;
+              align-items: flex-end;
+
+              p{
+                color: var(--white);
+              }
+          }
         }
       }
     }
@@ -185,7 +197,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-  
+
       flex-direction: column;
       gap: var(--unit);
       .count {
@@ -198,7 +210,7 @@
         align-items: center;
         gap: var(--unit);
 
-        .yrs-text{
+        .yrs-text {
           position: absolute;
           font-size: var(--unit);
           bottom: 40%;
@@ -225,8 +237,7 @@
       .text {
         width: 100%;
         text-align: center;
-        
-    
+
         line-height: 100%;
         display: flex;
         justify-content: center;
@@ -239,7 +250,7 @@
       .countTitle {
         width: fit-content;
         height: fit-content;
-        font-size: calc(var(--unit)*3);
+        font-size: calc(var(--unit) * 3);
         color: var(--white);
         text-align: center;
         line-height: 110%;
@@ -326,7 +337,8 @@
 .place-visit-parent {
   width: 100%;
   height: 300px;
-background: linear-gradient(rgba(44, 44, 44, 0.74), rgba(44, 44, 44, 0.74)),url("../../assets/map.jpeg");
+  background: linear-gradient(rgba(44, 44, 44, 0.74), rgba(44, 44, 44, 0.74)),
+    url("../../assets/map.jpeg");
 
   .place-visit-cont {
     height: 100%;
@@ -448,9 +460,7 @@ background: linear-gradient(rgba(44, 44, 44, 0.74), rgba(44, 44, 44, 0.74)),url(
       .right,
       .left {
         .count {
-          font-size: calc(var(--unit)*2);
-
-       
+          font-size: calc(var(--unit) * 2);
         }
 
         .text {
@@ -488,8 +498,6 @@ background: linear-gradient(rgba(44, 44, 44, 0.74), rgba(44, 44, 44, 0.74)),url(
   .counter-parent {
     .counter-cont {
       flex-direction: column !important;
-
-   
     }
   }
 
@@ -550,31 +558,27 @@ background: linear-gradient(rgba(44, 44, 44, 0.74), rgba(44, 44, 44, 0.74)),url(
 }
 
 @media only screen and (max-width: 550px) {
-
   .counter-parent {
     .counter-cont {
-      .left,.right{
-        .text{
+      .left,
+      .right {
+        .text {
           font-size: calc(var(--unit));
         }
 
-        .count{
-
-          .yrs-text{
-            bottom:10% !important;
+        .count {
+          .yrs-text {
+            bottom: 10% !important;
             right: 25% !important;
-         
           }
         }
       }
 
-      .middle{
-        .countTitle{
-          font-size: calc(var(--unit)*2) !important;
+      .middle {
+        .countTitle {
+          font-size: calc(var(--unit) * 2) !important;
         }
       }
-
-   
     }
   }
   .place-visit-parent {
