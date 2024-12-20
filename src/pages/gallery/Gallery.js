@@ -32,7 +32,7 @@ import { IoIosArrowBack } from "react-icons/io";
 // import gl5 from "../../assets/video/gl_5.webm";
 
 const Gallery = () => {
-  const [visibleImages, setVisibleImages] = useState(14);
+  const [visibleImages, setVisibleImages] = useState(15);
   const loadMore = () => {
     setVisibleImages((prev) => prev + 15);
   };
@@ -94,13 +94,16 @@ const Gallery = () => {
         `${process.env.REACT_APP_URL}/posts?_embed`,
         {
           params: {
-            per_page: 15, // Number of images per page
+            per_page: visibleImages, // Number of images per page
             page: pageNumber,
           },
         }
       );
-
+   
       const data = response.data;
+
+      console.log(data, "dayta")
+      console.log(response, "dayta")
       const images = data
         .filter((post) => {
           return (
@@ -126,8 +129,10 @@ const Gallery = () => {
           return null;
         })
         .filter((item) => item !== null);
-console.log(images, "dataimages")
+console.log(images)
       setImages(images);
+
+     
     } catch (error) {
       console.error(error);
     }
