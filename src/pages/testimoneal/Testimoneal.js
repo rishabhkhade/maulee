@@ -96,7 +96,7 @@ const Testimoneal = () => {
             ))}
           </div>
 
-          <a class="btn2"  href="https://www.youtube.com/@mouleestattooart"  target="blank">
+          <a class="btn2"  href="https://www.youtube.com/@mouleestattooart/playlists"  target="blank">
             <div class="btn_text">
               Know More
             </div>
