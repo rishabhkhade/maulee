@@ -151,61 +151,32 @@ const Service = () => {
           <SectionHeading line_text="Services" fill_text="services" />
         </div>
       </div>
-
-      <div className="service-list parent">
-        <div
-          className="service-cont cont"
-          data-aos="fade-up"
-          data-aos-delay="500"
-          data-aos-duration="1000"
-        >
-          <Swiper
-            slidesPerView={4}
-            centeredSlides={false}
-            spaceBetween={30}
-            grabCursor={true}
-            navigation={{
-              clickable: true,
-            }}
-            breakpoints={{
-              350: {
-                slidesPerView: 1,
-                spaceBetween: 30,
-              },
-              700: {
-                slidesPerView: 2,
-                spaceBetween: 50,
-              },
-              1000: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
-              1200: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
-            }}
-            modules={[Pagination, Navigation]}
-            className="mySwiper"
+      <div class="service_parent parent">
+      {serviceContent.map((item, index) => (
+        <div className="service-list parent" key={index} >
+          <div
+            className="service-cont cont"
+            data-aos="fade-up"
+            data-aos-delay="500"
+            data-aos-duration="1000"
           >
-            {serviceContent.map((item, index) => (
-              <SwiperSlide className="swiperslide">
-                <div className="service" key={index}>
-                  <div
-                    class="service-photo bg-img-cover"
-                    style={{ backgroundImage: `url(${item.service_img})` }}
-                  ></div>
-                  <p>{item.content}</p>
-                  <Link to={item.path_link} className="tag-text">
-                    {item.title}
-                  </Link>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          
+              <div
+                class="service-photo bg-img-cover"
+                style={{ backgroundImage: `url(${item.service_img})` }}
+              ></div>
+              <div class="right">
+              <p>{item.content}</p>
+              <Link to={item.path_link} className="tag-text">
+                {item.title}
+              </Link>
+              </div>
+          
+          </div>
         </div>
+      ))}
       </div>
-
+    
       <div className="faq-parent parent">
         <div
           className="faq-cont cont"
