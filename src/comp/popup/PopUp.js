@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import "./popup.scss"
 import { IoClose } from "react-icons/io5";
+import { Link } from 'react-router-dom';
 const PopUp = ({setPopup}) => {
     const [formData, setFormData] = useState({
         name: "",
@@ -52,7 +53,7 @@ const PopUp = ({setPopup}) => {
               </p>
             </div>
             <div className="contact-bottom">
-              <form onSubmit={Submit}>
+              {/* <form onSubmit={Submit}>
                 <div className="form-group">
                   <input
                     type="text"
@@ -107,7 +108,16 @@ const PopUp = ({setPopup}) => {
                 <button className="btn" type="submit">
                   <div className="btn_text ">Submit</div>
                 </button>
-              </form>
+              </form> */}
+
+            <div class="pop_img bg-img-cover">
+
+            </div>
+            <Link className='btn' to="/contact-form" >
+              <div class="btn_text">
+                Contact us
+              </div>
+            </Link>
             </div>
 
             <div className="closeButton"  onClick={()=>setPopup(false)} >

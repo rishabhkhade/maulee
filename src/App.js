@@ -22,13 +22,16 @@ import ArtClasses from "./pages/artClasses/ArtClasses";
 function App() {
   const [popup, setPopup] = useState(false);
   const [blogview, setBlogView] = useState([]);
+
   const openPopUpdely = () => {
+  
     setTimeout(() => {
       setPopup(true);
     }, 10000);
   };
   useEffect(() => {
     openPopUpdely();
+  
   }, []);
 
   return (
