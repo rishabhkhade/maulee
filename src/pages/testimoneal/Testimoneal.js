@@ -3,7 +3,7 @@ import "./tesimoneal.scss";
 import Pagetop from "../../comp/pagetop/Pagetop";
 import ReactPlayer from "react-player";
 import video from "../../assets/video.webm";
-import service_top_img from "../../assets/hero.png";
+import service_top_img from "../../assets/service_pagetop.webp";
 import SectionHeading from "../../comp/sectionHeading/SectionHeading";
 import { Helmet } from "react-helmet";
 import { ImQuotesLeft } from "react-icons/im";

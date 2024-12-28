@@ -10,7 +10,7 @@ import { IoLogoInstagram } from "react-icons/io";
 import { Helmet } from "react-helmet";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import about_top_img from "../../assets/hero.png";
+import about_top_img from "../../assets/pagetop.webp";
 
 const About = () => {
   useEffect(() => {

@@ -20,7 +20,7 @@ import ReactPlayer from "react-player";
 // import { BiSolidVideos } from "react-icons/bi";
 import { IoMdPhotos } from "react-icons/io";
 import { BsYoutube } from "react-icons/bs";
-import gallery_top_img from "../../assets/hero.png";
+import gallery_top_img from "../../assets/pagetop.webp";
 import axios from "axios";
 import { IoIosArrowBack } from "react-icons/io";
 
@@ -37,24 +37,7 @@ const Gallery = () => {
     setVisibleImages((prev) => prev + 15);
   };
 
-  // const videos = [
-  //   {
-  //     image: gl1,
-  //   },
-  //   {
-  //     image: gl2,
-  //   },
-  //   {
-  //     image: gl3,
-  //   },
-  //   {
-  //     image: gl4,
-  //   },
-
-  //   {
-  //     image: gl5,
-  //   },
-  // ];
+ 
 
   const [gallerypages, setgalleryPage] = useState({
     photossection: true,

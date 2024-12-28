@@ -38,7 +38,7 @@ const Herosection = ({ herodata }) => {
         >
           {herodata.map((item, index) => (
             <SwiperSlide
-              className="hero-swiperslide-parent bg-img-cover parent"
+              className="hero-swiperslide-parent parent"
               key={index}
               style={{backgroundImage:`url(${item.heroimage})`}}
             >

@@ -3,11 +3,13 @@ import "./service.scss";
 import Pagetop from "../../comp/pagetop/Pagetop";
 import SectionHeading from "../../comp/sectionHeading/SectionHeading";
 import { IoIosArrowDown } from "react-icons/io";
-import service_top_img from "../../assets/hero.png";
+import service_top_img from "../../assets/service_pagetop.webp";
 import { Helmet } from "react-helmet";
 import tattoo from "../../assets/services/tattoo.webp";
-import piercing from "../../assets/services/piersing.webp";
-import temporary_tattoo from "../../assets/services/temporary_tattoo.webp";
+import piercing from "../../assets/services/peircing.webp";
+import temporary_tattoo from "../../assets/services/temp_tattoo.webp";
+import art_studio from "../../assets/services/art_studio.webp";
+import art_classes from "../../assets/services/art_classes.webp";
 
 // swiper
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -40,14 +42,14 @@ const Service = () => {
       title: "Temporary Tattoo",
     },
     {
-      service_img: tattoo,
+      service_img: art_studio,
 
       content:
         "Explore our collection of fine art and paintings, crafted by our talented artists. From stunning watercolor pieces to intricate, detailed artwork, each painting is a unique expression of creativity. Perfect for enhancing your home or workspace, our original pieces are available for purchase.",
       title: "Art studio",
     },
     {
-      service_img: tattoo,
+      service_img: art_classes,
 
       content:
         "This program is not just a service for us; it's a mission! Our goal is to create a healthy community, foster culture, and enhance careers. Beyond the syllabus, we'll have curricular guest artists and workshops. So, don't miss the chance to be a part of the first wave of this mission.",

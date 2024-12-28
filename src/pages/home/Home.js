@@ -24,7 +24,9 @@ import icon1 from "../../assets/Mask group.png";
 import image from "../../assets/tatto_images/img_1.webp";
 import heroimage from "../../assets/tArtist.webp";
 import ReactPlayer from "react-player";
-
+import hero1 from "../../assets/herosection.webp";
+import hero2 from "../../assets/herosection2.webp";
+import hero3 from "../../assets/herosection3.webp";
 // home gallery image
 import image1 from "../../assets/tatto_images/tatto_1.webp";
 import image2 from "../../assets/tatto_images/tattoo_2.webp";
@@ -37,13 +39,13 @@ import { useInView } from "react-intersection-observer";
 const Home = () => {
   const herodata = [
     {
-      heroimage: heroimage,
+      heroimage: hero1,
     },
     {
-      heroimage: heroimage,
+      heroimage: hero2,
     },
     {
-      heroimage: heroimage,
+      heroimage: hero3,
     },
   ];
 
