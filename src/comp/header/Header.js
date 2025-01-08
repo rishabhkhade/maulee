@@ -59,6 +59,10 @@ const Header = () => {
       path:"/mouleeswork"
     },
     {
+      nav :"Tattoo Education",
+      path:"/artclasses"
+    },
+    {
       nav :"Client's Voice",
       path:"/our_Clients"
     },

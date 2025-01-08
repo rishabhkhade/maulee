@@ -12,25 +12,6 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import axios from "axios";
 
 function AfterFooter() {
-  const data = [
-    {
-      description:
-        " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum rem perferendis quas placeat, amet officiis atque ab! Natus, distinctio qui? perferendis quas placeat, amet officiis atque ab! Natus, distinctio qui? distinctio qui?atque ab! Natus, distinctio qui? distinctio qui? 1",
-    },
-    {
-      description:
-        " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum rem perferendis quas placeat, amet officiis atque ab! Natus, distinctio qui? perferendis quas placeat, amet officiis atque ab! Natus, distinctio qui? distinctio qui?atque ab! Natus, distinctio qui? distinctio qui? 2",
-    },
-    {
-      description:
-        " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum rem perferendis quas placeat, amet officiis atque ab! Natus, distinctio qui? perferendis quas placeat, amet officiis atque ab! Natus, distinctio qui? distinctio qui?atque ab! Natus, distinctio qui? distinctio qui? 3",
-    },
-    {
-      description:
-        " Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum rem perferendis quas placeat, amet officiis atque ab! Natus, distinctio qui? perferendis quas placeat, amet officiis atque ab! Natus, distinctio qui? distinctio qui?atque ab! Natus, distinctio qui? distinctio qui? 4",
-    },
-  ];
-
   const [blogData, setBlogData] = useState([]);
 
   const blogsData = async () => {
@@ -52,7 +33,7 @@ function AfterFooter() {
             post._embedded &&
             post._embedded["wp:term"] &&
             post._embedded["wp:term"][0].some(
-              (category) => category.name === "Blog"
+              (category) => category.name === "Keywords"
             )
           );
         })
@@ -60,16 +41,11 @@ function AfterFooter() {
           const featuredMedia = post._embedded["wp:featuredmedia"]?.[0] || {};
           return {
             title: post.title.rendered,
-            description: post.excerpt.rendered,
-            uploadDate: post.date,
-            imageUrl: featuredMedia.source_url || "",
-            imageId: featuredMedia.id || null,
             category: "Blog",
           };
         });
-
+      console.log(blogPosts, "fdgd");
       setBlogData(blogPosts);
-
     } catch (error) {
       console.log(error);
     }
@@ -79,17 +55,15 @@ function AfterFooter() {
     blogsData();
   }, []);
 
-
-
   return (
     <>
       <div className="icons-box">
-       <a target="blank" href="https://wa.me/+919890665043">
-       <FaWhatsapp />
-       </a>
-       <a target="blank" href="tel:+919890665043">
-       <IoCallOutline />
-       </a>
+        <a target="blank" href="https://wa.me/+919890665043">
+          <FaWhatsapp />
+        </a>
+        <a target="blank" href="tel:+919890665043">
+          <IoCallOutline />
+        </a>
       </div>
 
       <div className="footer-swiper parent">
@@ -107,15 +81,9 @@ function AfterFooter() {
           modules={[Autoplay, Navigation]}
           className="mySwiper parent"
         >
-          {blogData.slice(0,4).map((item, index) => (
+          {blogData.slice(0, 4).map((item, index) => (
             <SwiperSlide className="parent">
-                <p
-                      className="cont paragraph"
-                      dangerouslySetInnerHTML={{
-                        __html: item.description.slice(0, 80),
-                      }}
-                    />
-            
+              <p className="cont paragraph">{item.title}</p>
             </SwiperSlide>
           ))}
           <div className="custom-prev">
@@ -126,8 +94,6 @@ function AfterFooter() {
           </div>
         </Swiper>
       </div>
-
-      
     </>
   );
 }
