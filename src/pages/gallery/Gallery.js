@@ -7,12 +7,7 @@ import { BsArrowDown } from "react-icons/bs";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import {
-
-  EffectCoverflow,
-  Navigation,
-  Autoplay,
-} from "swiper/modules";
+import { EffectCoverflow, Navigation, Autoplay } from "swiper/modules";
 // image
 
 import video from "../../assets/video.webm";
@@ -32,12 +27,10 @@ import { IoIosArrowBack } from "react-icons/io";
 // import gl5 from "../../assets/video/gl_5.webm";
 
 const Gallery = () => {
-  const [visibleImages, setVisibleImages] = useState(15);
+  const [visibleImages, setVisibleImages] = useState(13);
   const loadMore = () => {
-    setVisibleImages((prev) => prev + 15);
+    setVisibleImages((prev) => prev + 13);
   };
-
- 
 
   const [gallerypages, setgalleryPage] = useState({
     photossection: true,
@@ -71,22 +64,22 @@ const Gallery = () => {
   const [lightboxImageOpen, setLightboxOpen] = useState(false);
   const [selectedImage, setSelectedImage] = useState(0);
 
+  const [hasMoreImages, setHasMoreImages] = useState(true); // New state to track if more images are available
+
   const fetchGallery = async () => {
     try {
       const response = await axios.get(
         `${process.env.REACT_APP_URL}/posts?_embed`,
         {
           params: {
-            per_page: visibleImages, // Number of images per page
+            per_page: 13, // Always fetch 13 images per page
             page: pageNumber,
           },
         }
       );
-   
+
       const data = response.data;
 
-      console.log(data, "dayta")
-      console.log(response, "dayta")
       const images = data
         .filter((post) => {
           return (
@@ -112,10 +105,11 @@ const Gallery = () => {
           return null;
         })
         .filter((item) => item !== null);
-console.log(images)
-      setImages(images);
 
-     
+      // If the number of images returned is less than the per_page limit, no more images are available
+      setHasMoreImages(data.length === 13);
+
+      setImages(images);
     } catch (error) {
       console.error(error);
     }
@@ -218,28 +212,30 @@ console.log(images)
                     onClick={() => openLightbox(index)}
                   ></div>
                 ))}
-
                 <div className="pagination">
                   <div
                     className={`left-arrow arrow ${
-                      pageNumber <= 1 ? "disabled" : "left-arrow arrow"
+                      pageNumber <= 1 ? "disabled" : ""
                     }`}
-                    onClick={
-                      pageNumber > 1
-                        ? () => setPageNumber(pageNumber - 1)
-                        : null
-                    }
+                    onClick={() => {
+                      if (pageNumber > 1) {
+                        setPageNumber((prev) => prev - 1);
+                        setVisibleImages(13); // Reset visible images on page change
+                      }
+                    }}
                   >
                     <IoIosArrowBack />
                   </div>
                   <div
                     className={`right-arrow arrow ${
-                      images.length < visibleImages &&
-                      images.length !== visibleImages
-                        ? "disabled"
-                        : "right-arrow arrow"
+                      !hasMoreImages ? "disabled" : ""
                     }`}
-                    onClick={() => setPageNumber(pageNumber + 1)}
+                    onClick={() => {
+                      if (hasMoreImages) {
+                        setPageNumber((prev) => prev + 1);
+                        setVisibleImages(13); // Reset visible images on page change
+                      }
+                    }}
                   >
                     <IoIosArrowBack />
                   </div>
@@ -314,16 +310,15 @@ console.log(images)
               delay: 3500,
               disableOnInteraction: false,
             }}
-            initialSlide={selectedImage} 
+            initialSlide={selectedImage}
             loop={true}
             navigation={{ nextEl: ".custom-next", prevEl: ".custom-prev" }}
-      
-            modules={[ EffectCoverflow,Autoplay, Navigation]}
+            modules={[EffectCoverflow, Autoplay, Navigation]}
             className="mySwiper"
             onClick={closeLightbox}
           >
             {images.map((item, index) => (
-              <SwiperSlide key={index}  className="swiperslide" >
+              <SwiperSlide key={index} className="swiperslide">
                 <div
                   className="image bg-img-contain"
                   style={{ backgroundImage: `url(${item.imageUrl})` }}
@@ -331,12 +326,12 @@ console.log(images)
               </SwiperSlide>
             ))}
 
-<div className="custom-prev">
-            <BsArrowDown />
-          </div>
-          <div className="custom-next">
-            <BsArrowDown />
-          </div>
+            <div className="custom-prev">
+              <BsArrowDown />
+            </div>
+            <div className="custom-next">
+              <BsArrowDown />
+            </div>
           </Swiper>
         </div>
       )}
