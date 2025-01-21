@@ -12,9 +12,12 @@ const Contact = () => {
   
     const formEle = document.querySelector("form");
     const formDatab = new FormData(formEle);
+    const date = new Date().toDateString();
+
+    formDatab.append("date",date)
   
     fetch(
-      "https://script.google.com/macros/s/AKfycbyja3Pim7AHQvnRZWueQDFuDTuLKvWagL1NchT_bmLTT9dwpN00_MPs9bdAQLr4bD0R/exec",
+      "https://script.google.com/macros/s/AKfycbzw0fa44vdQ0zxgvTFe4TvfQ3h0mrTyY8u3wS3Tc1da_WUe_W-XVlqZFN5hFUw3EAVj/exec",
       {
         method: "POST",
         body: formDatab,

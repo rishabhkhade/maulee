@@ -30,6 +30,7 @@ function Blog({ setBlogView }) {
     }
   }, [blogid]);
 
+
   const blogsData = async () => {
     try {
       const response = await axios.get(
