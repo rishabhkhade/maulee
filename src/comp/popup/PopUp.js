@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import "./popup.scss"
 import { IoClose } from "react-icons/io5";
 import { Link } from 'react-router-dom';
+import ReactPlayer from 'react-player';
+import pop_up_video from "../../assets/video/pop_up_video.mp4"
 const PopUp = ({ setPopup }) => {
   const [formData, setFormData] = useState({
     name: "",
@@ -114,7 +116,28 @@ const PopUp = ({ setPopup }) => {
             </form>
 
             <div class="pop_img bg-img-cover">
-
+              <div class="video">
+              <ReactPlayer
+                           config={{
+                             file: {
+                               forceVideo: true,
+                               attributes: {
+                                 preload: "metadata",
+                               },
+                             },
+                           }}
+                           autoPlay
+                           loop
+                           muted
+                           playsInline
+                           controls={false}
+                           playing={true}
+                           width="100%"
+                           height="100%"
+                           className="popvideo"
+                           url={pop_up_video}
+                         />
+              </div>
             </div>
             <Link className='btn' to="/contact-form" >
               <div class="btn_text">
