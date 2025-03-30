@@ -18,10 +18,33 @@ import Tatto_care from "./pages/tattocare/Tatto_care";
 import Privacy from "./pages/privacy/Privacy";
 import Cookies from "./pages/cookies/Cookies";
 import ArtClasses from "./pages/artClasses/ArtClasses";
-
+import ReactGA from "react-ga4";
 function App() {
   const [popup, setPopup] = useState(false);
   const [blogview, setBlogView] = useState([]);
+
+
+  ReactGA.initialize("G-LFH7NC7P8K");
+
+  
+  useEffect(() => {
+    // Add the analytics script to the <head>
+    const script1 = document.createElement("script");
+    script1.async = true;
+    script1.src = "https://www.googletagmanager.com/gtag/js?id=G-LFH7NC7P8K";
+    document.head.appendChild(script1);
+
+    // Add the gtag initialization script
+    const script2 = document.createElement("script");
+    script2.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LFH7NC7P8K');
+    `;
+    document.head.appendChild(script2);
+  }, []);
+
 
   const openPopUpdely = () => {
   
