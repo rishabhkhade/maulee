@@ -31,7 +31,7 @@ function App() {
     // Add the analytics script to the <head>
     const script1 = document.createElement("script");
     script1.async = true;
-    script1.src = "https://www.googletagmanager.com/gtag/js?id=G-LFH7NC7P8K";
+    script1.src="https://www.googletagmanager.com/gtag/js?id=G-Y66VD4YHRR";
     document.head.appendChild(script1);
 
     // Add the gtag initialization script
@@ -40,7 +40,7 @@ function App() {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-LFH7NC7P8K');
+      gtag('config', 'G-Y66VD4YHRR');
     `;
     document.head.appendChild(script2);
   }, []);
