@@ -40,11 +40,11 @@ const Contact = () => {
     <>
       <Helmet>
         <title>
-        Contact Us | Get in Touch with Moulee's Tattoo Art Studio
+        Contact Moulee's Tattoo Art Studio | Book Your Tattoo in Pune
         </title>
         <meta
           name="description"
-          content="Reach out to Moulee's Tattoo Art Studio for inquiries, appointments, and consultations. We're here to assist you with custom tattoos, piercing services, and more. Visit us in Pune or contact us online for exceptional service and artistry."
+          content="Ready to get inked? Contact Moulee’s Tattoo Art Studio in Pune to book your appointment or consultation. Let’s bring your tattoo vision to life."
         />
         <meta
           name="keywords"

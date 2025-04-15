@@ -95,16 +95,11 @@ const Service = () => {
     <>
       <Helmet>
         <title>
-          Moulee's Tattoo Art Studio | Best Tattoo Studio in Pune & Viman Nagar
-          | Art Classes by Moulee's Tattoo Art | Fine Art & Painting Creations |
-          Temporary Tattoos in Pune | Beautiful, Non-Permanent Designs |
-          Professional Piercing Services in Pune | Hygienic & Safe | Custom
-          Tattoos in Pune | Realism, Watercolor, & Traditional Styles | Fine Art
-          & Paintings by Moulee's Tattoo Art | Unique Creative Pieces
+        Tattoo Services in Pune | Moulee's Tattoo Art Studio
         </title>
         <meta
           name="description"
-          content="Moulee's Tattoo Art Studio, the best tattoo studio in Pune and Viman Nagar, specializes in custom tattoo designs, expert cover-ups, and diverse styles like realism, traditional, and watercolor tattoos. Our skilled artists ensure every tattoo is a masterpiece tailored to your vision. Explore professional piercing services in a hygienic and safe environment, along with temporary tattoos that last 5-7 days, perfect for special occasions or testing a design. Enhance your creativity with our fine art classes and discover stunning paintings crafted by talented artists, ideal for home or workspace decoration. Experience exceptional artistry, personalized service, and a welcoming atmosphere at our clean and modern studio."
+          content="Explore our professional tattoo services in Pune—from custom tattoos to cover-ups. Moulee’s Tattoo Art Studio ensures precision, safety, and stunning results."
         />
         <meta
           name="keywords"

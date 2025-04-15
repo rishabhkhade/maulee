@@ -44,7 +44,7 @@ function AfterFooter() {
             category: "Blog",
           };
         });
-      console.log(blogPosts, "fdgd");
+    
       setBlogData(blogPosts);
     } catch (error) {
       console.log(error);
@@ -82,7 +82,7 @@ function AfterFooter() {
           className="mySwiper parent"
         >
           {blogData.slice(0, 4).map((item, index) => (
-            <SwiperSlide className="parent">
+            <SwiperSlide className="parent" key={index}>
               <p className="cont paragraph">{item.title}</p>
             </SwiperSlide>
           ))}

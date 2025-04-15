@@ -33,7 +33,7 @@ import image2 from "../../assets/tatto_images/tattoo_2.webp";
 import image3 from "../../assets/tatto_images/tattoo_3.webp";
 import image4 from "../../assets/tatto_images/tattoo_4.webp";
 import image5 from "../../assets/tatto_images/tattoo_5.webp";
-import image6 from "../../assets/tatto_images/img_12.webp"
+import image6 from "../../assets/tatto_images/img_12.webp";
 // import image6 from "../../assets/tatto_images//image_6.webp";
 import { useInView } from "react-intersection-observer";
 const Home = () => {
@@ -126,7 +126,7 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Moulee's Tattoo Art Studio | Best Tattoo Studio</title>
+        <title>Best Tattoo Studio in Pune | Moulee's Tattoo Art Studio</title>
         <meta
           name="description"
           content="Best tattoo studio in Pune. Moulee's Tattoo Art offers customized permanent tattoo services in Pune. Our artists believe in being genuine with our designs."
@@ -252,7 +252,11 @@ const Home = () => {
             <strong>Moulee’s Care</strong> - a lifetime Commitment !!!
           </p>
           <Link to="/Moulee’s_care" class="btn care_btn">
-            <img className="btn_text" src={fill_protectionlicon} alt="" />
+            <img
+              className="btn_text"
+              src={fill_protectionlicon}
+              alt="tattoo_care_icon"
+            />
             <div class="btn_text">Explore Now</div>
           </Link>
         </div>
@@ -326,10 +330,8 @@ const Home = () => {
 
               <SwiperSlide className="gallery-swiperslide">
                 <Link to="/mouleeswork">
-                  <div class="tatto-image bg-img-cover last_image"   >  
-                    <p>
-                      Visit More Gallery
-                    </p>
+                  <div class="tatto-image bg-img-cover last_image">
+                    <p>Visit More Gallery</p>
                   </div>
                 </Link>
               </SwiperSlide>

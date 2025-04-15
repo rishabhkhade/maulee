@@ -10,8 +10,8 @@ function BottomIcons({setPopup}) {
     <>
       <div className="side-icons">
         <Link to="/Moulee’s_care"  className="two-icon">
-          <img src={protectionlicon} alt="" className="white_icon"/>
-          <img src={fill_protectionlicon} alt=""  className="fill_icon" />
+          <img src={protectionlicon} alt="tattoo_care_icon" className="white_icon"/>
+          <img src={fill_protectionlicon} alt="tattoo_care_icon"  className="fill_icon" />
         </Link>
         <a href="https://www.instagram.com/moulees_tattoo_art" target="blank" className="two-icon">
           <FaInstagram />

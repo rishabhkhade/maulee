@@ -16,7 +16,7 @@ function Blog({ setBlogView }) {
   const itemsPerPage = 6;
   
   const blogViewPage = (id) => {
-    navigate(`/blogView?id=${id}`);
+    navigate(`/blogView?title=${id}`);
   };
   
   // In your BlogView component
@@ -44,7 +44,7 @@ function Blog({ setBlogView }) {
 
       const data = response.data;
 
-    
+  
       const blogPosts = data
         .filter((post) => {
           // Check if the post belongs to the 'Blog' category
@@ -60,6 +60,7 @@ function Blog({ setBlogView }) {
           const featuredMedia = post._embedded["wp:featuredmedia"]?.[0] || {};
           return {
             id:post.id,
+            slug:post.slug,
             title: post.title.rendered,
             description: post.excerpt.rendered,
             uploadDate: post.date,
@@ -68,9 +69,9 @@ function Blog({ setBlogView }) {
             category: "Blog",
           };
         });
-
+        
       setBlogData(blogPosts);
-      console.log(blogPosts, "sdsdf")
+      
     } catch (error) {
       console.log(error);
     }
@@ -127,7 +128,7 @@ function Blog({ setBlogView }) {
                   <div
                     className="blog-card"
                     key={index}
-                    onClick={() => blogViewPage(item.id)}
+                    onClick={() => blogViewPage(item.slug)}
                   >
                     <div className="blog-img-box">
                       <div className="card-img-overlay">

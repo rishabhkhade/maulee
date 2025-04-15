@@ -9,38 +9,34 @@ import { useSearchParams } from "react-router-dom";
 const BlogView = ({ blogview }) => {
   const [blogviewdata, setBlogviewData] = useState(null);
   const [searchParams] = useSearchParams();
-  const blogId = searchParams.get("id");
+  const blogId = searchParams.get("title");
 
-
-  
   const fetchBlogDataById = async (id) => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_URL}/posts/${id}?_embed` // Fetch single post by ID
+        `${process.env.REACT_APP_URL}/posts?slug=${id}&_embed` // Fetch single post by ID
       );
-  
-      const post = response.data;
-      const featuredMedia = post._embedded["wp:featuredmedia"]?.[0] || {};
-  
-      const postData = {
-        id: post.id,
-        title: post.title.rendered,
-        description: post.content.rendered,
-        uploadDate: post.date,
-        imageUrl: featuredMedia.source_url || "",
-        imageId: featuredMedia.id || null,
-        category: "Blog",
-      };
-  
-      setBlogviewData(postData); // Set the blog data based on the single post
-  
-      console.log(postData, "Single Post Data");
-  
+
+      // const post = response.data;
+      // const featuredMedia = post._embedded["wp:featuredmedia"]?.[0] || {};
+
+      // const postData = {
+      //   id: post.id,
+      //   title: post.title.rendered,
+      //   description: post.content.rendered,
+      //   uploadDate: post.date,
+      //   imageUrl: featuredMedia.source_url || "",
+      //   imageId: featuredMedia.id || null,
+      //   category: "Blog",
+      // };
+
+      setBlogviewData(response.data[0]); // Set the blog data based on the single post
+
+    
     } catch (error) {
       console.log(error);
     }
   };
-  
 
   useEffect(() => {
     if (blogId) {
@@ -75,18 +71,21 @@ const BlogView = ({ blogview }) => {
           {blogviewdata ? (
             <>
               <div className="image">
-                <img src={blogviewdata.imageUrl} alt={blogviewdata.title} />
+                <img
+                  src={
+                    blogviewdata?._embedded?.["wp:featuredmedia"]?.[0]
+                      ?.source_url || "default-image.jpg"
+                  }
+                  alt={blogviewdata?.title?.rendered || "Blog Image"}
+                />
               </div>
               <div class="top-line">
-                <h1>{blogviewdata.title}</h1>
-                <p>{new Date(blogviewdata.uploadDate).toLocaleDateString()}</p>
+                <h1>{blogviewdata?.title?.rendered}</h1>
+                <p>{blogviewdata?.date?.split("T")[0]}</p>
               </div>
               <div
-                dangerouslySetInnerHTML={{ __html: blogviewdata.description }}
-
-              
+                dangerouslySetInnerHTML={{ __html: blogviewdata?.content?.rendered }}
               />
-          
             </>
           ) : (
             <p>Loading...</p>

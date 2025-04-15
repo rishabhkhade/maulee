@@ -18,6 +18,7 @@ import { BsYoutube } from "react-icons/bs";
 import gallery_top_img from "../../assets/pagetop.webp";
 import axios from "axios";
 import { IoIosArrowBack } from "react-icons/io";
+import { Helmet } from "react-helmet";
 
 // videos
 // import gl1 from "../../assets/video/gl_1.webm";
@@ -137,6 +138,27 @@ const Gallery = () => {
   ];
   return (
     <>
+    <Helmet>
+        <title>
+        Tattoo Portfolio | Moulee's Signature Tattoo Designs in Pune
+        </title>
+        <meta
+          name="description"
+          content="Browse Moulee’s exclusive tattoo portfolio showcasing creative, detailed, and custom artwork. Discover why we're one of the best tattoo studios in Pune."
+        />
+        <meta
+          name="keywords"
+          content="Best tattoo studio in Pune,Best tattoo studio in Viman Nagar,Custom tattoo designs Pune,
+          Realism tattoos Pune,Watercolor tattoos Pune,
+          Traditional tattoos Pune,Neo-traditional tattoos Pune,
+          Tattoo cover-ups Pune,Professional piercing services Pune,
+          Hygienic piercing studio Pune,Temporary tattoos Pune,
+          Non-permanent tattoos Pune,Art classes Pune,
+          Fine art and paintings Pune,Original artwork for home,
+          Modern tattoo and art studio Pune"
+        />
+        <link rel="canonical" href="https://www.mouleestattooart.com/service" />
+      </Helmet>
       <Pagetop pageHeader="Moulees's Work" backgroundImage={gallery_top_img} />
 
       <div className="gallery-parent parent">
