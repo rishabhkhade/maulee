@@ -16,7 +16,7 @@ const links = [
 ];
 
 try {
-  const stream = new SitemapStream({ hostname: 'https://www.mouleastattooart.com' });
+  const stream = new SitemapStream({ hostname: 'https://www.mouleestattooart.com' });
   const writeStream = createWriteStream('./public/sitemap.xml');
 
   const xml = await streamToPromise(Readable.from(links).pipe(stream));
