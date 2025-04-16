@@ -19,6 +19,8 @@ import Privacy from "./pages/privacy/Privacy";
 import Cookies from "./pages/cookies/Cookies";
 import ArtClasses from "./pages/artClasses/ArtClasses";
 import ReactGA from "react-ga4";
+import Sitemap from "./pages/sitemap/Sitemap";
+import Error from "./pages/error/Error";
 function App() {
   const [popup, setPopup] = useState(false);
   const [blogview, setBlogView] = useState([]);
@@ -75,6 +77,8 @@ function App() {
           <Route path="/contact-form" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/cookies" element={<Cookies />} />
+          <Route path="*" element={<Error />} />
+       
           <Route path="/artclasses" element={<ArtClasses />} />
         </Routes>
         <Footer setPopup={setPopup} />

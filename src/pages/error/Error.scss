@@ -1,0 +1,14 @@
+.error_parent{
+    width: 100%;
+    height: 100svh;
+    margin-top: 80px;
+
+    .error_cont{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100%;
+        gap: calc(var(--unit));
+    }
+}
