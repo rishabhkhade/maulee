@@ -17,7 +17,7 @@ const Footer = ({ setPopup }) => {
             <Link to="/about">About</Link>
             <Link to="/service">Services</Link>
             <Link to="/mouleeswork">Moulees Work</Link>
-            <Link to="/blog">Blogs</Link>
+            <Link to="/blogs">Blogs</Link>
             <Link to="/contact-form">Contact</Link>
           </div>
           <div className="copyright-div">
