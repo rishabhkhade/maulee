@@ -4,12 +4,14 @@ import "./blogview.scss";
 import axios from "axios";
 import gallery_top_img from "../../assets/hero.png";
 import { Helmet } from "react-helmet";
-import { useSearchParams } from "react-router-dom";
+import { useParams, useSearchParams } from "react-router-dom";
 
 const BlogView = ({ blogview }) => {
   const [blogviewdata, setBlogviewData] = useState(null);
-  const [searchParams] = useSearchParams();
-  const blogId = searchParams.get("title");
+  // const [searchParams] = useSearchParams();
+  // const blogId = searchParams.get("title");
+
+  const {title} =  useParams()
 
   const fetchBlogDataById = async (id) => {
     try {
@@ -39,10 +41,10 @@ const BlogView = ({ blogview }) => {
   };
 
   useEffect(() => {
-    if (blogId) {
-      fetchBlogDataById(blogId); // Fetch the blog post data based on the id from URL
+    if (title) {
+      fetchBlogDataById(title); // Fetch the blog post data based on the id from URL
     }
-  }, [blogId]);
+  }, [title]);
 
   return (
     <>

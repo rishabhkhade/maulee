@@ -19,7 +19,7 @@ import Privacy from "./pages/privacy/Privacy";
 import Cookies from "./pages/cookies/Cookies";
 import ArtClasses from "./pages/artClasses/ArtClasses";
 import ReactGA from "react-ga4";
-import Sitemap from "./pages/sitemap/Sitemap";
+
 import Error from "./pages/error/Error";
 function App() {
   const [popup, setPopup] = useState(false);
@@ -71,9 +71,9 @@ function App() {
           <Route path="/service" element={<Service />} />
           <Route path="/mouleeswork" element={<Gallery />} />
           <Route path="/our_Clients" element={<Testimoneal />} />
-          <Route path="/blog" element={<Blog setBlogView={setBlogView} />} />
+          <Route path="/blogs" element={<Blog setBlogView={setBlogView} />} />
           <Route path="/Moulee’s_care" element={<Tatto_care />} />
-          <Route path="/blogView" element={<BlogView blogview={blogview} />} />
+          <Route path="/blog/:title" element={<BlogView blogview={blogview} />} />
           <Route path="/contact-form" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/cookies" element={<Cookies />} />

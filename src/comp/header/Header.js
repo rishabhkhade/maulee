@@ -68,7 +68,7 @@ const Header = () => {
     },
     {
       nav :"Blog",
-      path:"/blog"
+      path:"/blogs"
     },
     {
       nav :"Contact us",
