@@ -36,15 +36,15 @@ const About = () => {
       insta_link: "https://www.instagram.com/sanket_moulees/profilecard/?igsh=MWYxbWoxcWhtNWZwcg%3D%3D",
       x_link: "/whatsapp",
     },
-    {
-      image: akshayImage,
-      artist_name: "Akshay Patil",
-      description:
-        "Hi, I’m Akshay, a tattoo artist at Moulees Tattoo Art Studio. My passion lies in crafting unique, personalized designs that tell my clients' stories. I strive to create an environment where everyone feels comfortable and confident in bringing their ideas to life, always focusing on both artistry and safety.",
-      whatsapp_link: "/whatsapp",
-      insta_link: "https://www.instagram.com/akshay_moulees/profilecard/?igsh=eGlhaHkzbDJ3MGN6",
-      x_link: "/whatsapp",
-    },
+    // {
+    //   image: akshayImage,
+    //   artist_name: "Akshay Patil",
+    //   description:
+    //     "Hi, I’m Akshay, a tattoo artist at Moulees Tattoo Art Studio. My passion lies in crafting unique, personalized designs that tell my clients' stories. I strive to create an environment where everyone feels comfortable and confident in bringing their ideas to life, always focusing on both artistry and safety.",
+    //   whatsapp_link: "/whatsapp",
+    //   insta_link: "https://www.instagram.com/akshay_moulees/profilecard/?igsh=eGlhaHkzbDJ3MGN6",
+    //   x_link: "/whatsapp",
+    // },
     {
       image: arpitImage,
       artist_name: "Arpit Vyas",
