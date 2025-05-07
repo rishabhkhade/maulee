@@ -37,7 +37,7 @@ const PopUp = ({ setPopup }) => {
     )
       .then((res) => res.text())
       .then((data) => {
-        console.log(data);
+  
         alert(data);
         formEle.reset();
       })
