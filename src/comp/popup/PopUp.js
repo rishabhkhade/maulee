@@ -29,7 +29,7 @@ const PopUp = ({ setPopup }) => {
     formDatab.append("date", date);
 
     fetch(
-      "https://script.google.com/macros/s/AKfycbzw0fa44vdQ0zxgvTFe4TvfQ3h0mrTyY8u3wS3Tc1da_WUe_W-XVlqZFN5hFUw3EAVj/exec",
+      "https://script.google.com/macros/s/AKfycbyj-Gs_lQpw8FreCUL9vDJ0IUXia7BGhmQVlCBm7wWeLNheWFZegE8Zwaehl3shD9De/exec",
       {
         method: "POST",
         body: formDatab,
