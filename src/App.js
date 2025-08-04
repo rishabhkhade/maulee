@@ -21,19 +21,18 @@ import ArtClasses from "./pages/artClasses/ArtClasses";
 import ReactGA from "react-ga4";
 
 import Error from "./pages/error/Error";
+import Kharadi from "./pages/best-tattoo-shops-kharadi/Kharadi";
 function App() {
   const [popup, setPopup] = useState(false);
   const [blogview, setBlogView] = useState([]);
 
-
   ReactGA.initialize("G-LFH7NC7P8K");
 
-  
   useEffect(() => {
     // Add the analytics script to the <head>
     const script1 = document.createElement("script");
     script1.async = true;
-    script1.src="https://www.googletagmanager.com/gtag/js?id=G-Y66VD4YHRR";
+    script1.src = "https://www.googletagmanager.com/gtag/js?id=G-Y66VD4YHRR";
     document.head.appendChild(script1);
 
     // Add the gtag initialization script
@@ -47,16 +46,13 @@ function App() {
     document.head.appendChild(script2);
   }, []);
 
-
   const openPopUpdely = () => {
-  
     setTimeout(() => {
       setPopup(true);
     }, 10000);
   };
   useEffect(() => {
     openPopUpdely();
-  
   }, []);
 
   return (
@@ -73,12 +69,16 @@ function App() {
           <Route path="/our_Clients" element={<Testimoneal />} />
           <Route path="/blogs" element={<Blog setBlogView={setBlogView} />} />
           <Route path="/Moulee’s_care" element={<Tatto_care />} />
-          <Route path="/blog/:title" element={<BlogView blogview={blogview} />} />
+          <Route
+            path="/blog/:title"
+            element={<BlogView blogview={blogview} />}
+          />
           <Route path="/contact-form" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/cookies" element={<Cookies />} />
+          <Route path="/best-tattoo-shops-kharadi-pune" element={<Kharadi />} />
           <Route path="*" element={<Error />} />
-       
+
           <Route path="/artclasses" element={<ArtClasses />} />
         </Routes>
         <Footer setPopup={setPopup} />
