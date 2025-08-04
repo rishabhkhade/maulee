@@ -22,6 +22,8 @@ import ReactGA from "react-ga4";
 
 import Error from "./pages/error/Error";
 import Kharadi from "./pages/best-tattoo-shops-kharadi/Kharadi";
+import Koregaon from "./pages/best-tattoo-shops-koregaon/Koregaon";
+import TingreNagar from "./pages/tattoo-studio-tingre-nagar-pune/TingreNagar";
 function App() {
   const [popup, setPopup] = useState(false);
   const [blogview, setBlogView] = useState([]);
@@ -76,7 +78,9 @@ function App() {
           <Route path="/contact-form" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/cookies" element={<Cookies />} />
-          <Route path="/best-tattoo-shops-kharadi-pune" element={<Kharadi />} />
+          <Route path="/best-tattoo-shop-kharadi-pune" element={<Kharadi />} />
+          <Route path="/best-tattoo-shop-koregaon-pune" element={<Koregaon />} />
+          <Route path="/tattoo-studio-tingre-nagar-pune" element={<TingreNagar />} />
           <Route path="*" element={<Error />} />
 
           <Route path="/artclasses" element={<ArtClasses />} />
