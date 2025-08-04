@@ -9,9 +9,7 @@ const Kharadi = () => {
         <div className="heading-wrap">
           <h1>Best Tattoo Shops in Kharadi, Pune – Where Art Meets Soul</h1>
           <p className="">
-            When searching for the best tattoo shops in Kharadi, Pune, you might
-            be overwhelmed by the options available. However, not all tattoo
-            studios are &nbsp;
+            When searching for the &nbsp;
             <strong>best tattoo shops in Kharadi, Pune</strong>, many expect
             flashy studios, quick ink jobs, and trendy designs. But what if
             you're seeking something more personal? Something soulful? That's
