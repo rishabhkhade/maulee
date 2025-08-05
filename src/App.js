@@ -25,6 +25,8 @@ import Kharadi from "./pages/best-tattoo-shops-kharadi/Kharadi";
 import Koregaon from "./pages/best-tattoo-shops-koregaon/Koregaon";
 import TingreNagar from "./pages/tattoo-studio-tingre-nagar-pune/TingreNagar";
 import Kalyaninagar from "./pages/best-tattoo-shops-kalyaninagar/Kalyaninagar";
+import Vishrantwadi from "./pages/tatto-shops-vishrantiwadi-pune/Vishrantwadi";
+import VimanNagar from "./pages/tattoo-artists-viman-nagar-pune/VimanNagar";
 function App() {
   const [popup, setPopup] = useState(false);
   const [blogview, setBlogView] = useState([]);
@@ -91,6 +93,14 @@ function App() {
           <Route
             path="/tattoo-artists-kalyani-nagar-pune"
             element={<Kalyaninagar />}
+          />
+          <Route
+            path="/tattoo-shops-vishrantwadi-pune"
+            element={<Vishrantwadi />}
+          />
+          <Route
+            path="/tattoo-artists-viman-nagar-pune"
+            element={<VimanNagar />}
           />
           <Route path="*" element={<Error />} />
 

@@ -41,8 +41,8 @@
 
             border: 1px solid rgba(0, 0, 0, 0.185);
             border-left: 4px solid var(--blue);
-            padding: calc(var(--unit) * 1.5);
             border-radius: calc(var(--unit));
+            padding: calc(var(--unit) * 1.5);
             display: flex;
             flex-direction: column;
             gap: calc(var(--unit) / 2);

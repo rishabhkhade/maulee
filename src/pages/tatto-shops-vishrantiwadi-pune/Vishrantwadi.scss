@@ -1,0 +1,130 @@
+.vishrantwadi-parent {
+    height: auto;
+    padding: 100px 0px;
+
+    .vishrantwadi-cont {
+        display: flex;
+        flex-direction: column;
+        gap: calc(var(--unit));
+
+        h1 {
+            font-size: 50px;
+            font-weight: 600;
+            text-align: center;
+            color: var(--blue);
+        }
+
+        strong {
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--unit) / 2);
+
+            li {
+                color: rgb(117, 116, 116);
+                font-size: 14px;
+            }
+        }
+
+        .heading-wrap {
+            background: rgba(194, 194, 194, 0.144);
+            padding: calc(var(--unit) * 1.5);
+            border-radius: calc(var(--unit));
+            display: flex;
+            gap: calc(var(--unit));
+            flex-direction: column;
+
+            h2 {
+                text-decoration: underline;
+            }
+
+        }
+
+        .sanctuary {
+            padding: calc(var(--unit) * 1.5);
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--unit));
+        }
+
+        .experience {
+
+            padding: calc(var(--unit) * 1.5);
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--unit));
+        }
+
+        .meet {
+            padding: calc(var(--unit) * 1.5);
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--unit));
+            border: 1px solid rgba(0, 0, 0, 0.185);
+            border-left: 4px solid var(--blue);
+            border-radius: calc(var(--unit));
+
+        }
+
+        .special {
+            padding: calc(var(--unit) * 1.5);
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--unit));
+
+            .shops-wrap {
+                display: flex;
+                flex-direction: column;
+                gap: calc(var(--unit));
+            }
+        }
+
+        .ideal {
+            padding: calc(var(--unit) * 1.5);
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--unit));
+        }
+
+        .client {
+            border: 2px solid rgba(0, 0, 0, 0.185);
+            padding: calc(var(--unit) * 1.5);
+            border-radius: calc(var(--unit));
+            font-style: italic;
+        }
+
+        .address {
+            background: rgba(194, 194, 194, 0.144);
+            padding: calc(var(--unit) * 1.5);
+            border-radius: calc(var(--unit));
+            display: flex;
+            gap: calc(var(--unit));
+            flex-direction: column;
+
+        }
+
+        .santuary {
+            padding: calc(var(--unit) * 1.5);
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--unit));
+            border: 1px solid rgba(0, 0, 0, 0.185);
+            padding: calc(var(--unit) * 1.5);
+            border-radius: calc(var(--unit));
+        }
+
+
+
+
+
+
+
+
+
+
+    }
+}
