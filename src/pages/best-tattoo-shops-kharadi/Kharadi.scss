@@ -147,3 +147,54 @@
     }
   }
 }
+
+@media (max-width: 1000px) {
+  .kharadi-parent {
+    .kharadi-cont {
+      .heading-wrap {
+        h1 {
+          font-size: 40px;
+        }
+      }
+      .diff-Section {
+        .three-points-wrap {
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, auto);
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .kharadi-parent {
+    .kharadi-cont {
+      .heading-wrap {
+        h1 {
+          font-size: 32px;
+        }
+      }
+      .diff-Section {
+        .three-points-wrap {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+      .direction-section {
+        .direction-wrap {
+          .tag-wrap {
+            .tags {
+              padding: 8px;
+              font-size: 12px;
+            }
+            p {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}

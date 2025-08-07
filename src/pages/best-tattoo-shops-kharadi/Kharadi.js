@@ -182,9 +182,7 @@ const Kharadi = () => {
         </div>
 
         <div className="ideal">
-          <h2>
-            Ideal for Clients Who Want Meaning
-          </h2>
+          <h2>Ideal for Clients Who Want Meaning</h2>
           <p>Moulee's Tattoo Art Studio is ideal for those who:</p>
           <div className="ul-li-wrap">
             Want a tattoo with deep emotional or spiritual meaning
