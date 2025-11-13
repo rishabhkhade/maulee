@@ -21,6 +21,7 @@ import { Link } from "react-router-dom";
 import CountUp from "react-countup";
 import { IoIosStar } from "react-icons/io";
 import icon1 from "../../assets/Mask group.png";
+import icon2 from "../../assets/dummy_girl.jpg";
 import image from "../../assets/tatto_images/img_1.webp";
 import heroimage from "../../assets/tArtist.webp";
 import ReactPlayer from "react-player";
@@ -44,30 +45,30 @@ const Home = () => {
     {
       heroimage: hero2,
     },
-    {
-      heroimage: hero3,
-    },
+    // {
+    //   heroimage: hero3,
+    // },
   ];
 
   const testimoealData = [
     {
       clientdesc:
         "I Came here for tattoo and the experience was amazing. Very friendly and experienced persons made me feel at home. Artist gave me multiple design options, and honestly exceeded my expectations by 10 times. ",
-      icon: icon1,
+      icon: icon2,
       name: "Palvi Praksah",
       star: 5,
     },
     {
       clientdesc:
         "A place where you should must visit if planning to get inked.Fantastic service, guidance, desings etc. I loved the place",
-      icon: icon1,
+      icon: icon2,
       name: "Preeti Baviskar",
       star: 5,
     },
     {
       clientdesc:
         "The studio and all the equipments used are super clean and maintained. He exactly understands your thought and emotion behind the tattoo.",
-      icon: icon1,
+      icon: icon2,
       name: "Shruti Ambekar",
       star: 5,
     },
@@ -455,7 +456,7 @@ const Home = () => {
         </Swiper>
       </div>
 
-      <div className="place-visit-parent parent">
+      <div className="place-visit-parent parent bg-img-cover">
         <div
           className="place-visit-cont cont"
           data-aos="fade-up"
@@ -465,7 +466,7 @@ const Home = () => {
           <div className="left">
             <a
               className="location "
-              href="https://maps.app.goo.gl/RpE5B4t8yLJuvtGr5"
+              href="https://maps.app.goo.gl/2HboYdBF4dQoLJQ1A"
               target="blank"
             >
               <div className="arc bg-img-contain"></div>
@@ -474,7 +475,7 @@ const Home = () => {
               </div>
             </a>
             <div className="visit-text">
-              <h5 className="">Viman Nagar , Pune</h5>
+              <h5 className="">Tingre Nagar , Pune</h5>
             </div>
           </div>
           <div className="right">
